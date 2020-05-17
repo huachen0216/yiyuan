@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/ResidentHealthQuery/index",
+    "pages/ResidentHealthMain/index",
+    "pages/ResidentHealthAdd/index",
     "pages/index/index",
     "pages/logs/logs"
   ],

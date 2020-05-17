@@ -1,0 +1,14 @@
+<view class="page-body">
+	<view class="btn-area" id="buttonContainer">
+		<button type="default" bindtap="addRecord">新建档案</button>
+	</view>
+
+	<view class="btn-area" id="buttonContainer">
+		<button type="default" bindtap="addRecord">查询档案</button>
+	</view>
+
+	<view class="btn-area" id="buttonContainer">
+		<button type="default" bindtap="addRecord">修改</button>
+	</view>
+
+</view>
