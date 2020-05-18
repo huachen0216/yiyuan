@@ -5,9 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usercode: ''
+    usercode: '',
+    qRCodeMsg: ''
   },
 
+  // 新增档案
   addRecord: function () {
     wx.navigateTo({
       // url: '../ResidentHealthAdd/index?usercode='+this.data.usercode,
@@ -15,14 +17,40 @@ Page({
     })
   },
 
+  // 查询档案
+  scanRecord: function () {
+    var that = this
+    wx.scanCode({
+      success: function(res) {
+        // console.log(res);
+        that.setData({
+          qRCodeMsg: res.result
+        });
+        
+        wx.showToast({
+          title: '扫描成功, ' + that.data.qRCodeMsg,
+          duration: 2000
+        })
+      }
+    })
+  },
+
+  queryRecord: function() {
+    wx.navigateTo({
+      url: '../ResidentHealthQuery/index?usercode='+this.data.qRCodeMsg,
+      // url: '../ResidentHealthAdd/index'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    wx.setStorage({
-      data: 'abcefg',
-      key: 'usercode',
-    })
+    // wx.setStorage({
+    //   data: '2005035480',
+    //   key: 'usercode',
+    // })
+    wx.clearStorage()
   },
 
   /**
