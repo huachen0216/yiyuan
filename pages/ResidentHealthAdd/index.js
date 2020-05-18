@@ -5,7 +5,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-
     // radio item定义
     genderItems: [{
         name: '男',

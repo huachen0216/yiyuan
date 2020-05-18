@@ -1,1 +1,51 @@
-/* pages/ResidentHealthQuery/index.wxss */
+.addPageMain {
+  margin-left: 10px;
+}
+
+.add-text-section {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.add-text-likecheckbox-section {
+  display: flex;
+}
+
+.text-title {
+  margin-right: 10px;
+}
+
+.add-radio-section {
+  margin-bottom: 10px
+}
+
+.radio-title {
+  margin-bottom: 5px;
+}
+
+.radio-item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.checkbox-item {
+  display: inline-block;
+  margin-right: 20px;
+  margin-bottom: 5px;
+}
+
+.add-checkbox-item {
+  display: flex;
+}
+
+.add-checkbox-section {
+  margin-bottom: 10px;
+}
+
+.add-checkbox-item .item-value {
+  margin-right: 10px;
+}
+
+.item-input-value {
+  width: 50px;
+}

@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usercode: '',
+    usercode: '2005035480',
     qRCodeMsg: ''
   },
 
@@ -24,11 +24,11 @@ Page({
       success: function(res) {
         // console.log(res);
         that.setData({
-          qRCodeMsg: res.result
+          usercode: res.result
         });
         
         wx.showToast({
-          title: '扫描成功, ' + that.data.qRCodeMsg,
+          title: '扫描成功, ' + that.data.usercode,
           duration: 2000
         })
       }
@@ -37,7 +37,7 @@ Page({
 
   queryRecord: function() {
     wx.navigateTo({
-      url: '../ResidentHealthQuery/index?usercode='+this.data.qRCodeMsg,
+      url: '../ResidentHealthQuery/index?usercode='+this.data.usercode,
       // url: '../ResidentHealthAdd/index'
     })
   },
@@ -50,7 +50,7 @@ Page({
     //   data: '2005035480',
     //   key: 'usercode',
     // })
-    wx.clearStorage()
+    // wx.clearStorage()
   },
 
   /**
