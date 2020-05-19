@@ -54,42 +54,160 @@ Page({
 
     isNoDrinkItems: [{
         name: '是',
-        value: 'yes'
+        value: 'yes',
       },
       {
         name: '否',
-        value: 'no'
+        value: 'no',
       }
     ],
 
     // checkbox item 定义
-    familyHistoryCheckboxItems: [{
+    fatherCheckboxItems: [{
         name: '高血压',
-        value: 'gxy'
+        value: 'gxy',
+        status: 0
       },
       {
         name: '糖尿病',
-        value: 'tlb'
+        value: 'tlb',
+        status: 0
       },
       {
         name: '冠心病',
-        value: 'gxb'
+        value: 'gxb',
+        status: 0
       },
       {
         name: '慢性阻塞型疾病',
-        value: 'mxzs'
+        value: 'mxzs',
+        status: 0
       },
       {
         name: '恶性肿瘤',
-        value: 'exzl'
+        value: 'exzl',
+        status: 0
       },
       {
         name: '脑卒中',
-        value: 'ngz'
+        value: 'ngz',
+        status: 0
       },
       {
         name: '肝炎',
-        value: 'gy'
+        value: 'gy',
+        status: 0
+      },
+    ],
+
+    motherCheckboxItems: [{
+        name: '高血压',
+        value: 'gxy',
+        status: 0
+      },
+      {
+        name: '糖尿病',
+        value: 'tlb',
+        status: 0
+      },
+      {
+        name: '冠心病',
+        value: 'gxb',
+        status: 0
+      },
+      {
+        name: '慢性阻塞型疾病',
+        value: 'mxzs',
+        status: 0
+      },
+      {
+        name: '恶性肿瘤',
+        value: 'exzl',
+        status: 0
+      },
+      {
+        name: '脑卒中',
+        value: 'ngz',
+        status: 0
+      },
+      {
+        name: '肝炎',
+        value: 'gy',
+        status: 0
+      },
+    ],
+
+    childCheckboxItems: [{
+        name: '高血压',
+        value: 'gxy',
+        status: 0
+      },
+      {
+        name: '糖尿病',
+        value: 'tlb',
+        status: 0
+      },
+      {
+        name: '冠心病',
+        value: 'gxb',
+        status: 0
+      },
+      {
+        name: '慢性阻塞型疾病',
+        value: 'mxzs',
+        status: 0
+      },
+      {
+        name: '恶性肿瘤',
+        value: 'exzl',
+        status: 0
+      },
+      {
+        name: '脑卒中',
+        value: 'ngz',
+        status: 0
+      },
+      {
+        name: '肝炎',
+        value: 'gy',
+        status: 0
+      },
+    ],
+
+    brothersCheckboxItems: [{
+        name: '高血压',
+        value: 'gxy',
+        status: 0
+      },
+      {
+        name: '糖尿病',
+        value: 'tlb',
+        status: 0
+      },
+      {
+        name: '冠心病',
+        value: 'gxb',
+        status: 0
+      },
+      {
+        name: '慢性阻塞型疾病',
+        value: 'mxzs',
+        status: 0
+      },
+      {
+        name: '恶性肿瘤',
+        value: 'exzl',
+        status: 0
+      },
+      {
+        name: '脑卒中',
+        value: 'ngz',
+        status: 0
+      },
+      {
+        name: '肝炎',
+        value: 'gy',
+        status: 0
       },
     ],
 
@@ -121,6 +239,7 @@ Page({
     beer: '',
     liquor: '',
     redwine: '',
+    meal: '',
     // 按钮状态
     isDisabled: false
   },
@@ -172,7 +291,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    that.setData({
+      usercode: options.usercode
+    })
+    console.log(that.data)
   },
 
   /**

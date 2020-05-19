@@ -1,9 +1,9 @@
 <view class="addPageMain">
 	<view class="add-text-section">
 		<view class='text-title'>编号:</view>
-		<input class="weui-input" value="{{usercode}}" disabled="True"/>
+		<input class="weui-input" value="{{usercode}}" disabled="True" />
 	</view>
-	
+
 	<view class="add-text-section">
 		<view class='text-title'>姓名:</view>
 		<input class="weui-input" placeholder="姓名" value="{{username}}" bindinput="inputChangeHandle" data-prop="username" />
@@ -134,7 +134,7 @@
 	<view class="add-checkbox-section">
 		<view class="checkbox-title">父亲：</view>
 		<checkbox-group bindchange="inputChangeHandle" value="{{father}}" data-prop="father">
-			<label class="checkbox-item" wx:for="{{familyHistoryCheckboxItems}}" wx:key="{{item.value}}">
+			<label class="checkbox-item" wx:for="{{fatherCheckboxItems}}" wx:key="{{item.value}}">
 				<checkbox value="{{item.value}}" />{{item.name}}
 			</label>
 		</checkbox-group>
@@ -143,7 +143,7 @@
 	<view class="add-checkbox-section">
 		<view class="checkbox-title">母亲：</view>
 		<checkbox-group bindchange="inputChangeHandle" value="{{mother}}" data-prop="mother">
-			<label class="checkbox-item" wx:for="{{familyHistoryCheckboxItems}}" wx:key="{{item.value}}">
+			<label class="checkbox-item" wx:for="{{motherCheckboxItems}}" wx:key="{{item.value}}">
 				<checkbox value="{{item.value}}" />{{item.name}}
 			</label>
 		</checkbox-group>
@@ -152,7 +152,7 @@
 	<view class="add-checkbox-section">
 		<view class="checkbox-title">子女：</view>
 		<checkbox-group bindchange="inputChangeHandle" bindchange="inputChangeHandle" value="{{child}}" data-prop="child">
-			<label class="checkbox-item" wx:for="{{familyHistoryCheckboxItems}}" wx:key="{{item.value}}">
+			<label class="checkbox-item" wx:for="{{childCheckboxItems}}" wx:key="{{item.value}}">
 				<checkbox value="{{item.value}}" />{{item.name}}
 			</label>
 		</checkbox-group>
@@ -161,7 +161,7 @@
 	<view class="add-checkbox-section">
 		<view class="checkbox-title">兄弟姐妹：</view>
 		<checkbox-group bindchange="inputChangeHandle" value="{{brothers}}" data-prop="brothers">
-			<label class="checkbox-item" wx:for="{{familyHistoryCheckboxItems}}" wx:key="{{item.value}}">
+			<label class="checkbox-item" wx:for="{{brothersCheckboxItems}}" wx:key="{{item.value}}">
 				<checkbox value="{{item.value}}" />{{item.name}}
 			</label>
 		</checkbox-group>
@@ -234,7 +234,7 @@
 	<view class="add-radio-section">
 		<view class="radio-title">是否戒酒：</view>
 		<radio-group bindchange="inputChangeHandle" data-prop="nodrink">
-			<view class="radio-item" wx:for="{{isNoSmokeItems}}">
+			<view class="radio-item" wx:for="{{isNoDrinkItems}}">
 				<radio value="{{item.name}}"></radio>
 				<label>{{item.name}}</label>
 			</view>
@@ -243,7 +243,7 @@
 
 	<view class="add-text-section">
 		<view class='text-title'>主食量</view>
-		<input class="item-input-value" placeholder="两" />
+		<input class="item-input-value" placeholder="两" value="{{meal}}" bindinput="inputChangeHandle" data-prop="meal" />
 		<view class='text-title'>/顿</view>
 	</view>
 	<view class="buttons">

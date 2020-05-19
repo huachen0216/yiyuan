@@ -12,7 +12,7 @@
 	</view>
 
 	<view class="btn-area" id="buttonContainer">
-		<button type="default" bindtap="addRecord">修改</button>
+		<button type="default" bindtap="addRecord">修改档案</button>
 	</view>
 
 </view>

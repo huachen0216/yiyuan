@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usercode: '2005035480',
+    usercode: '2005035481',
     qRCodeMsg: ''
   },
 
@@ -13,7 +13,7 @@ Page({
   addRecord: function () {
     wx.navigateTo({
       // url: '../ResidentHealthAdd/index?usercode='+this.data.usercode,
-      url: '../ResidentHealthAdd/index'
+      url: '../ResidentHealthAdd/index?usercode='+this.data.usercode,
     })
   },
 
