@@ -11,9 +11,9 @@
 
 	<view class="add-radio-section">
 		<view class="radio-title">性别：</view>
-		<radio-group bindchange="inputChangeHandle" data-prop="gender">
+		<radio-group>
 			<view class="radio-item" wx:for="{{genderItems}}">
-				<radio value="{{item.name}}"></radio>
+				<radio value="{{item.name}}" checked="{{ item.gender == '1' }}"></radio>
 				<label>{{item.name}}</label>
 			</view>
 		</radio-group>

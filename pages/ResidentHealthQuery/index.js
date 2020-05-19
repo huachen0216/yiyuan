@@ -9,11 +9,13 @@ Page({
     // radio item定义
     genderItems: [{
         name: '男',
-        value: 'man'
+        value: 'man',
+        gender:0
       },
       {
         name: '女',
-        value: 'woman'
+        value: 'woman',
+        gender:0
       }
     ],
     householdItems: [{
@@ -134,6 +136,7 @@ Page({
       })
       .get({
         success: function (res) {
+          console.log(res.data)
           if (res.data === null) {
             wx.showToast({
               title: '没有查询到该用户的信息',
@@ -141,9 +144,14 @@ Page({
             })
           }
           var data = res.data[0]
+          that.data.genderItems.forEach(item => {
+            if (data.gender == item.name) {
+              item.gender = 1
+            }
+          })
           that.setData({
             // 单选框
-            gender: data.gender,
+            genderItems: that.data.genderItems,
             // 输入框
             usercode: data.usercode,
             username: data.username,
@@ -173,6 +181,7 @@ Page({
             liquor: data.liquor,
             redwine: data.redwine,
           })
+          console.log(that.data.genderItems)
         }
       })
   },
