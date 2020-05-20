@@ -241,8 +241,7 @@ Page({
     redwine: '',
     meal: '',
     // 按钮状态
-    isDisabled: false,
-    _id: ''
+    isDisabled: false
   },
 
   inputChangeHandle: function (e) {
@@ -254,9 +253,6 @@ Page({
 
   addRecordHandle(e) {
     var that = this;
-    that.setData({
-      _id: that.usercode
-    }) 
     DB.add({
         data: this.data,
         success(res) {
