@@ -5,8 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usercode: '2005035481',
+    usercode: '2005035480',
     qRCodeMsg: ''
+  },
+
+   // 修改档案
+   editRecord: function () {
+    wx.navigateTo({
+      url: '../ResidentHealthEdit/index?usercode='+this.data.usercode,
+    })
   },
 
   // 新增档案
