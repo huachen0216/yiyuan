@@ -1,12 +1,10 @@
-// pages/ResidentHealthMain/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    usercode: '2005035480',
-    qRCodeMsg: ''
+    usercode: ''
   },
 
    // 修改档案
@@ -19,12 +17,11 @@ Page({
   // 新增档案
   addRecord: function () {
     wx.navigateTo({
-      // url: '../ResidentHealthAdd/index?usercode='+this.data.usercode,
       url: '../ResidentHealthAdd/index?usercode='+this.data.usercode,
     })
   },
 
-  // 查询档案
+  // 扫描档案
   scanRecord: function () {
     var that = this
     wx.scanCode({
@@ -42,10 +39,10 @@ Page({
     })
   },
 
+  // 查询档案
   queryRecord: function() {
     wx.navigateTo({
       url: '../ResidentHealthQuery/index?usercode='+this.data.usercode,
-      // url: '../ResidentHealthAdd/index'
     })
   },
 
@@ -53,11 +50,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // wx.setStorage({
-    //   data: '2005035480',
-    //   key: 'usercode',
-    // })
-    // wx.clearStorage()
+
   },
 
   /**

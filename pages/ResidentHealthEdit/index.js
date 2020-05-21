@@ -311,10 +311,18 @@ Page({
       })
       .get({
         success: function (res) {
-          if (res.data === null) {
+          if (res.data.length == 0) {
             wx.showToast({
-              title: '没有查询到该用户的信息',
-              duration: 2000
+              title: '没有查询信息',
+              duration: 2000,
+              mask: true,
+              success() {
+                setTimeout(function () {
+                  wx.redirectTo({
+                    url: '../ResidentHealthMain/index',
+                  })
+                }, 1000)
+              }
             })
           }
           var data = res.data[0]

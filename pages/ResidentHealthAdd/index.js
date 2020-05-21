@@ -292,6 +292,26 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
+    DB.where({
+      usercode: options.usercode
+    }).get({
+      success(res) {
+        if (res.data.length > 0) {
+          wx.showToast({
+            title: '用户已存在',
+            duration: 2000,
+            mask: true,
+            success() {
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: '../ResidentHealthMain/index',
+                })
+              }, 1000)
+            }
+          })
+        }
+      }
+    })
     that.setData({
       usercode: options.usercode
     })
