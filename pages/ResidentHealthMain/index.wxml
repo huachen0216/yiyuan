@@ -8,7 +8,7 @@
 		<button type="default" bindtap="addRecord">新建档案</button>
 	</view>
 
-	<view class="btn-area" id="buttonContainer">
+	<view class="btn- button-style" id="buttonContainer">
 		<button type="default" bindtap="queryRecord">查询档案</button>
 	</view>
 
