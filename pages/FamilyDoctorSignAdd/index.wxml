@@ -1,0 +1,93 @@
+<view class="addPageMain">
+	<text class="text-style">北京方向社区卫生服务站家庭医生签约服务协议书</text>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>签订时间:</view>
+			<input class="weui-input" placeholder="签订时间" value="{{signtime}}" bindinput="inputChangeHandle" data-prop="signtime" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>签约操作人:</view>
+			<input class="weui-input" placeholder="签约操作人" value="{{signperson}}" bindinput="inputChangeHandle" data-prop="signperson" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>甲方:</view>
+			<input class="weui-input" placeholder="甲方" value="{{partya}}" bindinput="inputChangeHandle" data-prop="partya" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>编号:</view>
+			<input class="weui-input" placeholder="编号" value="{{personcode}}" bindinput="inputChangeHandle" data-prop="personcode" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>身份证:</view>
+			<input class="weui-input" placeholder="身份证" value="{{idcard}}" bindinput="inputChangeHandle" data-prop="idcard" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>联系电话:</view>
+			<input class="weui-input" placeholder="联系电话" value="{{contractphone}}" bindinput="inputChangeHandle" data-prop="contractphone" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>紧急联系人:</view>
+			<input class="weui-input" placeholder="紧急联系人" value="{{emergencycontact}}" bindinput="inputChangeHandle" data-prop="emergencycontact" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>紧急联系电话:</view>
+			<input class="weui-input" placeholder="紧急联系电话" value="{{emergencycontactphone}}" bindinput="inputChangeHandle" data-prop="emergencycontactphone" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>常用住址:</view>
+			<input class="weui-input" placeholder="常用住址" value="{{address}}" bindinput="inputChangeHandle" data-prop="address" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<text>乙方（家庭医生团队）： 丰台区北京方向社区卫生服务站</text>
+		<view class="add-text-section">
+			<view class='text-title'>团队:</view>
+			<input class="weui-input" placeholder="团队" value="{{partybteam}}" bindinput="inputChangeHandle" data-prop="partybteam" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>团队主要人员:</view>
+			<input class="weui-input" placeholder="团队主要人员" value="{{partybpersion}}" bindinput="inputChangeHandle" data-prop="partybpersion" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="section">
+			<text class="partleft">* 1、选择签约服务包：</text>
+			<text class="partright">选择服务包</text>
+		</view>
+
+    <view class="add-text-section">
+		<view class='text-title'>主食量</view>
+		<input class="item-input-value" placeholder="两" value="{{meal}}" bindinput="inputChangeHandle" data-prop="meal" />
+		<view class='text-title'>/顿</view>
+	</view>
+	</view>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</view>

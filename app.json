@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/FamilyDoctorSignAdd/index",
+    "pages/FamilyDoctorSign/index",
+    "pages/main/index",
     "pages/ResidentHealthMain/index",
     "pages/ResidentHealthAdd/index",
     "pages/ResidentHealthQuery/index",

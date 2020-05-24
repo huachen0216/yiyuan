@@ -1,4 +1,4 @@
-// pages/ResidentHealth/index.js
+// pages/main/index.js
 Page({
 
   /**
@@ -6,6 +6,20 @@ Page({
    */
   data: {
 
+  },
+
+  // 居民健康档案
+  ResidentHealth (e) {
+    wx.navigateTo({
+      url: '../ResidentHealthMain/index'
+    })
+  },
+
+  // 家庭医师签约
+  FamilyDoctorSign (e) {
+    wx.navigateTo({
+      url: '../FamilyDoctorSign/index'
+    })
   },
 
   /**

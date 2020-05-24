@@ -1,0 +1,47 @@
+.vcontainer {
+  padding-top: 10px;
+  padding-left: 10px;
+  margin-top: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  border: 1px dashed gray;
+}
+
+.text-style {
+  display: flex;
+  font-size: large;
+  font-weight: bold;
+  margin-bottom: 2vw;
+}
+
+.addPageMain {
+  margin-left: 10px;
+}
+
+.add-text-section {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.text-title {
+  margin-right: 10px;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.partleft {
+  width: 60%;
+}
+
+.partright {
+  width: 40%;
+}
+
+.item-input-value {
+  width: 50px;
+}

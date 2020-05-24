@@ -1,0 +1,4 @@
+.main-button-style {
+  margin-top: 5vw;
+  margin-bottom: 5vw;
+}
