@@ -218,4 +218,91 @@
 		</view>
 	</view>
 
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>4、本协议期限为一年。自时间：</view>
+		</view>
+		<view class="add-text-section">
+			<input class="item-input-value" placeholder="开始时间" value="{{starttime}}" bindinput="inputChangeHandle" data-prop="starttime" />
+			<view class='text-title'>起，至</view>
+			<input class="item-input-value" placeholder="结束时间" value="{{endtime}}" bindinput="inputChangeHandle" data-prop="endtime" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>
+				止。签约期满后，应进行续签续费或解约。在签约期内，甲方因居住地变更等个人原因，可提出终止现有签约关系，已交付的签约费不转不退。 </view>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			5、如甲乙双方在履行本协议过程中发生纠纷，双方应通过友好协商予以解决或由当地医疗纠纷调解委员
+			会调解。 协商不成或一方不愿协商，双方均可向有管辖权的法院提起诉讼。
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			6、本协议自甲方签字、乙方加盖公章之日起生效。
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			7、本协议一式二份，甲乙双方各执一份，社区卫生服务机构存档一份，具有同等法律效力。
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			8、本协议解释权归乙方所有。
+		</view>
+		<view class="signsection">
+			<text class="signpartleft">甲方：</text>
+			<text class="signpartright">乙方(团队长): </text>
+		</view>
+		<view class="signsection">
+			<text class="signpartleft"></text>
+			<text class="signpartright">(单位盖章)</text>
+		</view>
+		<view class="signsection">
+			<input class="signpartleft" placeholder="年月日" value="{{partasigntime}}" bindinput="inputChangeHandle" data-prop="partasigntime" />
+			<input class="signpartright" placeholder="年月日" value="{{partbsigntime}}" bindinput="inputChangeHandle" data-prop="partbsigntime" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="checkbox-item">
+			<checkbox value="jy" checked="{{termination}}" bindchange="inputChangeHandle" data-prop="termination" />解约:
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>解约时间:</view>
+			<input class="item-input-value" placeholder="解约时间" value="{{canceltime}}" bindinput="inputChangeHandle" data-prop="canceltime" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>甲方确认:</view>
+			<input class="item-input-value" placeholder="甲方确认" value="{{partaconfirm}}" bindinput="inputChangeHandle" data-prop="partaconfirm" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>乙方确认:</view>
+			<input class="item-input-value" value="郑晶" disabled="true" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="textView-title">解约原因: </view>
+		<textarea class="textarea-input-value" value="{{cancelreason}}" bindchange="inputChangeHandle" data-prop="termination" />
+		</view>
+
+	<view class="vcontainer">
+		<view class="checkbox-item">
+			<checkbox value="{{autotermination}}" checked="{{false}}" bindchange="inputChangeHandle" data-prop="autotermination" />是否自动续约
+		</view>
+	</view>
+	<view class="buttons">
+		<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
+		<button type="default" class="default" bindtap="canceleHandle">取消</button>
+	</view>
 </view>

@@ -1,11 +1,12 @@
 .vcontainer {
-  padding-top: 10px;
-  padding-left: 10px;
-  margin-top: 0px;
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 0px;
-  border: 1px dashed gray;
+  padding-top: 10rpx;
+  /* padding-left: 10rpx; */
+  margin-top: 0rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 0rpx;
+  border: 1rpx dashed gray;
+  justify-content: flex-start;
 }
 
 .text-style {
@@ -16,16 +17,16 @@
 }
 
 .addPageMain {
-  margin-left: 10px;
+  margin-left: 10rpx;
 }
 
 .add-text-section {
   display: flex;
-  margin-bottom: 10px;
+  margin-bottom: 10rpx;
 }
 
 .text-title {
-  margin-right: 10px;
+  margin-right: 10rpx;
 }
 
 .section {
@@ -43,14 +44,34 @@
 }
 
 .item-input-value {
-  width: 50px;
-  /* margin-right: 10px; */
+  width: 200rpx;
+  /* margin-right: 10rpx; */
+  border-bottom: 1rpx solid gray;
 }
 
-.page-section-spacing{
-  margin-top: 60rpx;
+.page-section-space {
+  margin-top: 10rpx;
 }
 
+.signsection {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100rpx;
+}
 
+.signpartleft {
+  width: 60%;
+  height: 100rpx;
+  text-align: left;
+  line-height: 100rpx;
+  border: 1rpx dashed gray;
+}
 
-
+.signpartright {
+  width: 40%;
+  height: 100rpx;
+  text-align: left;
+  line-height: 100rpx;
+  border: 1rpx dashed gray;
+}
