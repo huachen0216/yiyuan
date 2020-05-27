@@ -1,6 +1,8 @@
 {
   "pages":[
+    "pages/TheAgedHealthManageAdd/index",
     "pages/FamilyDoctorSignAdd/index",
+    "pages/TheAgedHealthManageMain/index",
     "pages/FamilyDoctorSign/index",
     "pages/main/index",
     "pages/ResidentHealthMain/index",
