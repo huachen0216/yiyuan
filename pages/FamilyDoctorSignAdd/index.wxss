@@ -11,9 +11,11 @@
 
 .text-style {
   display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: large;
   font-weight: bold;
-  margin-bottom: 2vw;
+  margin-bottom:20rpx;
 }
 
 .addPageMain {

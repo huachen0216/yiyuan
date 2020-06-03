@@ -5,7 +5,163 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // radio item定义
+    filetypeItems: [{
+        name: '纸质档案',
+        value: 'p-record',
+        gender: 0
+      },
+      {
+        name: '电子档案',
+        value: 'e-record',
+        gender: 0
+      }
+    ],
+    genderItems: [{
+        name: '男',
+        value: 'man',
+        gender: 0
+      },
+      {
+        name: '女',
+        value: 'woman',
+        gender: 0
+      }
+    ],
+    s_2_1: [{
+        name: '是',
+        value: '2_1_yes',
+        gender: 0
+      },
+      {
+        name: '否（视为不合格）',
+        value: '2_1_no',
+        gender: 0
+      }
+    ],
+    s_2_2: [{
+        name: '是',
+        value: '2_2_yes',
+        gender: 0
+      },
+      {
+        name: '否（视为不合格）',
+        value: '2_2_no',
+        gender: 0
+      }
+    ],
+    s_2_3: [{
+        name: '是',
+        value: '2_3_yes',
+        gender: 0
+      },
+      {
+        name: '否（视为不合格）',
+        value: '2_3_no',
+        gender: 0
+      }
+    ],
+    s_2_4: [{
+        name: '是',
+        value: '2_4_yes',
+        gender: 0
+      },
+      {
+        name: '否（视为不合格）',
+        value: '2_4_no',
+        gender: 0
+      }
+    ],
+    s_2_5: [{
+        name: '合格',
+        value: '2_5_yes',
+        gender: 0
+      },
+      {
+        name: '不合格',
+        value: '2_5_no',
+        gender: 0
+      }
+    ],
+    s_3_0: [{
+        name: '联系上，接受访谈（不失访，继续问卷）',
+        value: '3_0_1',
+        gender: 0
+      },
+      {
+        name: '联系上，不接受访谈（失访，结束问卷）',
+        value: '3_0_2',
+        gender: 0
+      },
+      {
+        name: '未联系上（失访，结束问卷））',
+        value: '3_0_3',
+        gender: 0
+      },
+      {
+        name: '未联系上，电话错号/不存在（失访，结束问卷）',
+        value: '3_0_4',
+        gender: 0
+      }
+    ],
+    s_3_1: [{
+        name: '本人',
+        value: '3_1_1',
+        gender: 0
+      },
+      {
+        name: '家属',
+        value: '3_1_2',
+        gender: 0
+      }
+    ],
+    s_3_2: [{
+        name: '做过',
+        value: '3_2_1',
+        gender: 0
+      },
+      {
+        name: '没做过',
+        value: '3_2_2',
+        gender: 0
+      },
+      {
+        name: '记不清',
+        value: '3_2_3',
+        gender: 0
+      }
+    ],
+    s_3_3: [{
+        name: '是',
+        value: '3_3_1',
+        gender: 0
+      },
+      {
+        name: '否',
+        value: '3_3_2',
+        gender: 0
+      }
+    ],
+    s_3_4: [{
+        name: '真实',
+        value: '3_4_1',
+        gender: 0
+      },
+      {
+        name: '不真实',
+        value: '3_4_2',
+        gender: 0
+      }
+    ],
 
+    // input变量定义
+    filenumber: '',
+    name: '',
+    phone: '',
+    examiner: '',
+    examinerdate: '',
+    principal: '',
+    assessedunit: ''
   },
 
   /**
