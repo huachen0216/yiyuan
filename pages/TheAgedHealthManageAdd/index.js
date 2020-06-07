@@ -1,4 +1,3 @@
-// pages/TheAgedHealthManageAdd/index.js
 Page({
 
   /**

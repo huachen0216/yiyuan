@@ -1,0 +1,206 @@
+<view class="addPageMain">
+	<text class="text-style">居民健康档案核查表</text>
+
+	<view class="add-text-section" style="font-weight: bold;">
+		<view class='text-title'>被考核单位: </view>
+		<input class="item-input-value" placeholder="被考核单位" value="{{assessedunit}}" bindinput="inputChangeHandle" data-prop="assessedunit" />
+		<view class='text-title'>社区卫生服务站</view>
+	</view>
+
+	<view class="text-title">1. 第一步：随机抽取2019年新建的居民健康档案（如2019年数量不足则全部抽取，剩余部分从2018年新建档案中抽取补足），在每机构核查5份。</view>
+	<view class="text-title">2. 第二步：根据档案记录，核查居民健康档案真实性及规范性（是否符合国家规范要求）。</view>
+	<view class="text-title">3. 第三步：根据核查情况在选择项上打“√”，或将结果选项序号填在“回答”栏中。</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>1 基础资料</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>1.1 档案编号: </view>
+			<input class="weui-input" placeholder="档案编号" value="{{filenumber}}" bindinput="inputChangeHandle" data-prop="filenumber" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>1.2 姓名: </view>
+			<input class="weui-input" placeholder="姓名" value="{{name}}" bindinput="inputChangeHandle" data-prop="name" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>联系方式: </view>
+			<input class="weui-input" placeholder="联系方式" value="{{phone}}" bindinput="inputChangeHandle" data-prop="phone" />
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">1.3 性别: </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="gender">
+				<view class="radio-item" wx:for="{{genderItems}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>2 访谈记录</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.1 联系结果 </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_1">
+				<view class="radio-item" wx:for="{{s_2_1}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.2 请问您是（被访者姓名）本人吗？ </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_2">
+				<view class="radio-item" wx:for="{{s_2_2}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.3 您（被访者姓名）到本地社区卫生服务站/村卫生室就诊过吗？ </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_3">
+				<view class="radio-item" wx:for="{{s_2_3}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.4 您知道自己（或被访者姓名）在本地社区卫生服务站/村卫生室有健康档案吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_4">
+				<view class="radio-item" wx:for="{{s_2_4}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.5 您自己（被访者）身体健康状况怎么样？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_5">
+				<view class="radio-item" wx:for="{{s_2_5}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>3 访谈基础情况</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">3.1 访谈基础情况</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_3_1">
+				<view class="radio-item" wx:for="{{s_3_1}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>4 真实性核查（不真实同时判定为不规范）</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">4.1 是否存在提前进行应对性准备，如提前告知被访谈人员、现场发现工作人员诱导被访者提供与事实不符的信息、冒充被访谈人员等情况？（在我们跟您沟通前，您知道我们要找您访谈吗？谁通知的？和您怎么说的？）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_4_1">
+				<view class="radio-item" wx:for="{{s_4_1}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">4.2 根据访谈记录，与健康档案中记录有无不符的内容（除①外，其他可多选。有1项访谈记录与档案记录不符，视为不真实）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{errorRecord}}" data-prop="errorRecord">
+				<label class="checkbox-item" wx:for="{{errorRecordCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title" style="font-weight: bold;">4.3 居民健康档案真实性 </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_4_3">
+				<view class="radio-item" wx:for="{{s_4_3}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>5 居民健康档案规范性核查</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">5.1 健康档案相应表单及内容是否符合《国家基本公共卫生服务规范》的要求？（即规范要求的《个人基本信息表》） </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_5_1">
+				<view class="radio-item" wx:for="{{s_5_1}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">5.2 居民健康档案封面填写空项、漏项或错项的有：
+				（可多选，空项、漏项或错项在2项及以上为不规范）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{residentHealtherrorRecord}}" data-prop="residentHealtherrorRecord">
+				<label class="checkbox-item" wx:for="{{residentHealtherrorRecordCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">5.3 居民“个人基本信息表”填写空项、漏项或错项的有：
+				（可多选，空项、漏项或错项在3项及以上为不规范）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{basicInfoerrorRecord}}" data-prop="basicInfoerrorRecord">
+				<label class="checkbox-item" wx:for="{{basicInfoerrorRecordCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title" style="font-weight: bold;">5.4 居民健康档案是否规范（合格） </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_5_4">
+				<view class="radio-item" wx:for="{{s_5_4}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>考核人(签字): </view>
+			<input class="weui-input" placeholder="考核人" value="{{examiner}}" bindinput="inputChangeHandle" data-prop="examiner" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>考核时间: </view>
+			<input class="weui-input" placeholder="考核时间" value="{{examinerdate}}" bindinput="inputChangeHandle" data-prop="examinerdate" />
+		</view>
+
+	</view>
+
+	<view class="buttons">
+		<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
+		<button type="default" class="default" bindtap="canceleHandle">取消</button>
+	</view>
+</view>

@@ -1,5 +1,9 @@
 {
   "pages":[
+    "pages/ResidentHealthChecklistAdd/index",
+    "pages/HypertensionManagelistAdd/index",
+    "pages/DiabetesHealthManageChecklistAdd/index",
+    "pages/TheAgedHealthManageChecklistAdd/index",
     "pages/TheAgedHealthManageAdd/index",
     "pages/FamilyDoctorSignAdd/index",
     "pages/TheAgedHealthManageMain/index",
