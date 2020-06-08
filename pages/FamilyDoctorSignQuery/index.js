@@ -1,32 +1,11 @@
-// pages/FamilyDoctorSign/index.js
+// pages/FamilyDoctorSignQuery/index.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    usercode: ''
-  },
 
-  // 新增记录
-  addRecord: function () {
-    wx.navigateTo({
-      url: '../FamilyDoctorSignAdd/index?usercode='+this.data.usercode,
-    })
-  },
-
-  // 修改档案
-  editRecord: function () {
-    wx.navigateTo({
-      url: '../FamilyDoctorSignUpdate/index?usercode='+this.data.usercode,
-    })
-  },
-
-  // 查询档案
-  queryRecord: function() {
-    wx.navigateTo({
-      url: '../FamilyDoctorSignQuery/index?usercode='+this.data.usercode,
-    })
   },
 
   /**

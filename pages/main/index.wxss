@@ -2,3 +2,19 @@
   margin-top: 5vw;
   margin-bottom: 5vw;
 }
+
+.add-text-section {
+  display: flex;
+  margin-bottom: 10rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-title {
+  margin-right: 10rpx;
+}
+
+.item-input-value {
+  width: 300rpx;
+}
+

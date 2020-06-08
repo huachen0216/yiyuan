@@ -4,11 +4,11 @@
 	</view>
 
 	<view class="btn-button-style main-button-style" id="buttonContainer">
-		<button type="default" disabled="true" bindtap="queryRecord">查询签约记录</button>
+		<button type="default" bindtap="queryRecord">查询签约记录</button>
 	</view>
 
 	<view class="btn-area main-button-style" id="buttonContainer">
-		<button type="default" disabled="true" bindtap="editRecord">修改签约记录</button>
+		<button type="default" bindtap="editRecord">修改签约记录</button>
 	</view>
 
 </view>

@@ -5,18 +5,29 @@ Page({
    * 页面的初始数据
    */
   data: {
+    usercode: ''
+  },
+
+  confirmHandle(e) {
 
   },
 
+  inputChangeHandle(e) {
+    var prop = e.target.dataset['prop']
+    var changed = {}
+    changed[prop] = e.detail.value
+    this.setData(changed)
+  },
+
   // 居民健康档案
-  ResidentHealth (e) {
+  ResidentHealth(e) {
     wx.navigateTo({
       url: '../ResidentHealthMain/index'
     })
   },
 
   // 家庭医师签约
-  FamilyDoctorSign (e) {
+  FamilyDoctorSign(e) {
     wx.navigateTo({
       url: '../FamilyDoctorSign/index'
     })
