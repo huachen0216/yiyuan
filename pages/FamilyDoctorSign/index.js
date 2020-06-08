@@ -11,21 +11,21 @@ Page({
   // 新增记录
   addRecord: function () {
     wx.navigateTo({
-      url: '../FamilyDoctorSignAdd/index?usercode='+this.data.usercode,
+      url: '../FamilyDoctorSignAdd/index?usercode=' + this.data.usercode,
     })
   },
 
   // 修改档案
   editRecord: function () {
     wx.navigateTo({
-      url: '../FamilyDoctorSignUpdate/index?usercode='+this.data.usercode,
+      url: '../FamilyDoctorSignUpdate/index?usercode=' + this.data.usercode,
     })
   },
 
   // 查询档案
-  queryRecord: function() {
+  queryRecord: function () {
     wx.navigateTo({
-      url: '../FamilyDoctorSignQuery/index?usercode='+this.data.usercode,
+      url: '../FamilyDoctorSignQuery/index?usercode=' + this.data.usercode,
     })
   },
 
@@ -33,7 +33,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    try {
+      var value = wx.getStorageSync('usercode')
+      if (value) {
+        that.setData({
+          usercode: value
+        })
+      }
+    } catch (e) {
+      wx.showToast({
+        title: '没有找到usercode，请重新输入',
+        duration: 2000
+      })
+    }
   },
 
   /**

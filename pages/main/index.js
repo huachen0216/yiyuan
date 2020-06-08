@@ -5,11 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
-    usercode: ''
+    usercode: '',
+    // 按钮状态
+    isDisabled: true
   },
 
   confirmHandle(e) {
-
+    var that = this;
+    var usercode = that.data.usercode
+    if (usercode.length == 0 ) {
+      wx.showToast({
+        title: '社保号码为空！',
+        duration: 2000
+      })
+      return
+    } 
+    wx.setStorage({
+      data: usercode,
+      key: 'usercode',
+    })
+    that.setData({
+      isDisabled: false
+    })
   },
 
   inputChangeHandle(e) {

@@ -1,9 +1,9 @@
 <view class="page-body">
-	<view class="btn-area" id="buttonContainer">
+	<!-- <view class="btn-area" id="buttonContainer">
 		<button type="default" bindtap="scanRecord">扫描病历</button>
 	</view>
 
-	<view class="text-style">每次操作前请先扫描二维码</view>
+	<view class="text-style">每次操作前请先扫描二维码</view> -->
 	<view class="btn-area" id="buttonContainer">
 		<button type="default" bindtap="addRecord">新建档案</button>
 	</view>

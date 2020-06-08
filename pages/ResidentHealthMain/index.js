@@ -26,7 +26,6 @@ Page({
     var that = this
     wx.scanCode({
       success: function(res) {
-        // console.log(res);
         that.setData({
           usercode: res.result
         });
@@ -50,7 +49,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    try {
+      var value = wx.getStorageSync('usercode')
+      if (value) {
+        that.setData({
+          usercode: value
+        })
+      } 
+    } catch(e) {
+      wx.showToast({
+        title: '没有找到usercode，请重新输入',
+        duration: 2000
+      })
+    }
   },
 
   /**

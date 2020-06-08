@@ -1,35 +1,35 @@
 <view class="add-text-section">
 	<input class="item-input-value" placeholder="请输入社保号码" value="{{usercode}}" bindinput="inputChangeHandle" data-prop="usercode" />
 	<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="confirmHandle">居民健康档案简表</button>
-</view>
+		<button type="default" bindtap="confirmHandle">确认</button>
+	</view>
 </view>
 
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealth">居民健康档案简表</button>
-</view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" disabled="true" bindtap="ResidentHealth">居民健康档案考核核查表</button>
+	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">居民健康档案简表</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="FamilyDoctorSign">家庭医师签约</button>
+	<button type="default" disabled="true" bindtap="ResidentHealth" disabled="{{isDisabled}}">居民健康档案考核核查表</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" disabled="true" bindtap="ResidentHealth">糖尿病管理核查表</button>
+	<button type="default" bindtap="FamilyDoctorSign" disabled="{{isDisabled}}">家庭医师签约</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" disabled="true" bindtap="ResidentHealth">老年人中医药健康管理</button>
+	<button type="default" disabled="true" bindtap="ResidentHealth" disabled="{{isDisabled}}">糖尿病管理核查表</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" disabled="true" bindtap="ResidentHealth">老年人健康管理核查表</button>
+	<button type="default" disabled="true" bindtap="ResidentHealth" disabled="{{isDisabled}}">老年人中医药健康管理</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" disabled="true" bindtap="ResidentHealth">高血压管理核查表</button>
+	<button type="default" disabled="true" bindtap="ResidentHealth" disabled="{{isDisabled}}">老年人健康管理核查表</button>
+</view>
+
+<view class="btn-area main-button-style" id="buttonContainer">
+	<button type="default" disabled="true" bindtap="ResidentHealth" disabled="{{isDisabled}}">高血压管理核查表</button>
 </view>
