@@ -1,2 +1,363 @@
-<!--pages/FamilyDoctorSignUpdate/index.wxml-->
-<text>pages/FamilyDoctorSignUpdate/index.wxml</text>
+<view class="addPageMain">
+	<text class="text-style">北京方向社区卫生服务站家庭医生签约服务协议书</text>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>签订时间:</view>
+			<input class="weui-input" placeholder="签订时间" value="{{signtime}}" bindinput="inputChangeHandle" data-prop="signtime" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>签约操作人:</view>
+			<input class="weui-input" placeholder="签约操作人" value="{{signperson}}" bindinput="inputChangeHandle" data-prop="signperson" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>甲方:</view>
+			<input class="weui-input" placeholder="甲方" value="{{partya}}" bindinput="inputChangeHandle" data-prop="partya" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>编号:</view>
+			<input class="weui-input" placeholder="编号" value="{{usercode}}" disabled="True" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>身份证:</view>
+			<input class="weui-input" placeholder="身份证" value="{{idcard}}" bindinput="inputChangeHandle" data-prop="idcard" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>联系电话:</view>
+			<input class="weui-input" placeholder="联系电话" value="{{contractphone}}" bindinput="inputChangeHandle" data-prop="contractphone" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>紧急联系人:</view>
+			<input class="weui-input" placeholder="紧急联系人" value="{{emergencycontact}}" bindinput="inputChangeHandle" data-prop="emergencycontact" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>紧急联系电话:</view>
+			<input class="weui-input" placeholder="紧急联系电话" value="{{emergencycontactphone}}" bindinput="inputChangeHandle" data-prop="emergencycontactphone" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>常用住址:</view>
+			<input class="weui-input" placeholder="常用住址" value="{{address}}" bindinput="inputChangeHandle" data-prop="address" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<text>乙方（家庭医生团队）： 丰台区北京方向社区卫生服务站</text>
+		<view class="add-text-section">
+			<view class='text-title'>团队:</view>
+			<input class="weui-input" placeholder="团队" value="{{partybteam}}" bindinput="inputChangeHandle" data-prop="partybteam" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>团队主要人员:</view>
+			<input class="weui-input" placeholder="团队主要人员" value="{{partybpersion}}" bindinput="inputChangeHandle" data-prop="partybpersion" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="section">
+			<text class="partleft">* 1、选择签约服务包：</text>
+			<text class="partright">选择服务包</text>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view>
+			<input value="家庭医生签约服务基本包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{docgovsubsidies}}" bindinput="inputChangeHandle" data-prop="docgovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{docpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="docpersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="老年女性服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{womengovsubsidies}}" bindinput="inputChangeHandle" data-prop="womengovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{womenpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="womenpersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="老年男性服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{mengovsubsidies}}" bindinput="inputChangeHandle" data-prop="mengovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{menpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="menpersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="糖尿病患者服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{diabetesgovsubsidies}}" bindinput="inputChangeHandle" data-prop="diabetesgovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{diabetespersonsubsidies}}" bindinput="inputChangeHandle" data-prop="diabetespersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="高血压患者服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{hypertensiongovsubsidies}}" bindinput="inputChangeHandle" data-prop="hypertensiongovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{hypertensionpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="hypertensionpersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="section">
+			<text class="partleft">* 2、甲方获得签约服务：</text>
+			<text class="partright">选择服务</text>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		（各区、各社区卫生服务机构可参照市级提供的基本签约服务内容和重点人群服务内容进行细化和修改，并在签约时详细向签约居民进行介绍及罗列）
+	</view>
+
+	<view class="vcontainer">
+		<view class="page-section-space">
+			<scroll-view scroll-y="true" style="height: 150px;">
+				<view class="add-text-section">
+					<view class='text-title'>(1) 建立更新相应健康档案</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(2) 健康评估及计划（1次/年）</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(3) 主动告知健康信息（1次/年）</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(4) 健康通服务</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(5) 随访</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(6) 自理能力评估</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(7) 免费物理检查：身高、体重、腰围、臀围、血压</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(8) 饮食、运动与用药指导</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(9) 心理咨询、心理辅导服务</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(10) 健康技能我指导</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(11) 预防接种</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(12) 家庭保健员培养</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(13) 免费义诊（1次/年）</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(14) 免费体检（1次/年）</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(15) 就医指导</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(16) 社区康复</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(17) 慢性病自我管理小组</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(18) 对孕妇进行孕期指导服务</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(19) 对残疾人开展康复训练指导</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(20) 贴心服务我上门</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(21) 对产妇和新生儿提供上门访视和体检服务</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(22) 对确有需求的进行定期上门访视</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(23) 转诊及预约服务</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(24) 中医养生保健服务</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(25) 传染病防治</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(26) 避孕药具发放</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>(27) 知己健康管理</view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view>3、甲方应配合事项：</view>
+		<view class="page-section-space">
+			<scroll-view scroll-y="true" style="height: 150px;">
+				<view class="add-text-section">
+					<view class='text-title'>（1）是健康第一责任人，应主动做好健康自我管理，并协助签约团队做好家庭中其他成员的健康管理。</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>（2）遵守签约协议，尊重签约人员。</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>（3）保证提供的信息真实有效。</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>（4）遵守医嘱，有问题及时咨询。</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>（5）在其他医疗机构诊疗等信息，应主动、及时向签约团队反馈。</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>（6）住址变更、长期离开居住地、联系方式变更、退约等，应及时告知签约团队。</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'> （7）授权签约团队调阅其健康档案以及在其他医疗机构的诊疗信息等。</view>
+				</view>
+				<view class="add-text-section">
+					<view class='text-title'>（8）作为患者应该履行的其他义务。 </view>
+				</view>
+			</scroll-view>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>4、本协议期限为一年。自时间：</view>
+		</view>
+		<view class="add-text-section">
+			<input class="item-input-value" placeholder="开始时间" value="{{starttime}}" bindinput="inputChangeHandle" data-prop="starttime" />
+			<view class='text-title'>起，至</view>
+			<input class="item-input-value" placeholder="结束时间" value="{{endtime}}" bindinput="inputChangeHandle" data-prop="endtime" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>
+				止。签约期满后，应进行续签续费或解约。在签约期内，甲方因居住地变更等个人原因，可提出终止现有签约关系，已交付的签约费不转不退。 </view>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			5、如甲乙双方在履行本协议过程中发生纠纷，双方应通过友好协商予以解决或由当地医疗纠纷调解委员
+			会调解。 协商不成或一方不愿协商，双方均可向有管辖权的法院提起诉讼。
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			6、本协议自甲方签字、乙方加盖公章之日起生效。
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			7、本协议一式二份，甲乙双方各执一份，社区卫生服务机构存档一份，具有同等法律效力。
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			8、本协议解释权归乙方所有。
+		</view>
+		<view class="signsection">
+			<text class="signpartleft">甲方：</text>
+			<text class="signpartright">乙方(团队长): </text>
+		</view>
+		<view class="signsection">
+			<text class="signpartleft"></text>
+			<text class="signpartright">(单位盖章)</text>
+		</view>
+		<view class="signsection">
+			<input class="signpartleft" placeholder="年月日" value="{{partasigntime}}" bindinput="inputChangeHandle" data-prop="partasigntime" />
+			<input class="signpartright" placeholder="年月日" value="{{partbsigntime}}" bindinput="inputChangeHandle" data-prop="partbsigntime" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="checkbox-item">
+			<checkbox value="jy" checked="{{termination}}" bindchange="inputChangeHandle" data-prop="termination" />解约:
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>解约时间:</view>
+			<input class="item-input-value" placeholder="解约时间" value="{{canceltime}}" bindinput="inputChangeHandle" data-prop="canceltime" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>甲方确认:</view>
+			<input class="item-input-value" placeholder="甲方确认" value="{{partaconfirm}}" bindinput="inputChangeHandle" data-prop="partaconfirm" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>乙方确认:</view>
+			<input class="item-input-value" value="郑晶" disabled="true" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="textView-title">解约原因: </view>
+		<textarea class="textarea-input-value" value="{{cancelreason}}" bindchange="inputChangeHandle" data-prop="termination" />
+		</view>
+
+	<view class="vcontainer">
+		<view class="checkbox-item">
+			<checkbox value="{{autotermination}}" checked="{{false}}" bindchange="inputChangeHandle" data-prop="autotermination" />是否自动续约
+		</view>
+	</view>
+	<view class="buttons">
+		<button type="primary" class="primary" bindtap="updateRecordHandle" disabled="{{isDisabled}}">保存</button>
+		<button type="default" class="default" bindtap="canceleHandle">取消</button>
+	</view>
+</view>

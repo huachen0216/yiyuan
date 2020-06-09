@@ -10,7 +10,6 @@ Page({
     usercode: '',
     signtime: '',
     partya: '',
-    personcode: '',
     idcard: '',
     contractphone: '',
     emergencycontact: '',
@@ -52,7 +51,7 @@ Page({
   addRecordHandle(e) {
     var that = this;
     DB.add({
-        data: this.data,
+        data: that.data,
         success(res) {
           wx.showToast({
             title: '成功',
