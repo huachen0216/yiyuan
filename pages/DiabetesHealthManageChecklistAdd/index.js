@@ -1,5 +1,6 @@
-Page({
+const DB = wx.cloud.database().collection("diabetesHealthManageCheckList")
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -352,7 +353,7 @@ Page({
         status: 0
       },
       {
-        name: '①缺少肝功能结果报告单',
+        name: '缺少肝功能结果报告单',
         value: '4-4-4',
         status: 0
       },
@@ -608,20 +609,87 @@ Page({
       }
     ],
     // input变量定义
-    filenumber: '',
+    assessedunit: '',
+    usercode: '',
     name: '',
     phone: '',
+    bloodlevel: '',
     examiner: '',
-    examinerdate: '',
-    assessedunit: '',
-    bloodlevel: ''
+    examinerdate: ''
+  },
+
+  inputChangeHandle: function (e) {
+    var prop = e.target.dataset['prop']
+    var changed = {}
+    changed[prop] = e.detail.value
+    this.setData(changed)
+  },
+
+  addRecordHandle(e) {
+    var that = this;
+    DB.add({
+        data: that.data,
+        success(res) {
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
+          })
+        },
+        fail(res) {
+          wx.showToast({
+            title: '失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }, ),
+      this.setData({
+        isDisabled: true
+      }),
+      wx.redirectTo({
+        url: '../DiabetesHealthManageChecklist/index',
+      })
+  },
+
+  /**
+   * 返回上一个页面
+   * @param {*} e 
+   */
+  canceleHandle(e) {
+    wx.redirectTo({
+      url: '../DiabetesHealthManageChecklist/index',
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    DB.where({
+      usercode: options.usercode
+    }).get({
+      success(res) {
+        if (res.data.length > 0) {
+          wx.showToast({
+            title: '用户已存在',
+            duration: 2000,
+            mask: true,
+            success() {
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: '../DiabetesHealthManageChecklist/index',
+                })
+              }, 1000)
+            }
+          })
+        }
+      }
+    })
+    that.setData({
+      usercode: options.usercode
+    })
   },
 
   /**

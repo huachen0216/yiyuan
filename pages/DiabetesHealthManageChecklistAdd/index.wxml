@@ -16,7 +16,7 @@
 
 		<view class="add-text-section">
 			<view class='text-title'>1.1 档案编号: </view>
-			<input class="weui-input" placeholder="档案编号" value="{{filenumber}}" bindinput="inputChangeHandle" data-prop="filenumber" />
+			<input class="weui-input" placeholder="档案编号" value="{{usercode}}" bindinput="inputChangeHandle" data-prop="usercode" />
 		</view>
 
 		<view class="add-text-section">

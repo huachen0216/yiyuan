@@ -1,13 +1,12 @@
 {
   "pages":[
-    "pages/FamilyDoctorSignQuery/index",
-    "pages/FamilyDoctorSignAdd/index",
+    "pages/DiabetesHealthManageChecklist/index",
+    "pages/DiabetesHealthManageChecklistAdd/index",
+    "pages/DiabetesHealthManageChecklistQuery/index",
+    "pages/DiabetesHealthManageChecklistUpdate/index",
     "pages/main/index",
-    "pages/FamilyDoctorSign/index",
-    "pages/FamilyDoctorSignUpdate/index",
     "pages/ResidentHealthChecklistAdd/index",
     "pages/HypertensionManagelistAdd/index",
-    "pages/DiabetesHealthManageChecklistAdd/index",
     "pages/TheAgedHealthManageChecklistAdd/index",
     "pages/TheAgedHealthManageAdd/index",
     "pages/TheAgedHealthManageMain/index",
