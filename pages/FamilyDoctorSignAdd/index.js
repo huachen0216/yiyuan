@@ -1,19 +1,119 @@
-// pages/FamilyDoctorSignAdd/index.js
+const DB = wx.cloud.database().collection("familyDocSignList")
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    // input变量定义
+    usercode: '',
+    signtime: '',
+    partya: '',
+    personcode: '',
+    idcard: '',
+    contractphone: '',
+    emergencycontact: '',
+    emergencycontactphone: '',
+    address: '',
+    partybteam: '',
+    partybpersion: '',
+    docgovsubsidies: '',
+    docpersonsubsidies: '',
+    womengovsubsidies: '',
+    womenpersonsubsidies: '',
+    mengovsubsidies: '',
+    menpersonsubsidies: '',
+    diabetesgovsubsidies: '',
+    diabetespersonsubsidies: '',
+    hypertensiongovsubsidies: '',
+    hypertensionpersonsubsidies: '',
+    starttime: '',
+    endtime: '',
+    partasigntime: '',
+    partbsigntime: '',
+    termination: '',
+    canceltime: '',
+    partaconfirm: '',
+    termination: '',
+    autotermination: '',
+    cancelreason: '',
+    // 按钮状态
+    isDisabled: false
   },
 
-  
+  inputChangeHandle: function (e) {
+    var prop = e.target.dataset['prop']
+    var changed = {}
+    changed[prop] = e.detail.value
+    this.setData(changed)
+  },
+
+  addRecordHandle(e) {
+    var that = this;
+    DB.add({
+        data: this.data,
+        success(res) {
+          wx.showToast({
+            title: '成功',
+            icon: 'success',
+            duration: 2000
+          })
+        },
+        fail(res) {
+          wx.showToast({
+            title: '失败',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      }, ),
+      this.setData({
+        isDisabled: true
+      }),
+      wx.redirectTo({
+        url: '../FamilyDoctorSign/index',
+      })
+  },
+
+  /**
+   * 返回上一个页面
+   * @param {*} e 
+   */
+  canceleHandle(e) {
+    wx.redirectTo({
+      url: '../FamilyDoctorSign/index',
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    DB.where({
+      usercode: options.usercode
+    }).get({
+      success(res) {
+        if (res.data.length > 0) {
+          wx.showToast({
+            title: '用户已存在',
+            duration: 2000,
+            mask: true,
+            success() {
+              setTimeout(function () {
+                wx.redirectTo({
+                  url: '../FamilyDoctorSign/index',
+                })
+              }, 1000)
+            }
+          })
+        }
+      }
+    })
+    that.setData({
+      usercode: options.usercode
+    })
   },
 
   /**

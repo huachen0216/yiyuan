@@ -1,1 +1,79 @@
-/* pages/FamilyDoctorSignQuery/index.wxss */
+.vcontainer {
+  padding-top: 10rpx;
+  /* padding-left: 10rpx; */
+  margin-top: 0rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 0rpx;
+  border: 1rpx dashed gray;
+  justify-content: flex-start;
+}
+
+.text-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: large;
+  font-weight: bold;
+  margin-bottom:20rpx;
+}
+
+.addPageMain {
+  margin-left: 10rpx;
+}
+
+.add-text-section {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.text-title {
+  margin-right: 10rpx;
+}
+
+.section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.partleft {
+  width: 60%;
+}
+
+.partright {
+  width: 40%;
+}
+
+.item-input-value {
+  width: 200rpx;
+  /* margin-right: 10rpx; */
+  border-bottom: 1rpx solid gray;
+}
+
+.page-section-space {
+  margin-top: 10rpx;
+}
+
+.signsection {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100rpx;
+}
+
+.signpartleft {
+  width: 60%;
+  height: 100rpx;
+  text-align: left;
+  line-height: 100rpx;
+  border: 1rpx dashed gray;
+}
+
+.signpartright {
+  width: 40%;
+  height: 100rpx;
+  text-align: left;
+  line-height: 100rpx;
+  border: 1rpx dashed gray;
+}

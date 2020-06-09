@@ -21,7 +21,7 @@
 
 		<view class="add-text-section">
 			<view class='text-title'>编号:</view>
-			<input class="weui-input" placeholder="编号" value="{{personcode}}" bindinput="inputChangeHandle" data-prop="personcode" />
+			<input class="weui-input" placeholder="编号" value="{{usercode}}" disabled="True" />
 		</view>
 
 		<view class="add-text-section">
@@ -72,7 +72,6 @@
 
 	<view class="vcontainer">
 		<view>
-			<!-- <input class="item-input-value" value="家庭医生签约服务基本" /> -->
 			<input value="家庭医生签约服务基本包" style="font-weight: bold" />
 		</view>
 		<view class="add-text-section">
@@ -83,6 +82,62 @@
 		<view class="add-text-section">
 			<view class='text-title'>居民自付费用：</view>
 			<input class="item-input-value" placeholder="0" value="{{docpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="docpersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="老年女性服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{womengovsubsidies}}" bindinput="inputChangeHandle" data-prop="womengovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{womenpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="womenpersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="老年男性服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{mengovsubsidies}}" bindinput="inputChangeHandle" data-prop="mengovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{menpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="menpersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="糖尿病患者服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{diabetesgovsubsidies}}" bindinput="inputChangeHandle" data-prop="diabetesgovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{diabetespersonsubsidies}}" bindinput="inputChangeHandle" data-prop="diabetespersonsubsidies" />
+			<view class='text-title'>元。</view>
+		</view>
+
+		<view>
+			<input value="高血压患者服务包" style="font-weight: bold" />
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>政府补助费用:</view>
+			<input class="item-input-value" placeholder="0" value="{{hypertensiongovsubsidies}}" bindinput="inputChangeHandle" data-prop="hypertensiongovsubsidies" />
+			<view class='text-title'>元；</view>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>居民自付费用：</view>
+			<input class="item-input-value" placeholder="0" value="{{hypertensionpersonsubsidies}}" bindinput="inputChangeHandle" data-prop="hypertensionpersonsubsidies" />
 			<view class='text-title'>元。</view>
 		</view>
 	</view>

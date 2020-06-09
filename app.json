@@ -1,9 +1,9 @@
 {
   "pages":[
+    "pages/FamilyDoctorSignQuery/index",
+    "pages/FamilyDoctorSignAdd/index",
     "pages/main/index",
     "pages/FamilyDoctorSign/index",
-    "pages/FamilyDoctorSignAdd/index",
-    "pages/FamilyDoctorSignQuery/index",
     "pages/FamilyDoctorSignUpdate/index",
     "pages/ResidentHealthChecklistAdd/index",
     "pages/HypertensionManagelistAdd/index",
