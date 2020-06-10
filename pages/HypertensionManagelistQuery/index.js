@@ -216,169 +216,6 @@ Page({
       }
     ],
     // checkbox item 定义
-    healthGuidanceCheckBoxItems: [{
-        name: '饮食、运动',
-        value: '2-5-1',
-        status: 0
-      },
-      {
-        name: '戒烟、限酒',
-        value: '2-5-2',
-        status: 0
-      },
-      {
-        name: '药物使用',
-        value: '2-5-3',
-        status: 0
-      },
-      {
-        name: '药物使用',
-        value: '2-5-4',
-        status: 0
-      },
-      {
-        name: '其他',
-        value: '2-5-5',
-        status: 0
-      },
-      {
-        name: '记不清（失访）',
-        value: '2-5-6',
-        status: 0
-      }
-    ],
-    healthCheckBoxItems: [{
-        name: '症状',
-        value: '4-2-1',
-        status: 0
-      },
-      {
-        name: '血压',
-        value: '4-2-2',
-        status: 0
-      },
-      {
-        name: '身高、体重、腰围',
-        value: '4-2-3',
-        status: 0
-      },
-      {
-        name: '老年人生活自理能力评估（有评估表）',
-        value: '4-2-4',
-        status: 0
-      },
-      {
-        name: '生活方式',
-        value: '4-2-5',
-        status: 0
-      },
-      {
-        name: '口腔、视力、听力和运动功能',
-        value: '4-2-6',
-        status: 0
-      },
-      {
-        name: '心、肺、腹部检查',
-        value: '4-2-7',
-        status: 0
-      },
-      {
-        name: '血常规',
-        value: '4-2-8',
-        status: 0
-      },
-      {
-        name: '尿常规',
-        value: '4-2-9',
-        status: 0
-      },
-      {
-        name: '肝功能 (血清谷草转氨酶、血清谷丙转氨酶、总胆红素)',
-        value: '4-2-10',
-        status: 0
-      },
-      {
-        name: '肾功能（血清肌酐、血尿素氮）',
-        value: '4-2-11',
-        status: 0
-      },
-      {
-        name: '血脂（总胆固醇、甘油三酯、高密度脂蛋白胆固醇、低密度脂蛋白胆固醇）',
-        value: '4-2-12',
-        status: 0
-      },
-      {
-        name: '空腹血糖',
-        value: '4-2-13',
-        status: 0
-      },
-      {
-        name: '心电图',
-        value: '4-2-14',
-        status: 0
-      },
-      {
-        name: '危险因素控制（无危险因素可空项）',
-        value: '4-2-15',
-        status: 0
-      },
-      {
-        name: '腹部B超',
-        value: '4-2-16',
-        status: 0
-      },
-      {
-        name: '超重肥胖（包括腹型肥胖）以及辅助检查异常结果未评价',
-        value: '4-2-17',
-        status: 0
-      },
-      {
-        name: '无空项、漏项或错项',
-        value: '4-2-18',
-        status: 0
-      }
-    ],
-    healthReportCheckBoxItems: [{
-        name: '有',
-        value: '4-4-1',
-        status: 0
-      },
-      {
-        name: '缺少尿常规结果报告单',
-        value: '4-4-2',
-        status: 0
-      },
-      {
-        name: '缺少血常规结果报告单',
-        value: '4-4-3',
-        status: 0
-      },
-      {
-        name: '①缺少肝功能结果报告单',
-        value: '4-4-4',
-        status: 0
-      },
-      {
-        name: '缺少肾功能结果报告单',
-        value: '4-4-5',
-        status: 0
-      },
-      {
-        name: '缺少血脂结果报告单 ',
-        value: '4-4-6',
-        status: 0
-      },
-      {
-        name: '缺少空腹血糖结果报告单',
-        value: '4-4-7',
-        status: 0
-      },
-      {
-        name: '缺少心电图报告单',
-        value: '4-4-8',
-        status: 0
-      }
-    ],
     checkServiceCheckBoxItems: [{
         name: '测量血压',
         value: '2-6-1',
@@ -591,41 +428,6 @@ Page({
     isDisabled: false
   },
 
-  inputChangeHandle: function (e) {
-    var prop = e.target.dataset['prop']
-    var changed = {}
-    changed[prop] = e.detail.value
-    this.setData(changed)
-  },
-
-  addRecordHandle(e) {
-    var that = this;
-    DB.add({
-        data: that.data,
-        success(res) {
-          wx.showToast({
-            title: '成功',
-            icon: 'success',
-            duration: 2000
-          })
-        },
-        fail(res) {
-          wx.showToast({
-            title: '失败',
-            icon: 'none',
-            duration: 2000
-          })
-        }
-      }, ),
-      this.setData({
-        isDisabled: true
-      }),
-      wx.redirectTo({
-        url: '../HypertensionManage/index',
-      })
-  },
-
-
   /**
    * 返回上一个页面
    * @param {*} e 
@@ -642,28 +444,150 @@ Page({
   onLoad: function (options) {
     var that = this;
     DB.where({
-      usercode: options.usercode
-    }).get({
-      success(res) {
-        if (res.data.length > 0) {
-          wx.showToast({
-            title: '用户已存在',
-            duration: 2000,
-            mask: true,
-            success() {
-              setTimeout(function () {
-                wx.redirectTo({
-                  url: '../FamilyDoctorSign/index',
-                })
-              }, 1000)
+        usercode: options.usercode
+      })
+      .get({
+        success: function (res) {
+          if (res.data.length == 0) {
+            wx.showToast({
+              title: '没有查询信息',
+              duration: 2000,
+              mask: true,
+              success() {
+                setTimeout(function() {
+                  wx.redirectTo({
+                    url: '../HypertensionManage/index',
+                  })
+                }, 1000)
+              }
+            })
+          }
+          var data = res.data[0]
+          //checkbox 变量设定
+          if (data.checkService !== undefined) {
+            that.data.checkServiceCheckBoxItems.forEach(item => {
+              data.checkService.forEach(checkServiceItem => {
+                if (checkServiceItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            checkServiceCheckBoxItems: that.data.checkServiceCheckBoxItems,
+          })
+
+          if (data.checkRecordList !== undefined) {
+            that.data.recordListCheckBoxItems.forEach(item => {
+              data.checkRecordList.forEach(checkRecordListItem => {
+                if (checkRecordListItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            recordListCheckBoxItems: that.data.recordListCheckBoxItems,
+          })
+
+          if (data.child !== undefined) {
+            that.data.childCheckboxItems.forEach(item => {
+              data.child.forEach(childItem => {
+                if (childItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            childCheckboxItems: that.data.childCheckboxItems,
+          })
+
+          if (data.brothers !== undefined) {
+            that.data.brothersCheckboxItems.forEach(item => {
+              data.brothers.forEach(brothersItem => {
+                if (brothersItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            brothersCheckboxItems: that.data.brothersCheckboxItems,
+          })
+
+          //radio 变量设置
+          that.data.genderItems.forEach(item => {
+            if (data.gender == item.name) {
+              item.gender = 1
             }
           })
+
+          that.data.householdItems.forEach(item => {
+              if (data.household == item.name) {
+                item.household = 1
+              }
+            }),
+
+            that.data.livingConditionItems.forEach(item => {
+              if (data.livingcond == item.name) {
+                item.livingcond = 1
+              }
+            }),
+
+            that.data.isNoSmokeItems.forEach(item => {
+              if (data.nosmoke == item.name) {
+                item.nosmoke = 1
+              }
+            }),
+
+            that.data.isNoDrinkItems.forEach(item => {
+              if (data.nodrink == item.name) {
+                item.nodrink = 1
+              }
+            }),
+
+            that.setData({
+              // 单选框
+              genderItems: that.data.genderItems,
+              householdItems: that.data.householdItems,
+              livingConditionItems: that.data.livingConditionItems,
+              isNoSmokeItems: that.data.isNoSmokeItems,
+              isNoDrinkItems: that.data.isNoDrinkItems,
+              // 输入框
+              usercode: data.usercode,
+              username: data.username,
+              bloodtype: data.bloodtype,
+              height: data.height,
+              weight: data.weight,
+              medicarecardNumber: data.medicarecardNumber,
+              positionsospital: data.positionsospital,
+              phone: data.phone,
+              drugallergy: data.drugallergy,
+              surgeryname: data.surgeryname,
+              surgerytime: data.surgerytime,
+              emergencycontact: data.emergencycontact,
+              emergencycontactphone: data.emergencycontactphone,
+              location: data.location,
+              huji: data.huji,
+              address: data.address,
+              policestation: data.policestation,
+              currentdisease: data.currentdisease,
+              acigarette: data.acigarette,
+              smokeage: data.smokeage,
+              drinkage: data.drinkage,
+              walkminute: data.walkminute,
+              runminute: data.runminute,
+              otherminute: data.otherminute,
+              beer: data.beer,
+              liquor: data.liquor,
+              redwine: data.redwine,
+              nation: data.nation,
+              education: data.education,
+              meal: data.meal,
+            })
         }
-      }
-    })
-    that.setData({
-      usercode: options.usercode
-    })
+      })
   },
 
   /**

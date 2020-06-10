@@ -243,7 +243,6 @@
 	</view>
 
 	<view class="buttons">
-		<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
 		<button type="default" class="default" bindtap="canceleHandle">取消</button>
 	</view>
 </view>

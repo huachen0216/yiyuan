@@ -580,7 +580,7 @@ Page({
       }
     ],
     // input变量定义
-    usercode: '',
+    filenumber: '',
     name: '',
     phone: '',
     examiner: '',
