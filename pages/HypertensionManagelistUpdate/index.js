@@ -1,7 +1,6 @@
 const DB = wx.cloud.database().collection("hypertensionManageList")
 
 Page({
-
   /**
    * 页面的初始数据
    */
@@ -436,8 +435,6 @@ Page({
     this.setData(changed)
   },
 
-
-
   updateRecordHandle(e) {
     var that = this;
     DB.doc(that.data.id).update({
@@ -464,6 +461,7 @@ Page({
         url: '../HypertensionManage/index',
       })
   },
+  
   /**
    * 返回上一个页面
    * @param {*} e 

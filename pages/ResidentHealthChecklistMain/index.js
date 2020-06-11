@@ -1,50 +1,30 @@
 Page({
+
   /**
    * 页面的初始数据
    */
   data: {
-    usercode: '',
-    // 按钮状态
-    isDisabled: true
+    usercode: ''
   },
 
-  confirmHandle(e) {
-    var that = this;
-    var usercode = that.data.usercode
-    if (usercode.length == 0 ) {
-      wx.showToast({
-        title: '社保号码为空！',
-        duration: 2000
-      })
-      return
-    } 
-    wx.setStorage({
-      data: usercode,
-      key: 'usercode',
-    })
-    that.setData({
-      isDisabled: false
-    })
-  },
-
-  inputChangeHandle(e) {
-    var prop = e.target.dataset['prop']
-    var changed = {}
-    changed[prop] = e.detail.value
-    this.setData(changed)
-  },
-
-  // 居民健康档案
-  ResidentHealth(e) {
+  // 新增档案
+  addRecord: function () {
     wx.navigateTo({
-      url: '../ResidentHealthMain/index'
+      url: '../ResidentHealthChecklistAdd/index?usercode=' + this.data.usercode,
     })
   },
 
-  // 家庭医师签约
-  FamilyDoctorSign(e) {
+  // 查询档案
+  queryRecord: function () {
     wx.navigateTo({
-      url: '../FamilyDoctorSignMain/index'
+      url: '../ResidentHealthChecklistQuery/index?usercode=' + this.data.usercode,
+    })
+  },
+
+  // 修改档案
+  editRecord: function () {
+    wx.navigateTo({
+      url: '../ResidentHealthChecklistUpdate/index?usercode=' + this.data.usercode,
     })
   },
 
@@ -52,7 +32,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    try {
+      var value = wx.getStorageSync('usercode')
+      if (value) {
+        that.setData({
+          usercode: value
+        })
+      }
+    } catch (e) {
+      wx.showToast({
+        title: '没有找到usercode，请重新输入',
+        duration: 2000
+      })
+    }
   },
 
   /**

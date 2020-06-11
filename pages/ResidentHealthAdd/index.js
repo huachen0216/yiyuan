@@ -277,6 +277,7 @@ Page({
         url: '../ResidentHealthMain/index',
       })
   },
+  
   /**
    * 返回上一个页面
    * @param {*} e 

@@ -324,23 +324,24 @@ Page({
     examinerdate: '',
     assessedunit: '',
     // 按钮状态
-    isDisabled: false
+    isDisabled: false,
+    id: ''
   },
 
-  inputChangeHandle: function (e) {
+  inputChangeHandle(e) {
     var prop = e.target.dataset['prop']
     var changed = {}
     changed[prop] = e.detail.value
     this.setData(changed)
   },
 
-  addRecordHandle(e) {
+  updateRecordHandle(e) {
     var that = this;
-    DB.add({
-        data: this.data,
+    DB.doc(that.data.id).update({
+        data: that.data,
         success(res) {
           wx.showToast({
-            title: '成功',
+            title: '更新成功',
             icon: 'success',
             duration: 2000
           })
@@ -351,8 +352,8 @@ Page({
             icon: 'none',
             duration: 2000
           })
-        }
-      }, ),
+        },
+      }),
       this.setData({
         isDisabled: true
       }),
@@ -377,58 +378,163 @@ Page({
   onLoad: function (options) {
     var that = this;
     DB.where({
-      usercode: options.usercode
-    }).get({
-      success(res) {
-        if (res.data.length > 0) {
-          wx.showToast({
-            title: '用户已存在',
-            duration: 2000,
-            mask: true,
-            success() {
-              setTimeout(function () {
-                wx.redirectTo({
-                  url: '../ResidentHealthChecklistMain/index',
-                })
-              }, 1000)
+        usercode: options.usercode
+      })
+      .get({
+        success: function (res) {
+          if (res.data.length == 0) {
+            wx.showToast({
+              title: '没有查询信息',
+              duration: 2000,
+              mask: true,
+              success() {
+                setTimeout(function () {
+                  wx.redirectTo({
+                    url: '../ResidentHealthChecklistMain/index',
+                  })
+                }, 1000)
+              }
+            })
+          }
+          var data = res.data[0]
+          //checkbox 变量设定
+          if (data.errorRecord !== undefined) {
+            that.data.errorRecordCheckBoxItems.forEach(item => {
+              data.errorRecord.forEach(errorRecordItem => {
+                if (errorRecordItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            errorRecordCheckBoxItems: that.data.errorRecordCheckBoxItems,
+          })
+
+          if (data.residentHealtherrorRecord !== undefined) {
+            that.data.residentHealtherrorRecordCheckBoxItems.forEach(item => {
+              data.residentHealtherrorRecord.forEach(residentHealtherrorRecordItem => {
+                if (residentHealtherrorRecordItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            residentHealtherrorRecordCheckBoxItems: that.data.residentHealtherrorRecordCheckBoxItems,
+          })
+
+          if (data.basicInfoerrorRecord !== undefined) {
+            that.data.basicInfoerrorRecordCheckBoxItems.forEach(item => {
+              data.basicInfoerrorRecord.forEach(basicInfoerrorRecordItem => {
+                if (basicInfoerrorRecordItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            basicInfoerrorRecordCheckBoxItems: that.data.basicInfoerrorRecordCheckBoxItems,
+          })
+
+          //radio 变量设置
+          that.data.genderItems.forEach(item => {
+            if (data.gender == item.name) {
+              item.gender = 1
             }
           })
+
+          that.data.s_2_1.forEach(item => {
+              if (data.s_2_1 == item.name) {
+                item.s_2_1 = 1
+              }
+            }),
+
+            that.data.s_2_2.forEach(item => {
+              if (data.s_2_2 == item.name) {
+                item.s_2_2 = 1
+              }
+            }),
+
+            that.data.s_2_3.forEach(item => {
+              if (data.s_2_3 == item.name) {
+                item.s_2_3 = 1
+              }
+            }),
+
+            that.data.s_2_4.forEach(item => {
+              if (data.s_2_4 == item.name) {
+                item.s_2_4 = 1
+              }
+            }),
+
+            that.data.s_2_5.forEach(item => {
+              if (data.s_2_5 == item.name) {
+                item.s_2_5 = 1
+              }
+            }),
+
+            that.data.s_3_1.forEach(item => {
+              if (data.s_3_1 == item.name) {
+                item.s_3_1 = 1
+              }
+            }),
+
+            that.data.s_4_1.forEach(item => {
+              if (data.s_4_1 == item.name) {
+                item.s_4_1 = 1
+              }
+            }),
+
+            that.data.s_4_3.forEach(item => {
+              if (data.s_4_3 == item.name) {
+                item.s_4_3 = 1
+              }
+            }),
+
+            that.data.s_5_1.forEach(item => {
+              if (data.s_5_1 == item.name) {
+                item.s_5_1 = 1
+              }
+            }),
+
+            that.data.s_5_4.forEach(item => {
+              if (data.s_5_4 == item.name) {
+                item.s_5_4 = 1
+              }
+            }),
+
+            that.setData({
+              // 单选框
+              genderItems: that.data.genderItems,
+              s_2_1: that.data.s_2_1,
+              s_2_2: that.data.s_2_2,
+              s_2_3: that.data.s_2_3,
+              s_2_4: that.data.s_2_4,
+              s_2_5: that.data.s_2_5,
+              s_3_1: that.data.s_3_1,
+              s_4_1: that.data.s_4_1,
+              s_4_3: that.data.s_4_3,
+              s_5_1: that.data.s_5_1,
+              s_5_4: that.data.s_5_4,
+              // 输入框
+              usercode: data.usercode,
+              name: data.name,
+              phone: data.phone,
+              examiner: data.examiner,
+              examinerdate: data.examinerdate,
+              assessedunit: data.assessedunit,
+              id: data._id
+            })
         }
-      }
-    })
-    that.setData({
-      usercode: options.usercode
-    })
+      })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    var that = this;
-    DB.where({
-      usercode: options.usercode
-    }).get({
-      success(res) {
-        if (res.data.length > 0) {
-          wx.showToast({
-            title: '用户已存在',
-            duration: 2000,
-            mask: true,
-            success() {
-              setTimeout(function () {
-                wx.redirectTo({
-                  url: '../ResidentHealthChecklistMain/index',
-                })
-              }, 1000)
-            }
-          })
-        }
-      }
-    })
-    that.setData({
-      usercode: options.usercode
-    })
+
   },
 
   /**

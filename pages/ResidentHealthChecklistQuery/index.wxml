@@ -196,11 +196,9 @@
 			<view class='text-title'>考核时间: </view>
 			<input class="weui-input" placeholder="考核时间" value="{{examinerdate}}" bindinput="inputChangeHandle" data-prop="examinerdate" />
 		</view>
-
 	</view>
 
 	<view class="buttons">
-		<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
 		<button type="default" class="default" bindtap="canceleHandle">取消</button>
 	</view>
 </view>
