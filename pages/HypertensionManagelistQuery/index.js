@@ -490,30 +490,43 @@ Page({
             recordListCheckBoxItems: that.data.recordListCheckBoxItems,
           })
 
-          if (data.child !== undefined) {
-            that.data.childCheckboxItems.forEach(item => {
-              data.child.forEach(childItem => {
-                if (childItem == item.value) {
+          if (data.noServiceList !== undefined) {
+            that.data.noServiceListCheckBoxItems.forEach(item => {
+              data.noServiceList.forEach(noServiceListItem => {
+                if (noServiceListItem == item.value) {
                   item.status = 1
                 }
               })
             })
           }
           that.setData({
-            childCheckboxItems: that.data.childCheckboxItems,
+            noServiceListCheckBoxItems: that.data.noServiceListCheckBoxItems,
           })
 
-          if (data.brothers !== undefined) {
-            that.data.brothersCheckboxItems.forEach(item => {
-              data.brothers.forEach(brothersItem => {
-                if (brothersItem == item.value) {
+          if (data.errorRecord !== undefined) {
+            that.data.errorRecordCheckBoxItems.forEach(item => {
+              data.errorRecord.forEach(errorRecordItem => {
+                if (errorRecordItem == item.value) {
                   item.status = 1
                 }
               })
             })
           }
           that.setData({
-            brothersCheckboxItems: that.data.brothersCheckboxItems,
+            errorRecordCheckBoxItems: that.data.errorRecordCheckBoxItems,
+          })
+
+          if (data.latestFollowUpRecord !== undefined) {
+            that.data.latestFollowUpRecordCheckBoxItems.forEach(item => {
+              data.latestFollowUpRecord.forEach(latestFollowUpRecordItem => {
+                if (latestFollowUpRecordItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            latestFollowUpRecordCheckBoxItems: that.data.latestFollowUpRecordCheckBoxItems,
           })
 
           //radio 变量设置
@@ -523,68 +536,101 @@ Page({
             }
           })
 
-          that.data.householdItems.forEach(item => {
-              if (data.household == item.name) {
-                item.household = 1
+          that.data.s_2_1.forEach(item => {
+              if (data.s_2_1 == item.name) {
+                item.s_2_1 = 1
               }
             }),
 
-            that.data.livingConditionItems.forEach(item => {
-              if (data.livingcond == item.name) {
-                item.livingcond = 1
+            that.data.s_2_2.forEach(item => {
+              if (data.s_2_2 == item.name) {
+                item.s_2_2 = 1
               }
             }),
 
-            that.data.isNoSmokeItems.forEach(item => {
-              if (data.nosmoke == item.name) {
-                item.nosmoke = 1
+            that.data.s_2_3.forEach(item => {
+              if (data.s_2_3 == item.name) {
+                item.s_2_3 = 1
               }
             }),
 
-            that.data.isNoDrinkItems.forEach(item => {
-              if (data.nodrink == item.name) {
-                item.nodrink = 1
+            that.data.s_2_4.forEach(item => {
+              if (data.s_2_4 == item.name) {
+                item.s_2_4 = 1
+              }
+            }),
+
+            that.data.s_2_5.forEach(item => {
+              if (data.s_2_5 == item.name) {
+                item.s_2_5 = 1
+              }
+            }),
+
+            that.data.s_2_7.forEach(item => {
+              if (data.s_2_7 == item.name) {
+                item.s_2_7 = 1
+              }
+            }),
+
+            that.data.s_3_1.forEach(item => {
+              if (data.s_3_1 == item.name) {
+                item.s_3_1 = 1
+              }
+            }),
+
+            that.data.s_3_3.forEach(item => {
+              if (data.s_3_3 == item.name) {
+                item.s_3_3 = 1
+              }
+            }),
+
+            that.data.s_4_3.forEach(item => {
+              if (data.s_4_3 == item.name) {
+                item.s_4_3 = 1
+              }
+            }),
+
+            that.data.s_4_5.forEach(item => {
+              if (data.s_4_5 == item.name) {
+                item.s_4_5 = 1
+              }
+            }),
+
+            that.data.s_4_6.forEach(item => {
+              if (data.s_4_6 == item.name) {
+                item.s_4_6 = 1
+              }
+            }),
+
+            that.data.s_5_1.forEach(item => {
+              if (data.s_5_1 == item.name) {
+                item.s_5_1 = 1
               }
             }),
 
             that.setData({
               // 单选框
               genderItems: that.data.genderItems,
-              householdItems: that.data.householdItems,
-              livingConditionItems: that.data.livingConditionItems,
-              isNoSmokeItems: that.data.isNoSmokeItems,
-              isNoDrinkItems: that.data.isNoDrinkItems,
+              s_2_1: that.data.s_2_1,
+              s_2_2: that.data.s_2_2,
+              s_2_3: that.data.s_2_3,
+              s_2_4: that.data.s_2_4,
+              s_2_5: that.data.s_2_5,
+              s_2_7:that.data.s_2_7,
+              s_3_1:that.data.s_3_1,
+              s_3_3:that.data.s_3_3,
+              s_4_3:that.data.s_4_3,
+              s_4_5:that.data.s_4_5,
+              s_4_6:that.data.s_4_6,
+              s_5_1:that.data.s_5_1,
               // 输入框
               usercode: data.usercode,
-              username: data.username,
-              bloodtype: data.bloodtype,
-              height: data.height,
-              weight: data.weight,
-              medicarecardNumber: data.medicarecardNumber,
-              positionsospital: data.positionsospital,
+              name: data.name,
               phone: data.phone,
-              drugallergy: data.drugallergy,
-              surgeryname: data.surgeryname,
-              surgerytime: data.surgerytime,
-              emergencycontact: data.emergencycontact,
-              emergencycontactphone: data.emergencycontactphone,
-              location: data.location,
-              huji: data.huji,
-              address: data.address,
-              policestation: data.policestation,
-              currentdisease: data.currentdisease,
-              acigarette: data.acigarette,
-              smokeage: data.smokeage,
-              drinkage: data.drinkage,
-              walkminute: data.walkminute,
-              runminute: data.runminute,
-              otherminute: data.otherminute,
-              beer: data.beer,
-              liquor: data.liquor,
-              redwine: data.redwine,
-              nation: data.nation,
-              education: data.education,
-              meal: data.meal,
+              examiner: data.examiner,
+              examinerdate: data.examinerdate,
+              assessedunit: data.assessedunit,
+              bloodpressure: data.bloodpressure,
             })
         }
       })

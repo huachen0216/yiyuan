@@ -1,10 +1,6 @@
 {
   "pages":[
-    "pages/HypertensionManage/index",
-    "pages/HypertensionManagelistAdd/index",
-    "pages/HypertensionManagelistQuery/index",
-    "pages/HypertensionManagelistUpdate/index",
-    "pages/DiabetesHealthManageChecklist/index",
+    "pages/DiabetesHealthManage/index",
     "pages/DiabetesHealthManageChecklistAdd/index",
     "pages/DiabetesHealthManageChecklistQuery/index",
     "pages/DiabetesHealthManageChecklistUpdate/index",

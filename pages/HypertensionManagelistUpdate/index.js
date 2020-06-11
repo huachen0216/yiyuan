@@ -216,169 +216,6 @@ Page({
       }
     ],
     // checkbox item 定义
-    healthGuidanceCheckBoxItems: [{
-        name: '饮食、运动',
-        value: '2-5-1',
-        status: 0
-      },
-      {
-        name: '戒烟、限酒',
-        value: '2-5-2',
-        status: 0
-      },
-      {
-        name: '药物使用',
-        value: '2-5-3',
-        status: 0
-      },
-      {
-        name: '药物使用',
-        value: '2-5-4',
-        status: 0
-      },
-      {
-        name: '其他',
-        value: '2-5-5',
-        status: 0
-      },
-      {
-        name: '记不清（失访）',
-        value: '2-5-6',
-        status: 0
-      }
-    ],
-    healthCheckBoxItems: [{
-        name: '症状',
-        value: '4-2-1',
-        status: 0
-      },
-      {
-        name: '血压',
-        value: '4-2-2',
-        status: 0
-      },
-      {
-        name: '身高、体重、腰围',
-        value: '4-2-3',
-        status: 0
-      },
-      {
-        name: '老年人生活自理能力评估（有评估表）',
-        value: '4-2-4',
-        status: 0
-      },
-      {
-        name: '生活方式',
-        value: '4-2-5',
-        status: 0
-      },
-      {
-        name: '口腔、视力、听力和运动功能',
-        value: '4-2-6',
-        status: 0
-      },
-      {
-        name: '心、肺、腹部检查',
-        value: '4-2-7',
-        status: 0
-      },
-      {
-        name: '血常规',
-        value: '4-2-8',
-        status: 0
-      },
-      {
-        name: '尿常规',
-        value: '4-2-9',
-        status: 0
-      },
-      {
-        name: '肝功能 (血清谷草转氨酶、血清谷丙转氨酶、总胆红素)',
-        value: '4-2-10',
-        status: 0
-      },
-      {
-        name: '肾功能（血清肌酐、血尿素氮）',
-        value: '4-2-11',
-        status: 0
-      },
-      {
-        name: '血脂（总胆固醇、甘油三酯、高密度脂蛋白胆固醇、低密度脂蛋白胆固醇）',
-        value: '4-2-12',
-        status: 0
-      },
-      {
-        name: '空腹血糖',
-        value: '4-2-13',
-        status: 0
-      },
-      {
-        name: '心电图',
-        value: '4-2-14',
-        status: 0
-      },
-      {
-        name: '危险因素控制（无危险因素可空项）',
-        value: '4-2-15',
-        status: 0
-      },
-      {
-        name: '腹部B超',
-        value: '4-2-16',
-        status: 0
-      },
-      {
-        name: '超重肥胖（包括腹型肥胖）以及辅助检查异常结果未评价',
-        value: '4-2-17',
-        status: 0
-      },
-      {
-        name: '无空项、漏项或错项',
-        value: '4-2-18',
-        status: 0
-      }
-    ],
-    healthReportCheckBoxItems: [{
-        name: '有',
-        value: '4-4-1',
-        status: 0
-      },
-      {
-        name: '缺少尿常规结果报告单',
-        value: '4-4-2',
-        status: 0
-      },
-      {
-        name: '缺少血常规结果报告单',
-        value: '4-4-3',
-        status: 0
-      },
-      {
-        name: '①缺少肝功能结果报告单',
-        value: '4-4-4',
-        status: 0
-      },
-      {
-        name: '缺少肾功能结果报告单',
-        value: '4-4-5',
-        status: 0
-      },
-      {
-        name: '缺少血脂结果报告单 ',
-        value: '4-4-6',
-        status: 0
-      },
-      {
-        name: '缺少空腹血糖结果报告单',
-        value: '4-4-7',
-        status: 0
-      },
-      {
-        name: '缺少心电图报告单',
-        value: '4-4-8',
-        status: 0
-      }
-    ],
     checkServiceCheckBoxItems: [{
         name: '测量血压',
         value: '2-6-1',
@@ -580,7 +417,7 @@ Page({
       }
     ],
     // input变量定义
-    filenumber: '',
+    usercode: '',
     name: '',
     phone: '',
     examiner: '',
@@ -588,23 +425,26 @@ Page({
     assessedunit: '',
     bloodpressure: '',
     // 按钮状态
-    isDisabled: false
+    isDisabled: false,
+    id: ''
   },
 
-  inputChangeHandle: function (e) {
+  inputChangeHandle(e) {
     var prop = e.target.dataset['prop']
     var changed = {}
     changed[prop] = e.detail.value
     this.setData(changed)
   },
 
-  addRecordHandle(e) {
+
+
+  updateRecordHandle(e) {
     var that = this;
-    DB.add({
+    DB.doc(that.data.id).update({
         data: that.data,
         success(res) {
           wx.showToast({
-            title: '成功',
+            title: '更新成功',
             icon: 'success',
             duration: 2000
           })
@@ -615,8 +455,8 @@ Page({
             icon: 'none',
             duration: 2000
           })
-        }
-      }, ),
+        },
+      }),
       this.setData({
         isDisabled: true
       }),
@@ -624,8 +464,6 @@ Page({
         url: '../HypertensionManage/index',
       })
   },
-
-
   /**
    * 返回上一个页面
    * @param {*} e 
@@ -642,28 +480,196 @@ Page({
   onLoad: function (options) {
     var that = this;
     DB.where({
-      usercode: options.usercode
-    }).get({
-      success(res) {
-        if (res.data.length > 0) {
-          wx.showToast({
-            title: '用户已存在',
-            duration: 2000,
-            mask: true,
-            success() {
-              setTimeout(function () {
-                wx.redirectTo({
-                  url: '../FamilyDoctorSign/index',
-                })
-              }, 1000)
+        usercode: options.usercode
+      })
+      .get({
+        success: function (res) {
+          if (res.data.length == 0) {
+            wx.showToast({
+              title: '没有查询信息',
+              duration: 2000,
+              mask: true,
+              success() {
+                setTimeout(function () {
+                  wx.redirectTo({
+                    url: '../HypertensionManage/index',
+                  })
+                }, 1000)
+              }
+            })
+          }
+          var data = res.data[0]
+          //checkbox 变量设定
+          if (data.checkService !== undefined) {
+            that.data.checkServiceCheckBoxItems.forEach(item => {
+              data.checkService.forEach(checkServiceItem => {
+                if (checkServiceItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            checkServiceCheckBoxItems: that.data.checkServiceCheckBoxItems,
+          })
+
+          if (data.checkRecordList !== undefined) {
+            that.data.recordListCheckBoxItems.forEach(item => {
+              data.checkRecordList.forEach(checkRecordListItem => {
+                if (checkRecordListItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            recordListCheckBoxItems: that.data.recordListCheckBoxItems,
+          })
+
+          if (data.noServiceList !== undefined) {
+            that.data.noServiceListCheckBoxItems.forEach(item => {
+              data.noServiceList.forEach(noServiceListItem => {
+                if (noServiceListItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            noServiceListCheckBoxItems: that.data.noServiceListCheckBoxItems,
+          })
+
+          if (data.errorRecord !== undefined) {
+            that.data.errorRecordCheckBoxItems.forEach(item => {
+              data.errorRecord.forEach(errorRecordItem => {
+                if (errorRecordItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            errorRecordCheckBoxItems: that.data.errorRecordCheckBoxItems,
+          })
+
+          if (data.latestFollowUpRecord !== undefined) {
+            that.data.latestFollowUpRecordCheckBoxItems.forEach(item => {
+              data.latestFollowUpRecord.forEach(latestFollowUpRecordItem => {
+                if (latestFollowUpRecordItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            latestFollowUpRecordCheckBoxItems: that.data.latestFollowUpRecordCheckBoxItems,
+          })
+
+          //radio 变量设置
+          that.data.genderItems.forEach(item => {
+            if (data.gender == item.name) {
+              item.gender = 1
             }
           })
+
+          that.data.s_2_1.forEach(item => {
+              if (data.s_2_1 == item.name) {
+                item.s_2_1 = 1
+              }
+            }),
+
+            that.data.s_2_2.forEach(item => {
+              if (data.s_2_2 == item.name) {
+                item.s_2_2 = 1
+              }
+            }),
+
+            that.data.s_2_3.forEach(item => {
+              if (data.s_2_3 == item.name) {
+                item.s_2_3 = 1
+              }
+            }),
+
+            that.data.s_2_4.forEach(item => {
+              if (data.s_2_4 == item.name) {
+                item.s_2_4 = 1
+              }
+            }),
+
+            that.data.s_2_5.forEach(item => {
+              if (data.s_2_5 == item.name) {
+                item.s_2_5 = 1
+              }
+            }),
+
+            that.data.s_2_7.forEach(item => {
+              if (data.s_2_7 == item.name) {
+                item.s_2_7 = 1
+              }
+            }),
+
+            that.data.s_3_1.forEach(item => {
+              if (data.s_3_1 == item.name) {
+                item.s_3_1 = 1
+              }
+            }),
+
+            that.data.s_3_3.forEach(item => {
+              if (data.s_3_3 == item.name) {
+                item.s_3_3 = 1
+              }
+            }),
+
+            that.data.s_4_3.forEach(item => {
+              if (data.s_4_3 == item.name) {
+                item.s_4_3 = 1
+              }
+            }),
+
+            that.data.s_4_5.forEach(item => {
+              if (data.s_4_5 == item.name) {
+                item.s_4_5 = 1
+              }
+            }),
+
+            that.data.s_4_6.forEach(item => {
+              if (data.s_4_6 == item.name) {
+                item.s_4_6 = 1
+              }
+            }),
+
+            that.data.s_5_1.forEach(item => {
+              if (data.s_5_1 == item.name) {
+                item.s_5_1 = 1
+              }
+            }),
+
+            that.setData({
+              // 单选框
+              genderItems: that.data.genderItems,
+              s_2_1: that.data.s_2_1,
+              s_2_2: that.data.s_2_2,
+              s_2_3: that.data.s_2_3,
+              s_2_4: that.data.s_2_4,
+              s_2_5: that.data.s_2_5,
+              s_2_7: that.data.s_2_7,
+              s_3_1: that.data.s_3_1,
+              s_3_3: that.data.s_3_3,
+              s_4_3: that.data.s_4_3,
+              s_4_5: that.data.s_4_5,
+              s_4_6: that.data.s_4_6,
+              s_5_1: that.data.s_5_1,
+              // 输入框
+              usercode: data.usercode,
+              name: data.name,
+              phone: data.phone,
+              examiner: data.examiner,
+              examinerdate: data.examinerdate,
+              assessedunit: data.assessedunit,
+              bloodpressure: data.bloodpressure,
+            })
         }
-      }
-    })
-    that.setData({
-      usercode: options.usercode
-    })
+      })
   },
 
   /**

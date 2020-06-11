@@ -1,4 +1,4 @@
-const DB = wx.cloud.database().collection("diabetesHealthManageCheckList")
+const DB = wx.cloud.database().collection("diabetesHealthManageList")
 
 Page({
   /**
@@ -648,7 +648,7 @@ Page({
         isDisabled: true
       }),
       wx.redirectTo({
-        url: '../DiabetesHealthManageChecklist/index',
+        url: '../DiabetesHealthManage/index',
       })
   },
 
@@ -658,7 +658,7 @@ Page({
    */
   canceleHandle(e) {
     wx.redirectTo({
-      url: '../DiabetesHealthManageChecklist/index',
+      url: '../DiabetesHealthManage/index',
     })
   },
 
@@ -679,7 +679,7 @@ Page({
             success() {
               setTimeout(function () {
                 wx.redirectTo({
-                  url: '../DiabetesHealthManageChecklist/index',
+                  url: '../DiabetesHealthManage/index',
                 })
               }, 1000)
             }

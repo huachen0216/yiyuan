@@ -1,2 +1,249 @@
-<!--pages/DiabetesHealthManageChecklistUpdate/index.wxml-->
-<text>pages/DiabetesHealthManageChecklistUpdate/index.wxml</text>
+<view class="addPageMain">
+	<text class="text-style">糖尿病患者健康管理核查表</text>
+
+	<view class="add-text-section" style="font-weight: bold;">
+		<view class='text-title'>被考核单位: </view>
+		<input class="item-input-value" placeholder="被考核单位" value="{{assessedunit}}" bindinput="inputChangeHandle" data-prop="assessedunit" />
+		<view class='text-title'>社区卫生服务站</view>
+	</view>
+
+	<view class="text-title">1. 第一步：随机抽取机构2019年管理的糖尿病患者健康档案，每个机构核查5份。</view>
+	<view class="text-title">2. 第二步：根据访谈记录和档案记录，核查档案规范性及真实性情况。</view>
+	<view class="text-title">3. 第三步：根据核查情况在选择项上打“√”，或将结果选项序号填在“回答”栏中。</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>1 基础资料</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>1.1 档案编号: </view>
+			<input class="weui-input" value="{{usercode}}" disabled="true"/>
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>1.2 姓名: </view>
+			<input class="weui-input" placeholder="姓名" value="{{name}}" bindinput="inputChangeHandle" data-prop="name" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>联系方式: </view>
+			<input class="weui-input" placeholder="联系方式" value="{{phone}}" bindinput="inputChangeHandle" data-prop="phone" />
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">1.3 性别: </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="gender">
+				<view class="radio-item" wx:for="{{genderItems}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>2 访谈记录</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.1 请问您是（被访者姓名）本人吗？ </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_1">
+				<view class="radio-item" wx:for="{{s_2_1}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.2 您知道自己（或被访者姓名）有糖尿病吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_2">
+				<view class="radio-item" wx:for="{{s_2_2}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.3 去年或今年中，本地的社区卫生服务站/村卫生室给您做过健康体检吗（有没有测量血压血糖、测量身高体重、听诊心肺）？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_3">
+				<view class="radio-item" wx:for="{{s_2_3}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.4 没有体检的原因是：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_4">
+				<view class="radio-item" wx:for="{{s_2_4}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.5 在今年中，本地的社区卫生服务站/村卫生室对您的随访情况？
+				（包括医生通过上门或门诊等多种形式的面对面随访服务，随访医生仅通过电话询问的不算在内，记为⑥）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_5">
+				<view class="radio-item" wx:for="{{s_2_5}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">2.6 在今年，本地的社区卫生服务站/村卫生室/村医在给您随访时，向您提供了下列哪些服务？（除⑧以外，其它选项可多选；除⑧以外，选择其他选项后跳转到3.1）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{checkService}}" data-prop="checkService">
+				<label class="checkbox-item" wx:for="{{checkServiceCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">2.7 没有随访的原因是：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_2_7">
+				<view class="radio-item" wx:for="{{s_2_7}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>3 真实性核查（不真实同时判定为不完整）</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">3.1 是否存在提前进行应对性准备，如提前告知被访谈人员、现场发现工作人员诱导被访者提供与事实不符的信息、冒充被访谈人员等情况？（在我们跟您沟通前，您知道我们要找您访谈吗？谁通知的？和您怎么说的？）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_3_1">
+				<view class="radio-item" wx:for="{{s_3_1}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">3.2 根据访谈记录，与健康档案记录进行比较（除①以外，其他选项可多选，且其他选项有任一项存在，判定为不真实）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{checkRecordList}}" data-prop="checkRecordList">
+				<label class="checkbox-item" wx:for="{{recordListCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title" style="font-weight: bold;">3.3 是否真实：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_3_3">
+				<view class="radio-item" wx:for="{{s_3_3}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>4 规范性核查</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">4.1 根据电话访谈情况，未按服务规范要求提供的服务有
+				（除⑩以外，其他选项可多选；出现①、②、③、④、⑤中任意一项，或出现其他选项中3项及以上服务未提供，视为不规范）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{noServiceList}}" data-prop="noServiceList">
+				<label class="checkbox-item" wx:for="{{noServiceListCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">4.2 根据档案记录，2018年或2019年健康体检记录中，填写空项、错项或漏项的项目（除⑾以外，①②③④出现任何一种情况均视为不规范，其他选项存在2项及以上视为不规范）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{errorRecord}}" data-prop="errorRecord">
+				<label class="checkbox-item" wx:for="{{errorRecordCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">4.3 按照建档时间，2019年随访记录中频次</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_4_3">
+				<view class="radio-item" wx:for="{{s_4_3}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">4.4 2019年最后1次随访记录中，填写空项、漏项或错项的栏目
+				（除⑩以外，其他选项可多选，出现③或⑧任何一种情况均视为不规范，或者其他选项在2项及以上，视为不规范）</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{latestFollowUpRecord}}}" data-prop="latestFollowUpRecord">
+				<label class="checkbox-item" wx:for="{{latestFollowUpRecordCheckBoxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">4.5 2019年随访记录中，糖尿病患者血糖值在随访监测中如1次血糖控制不满意，应在两周内追加随访1次，连续两次控制不满意，应在第2次随访中建议转诊，同时在第2次随访后两周内增加1次随访</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_4_5">
+				<view class="radio-item" wx:for="{{s_4_5}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title" style="font-weight: bold;">4.6 规范性核查</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_4_6">
+				<view class="radio-item" wx:for="{{s_4_6}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>5 血糖控制情况</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>电话询问或现场测量患者血糖值(mmol/L)： </view>
+			<input class="weui-input" placeholder="血糖值" value="{{bloodlevel}}" bindinput="inputChangeHandle" data-prop="bloodlevel" />
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title" style="font-weight: bold;">5.1 血糖是否达标 </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="s_5_1">
+				<view class="radio-item" wx:for="{{s_5_1}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-text-section">
+			<view class='text-title'>考核人(签字): </view>
+			<input class="weui-input" placeholder="考核人" value="{{examiner}}" bindinput="inputChangeHandle" data-prop="examiner" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>考核时间: </view>
+			<input class="weui-input" placeholder="考核时间" value="{{examinerdate}}" bindinput="inputChangeHandle" data-prop="examinerdate" />
+		</view>
+
+	</view>
+
+	<view class="buttons">
+		<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
+		<button type="default" class="default" bindtap="canceleHandle">取消</button>
+	</view>
+</view>
