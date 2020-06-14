@@ -1,3 +1,5 @@
+const DB = wx.cloud.database().collection("elderlyHealthManageChecklist")
+
 Page({
 
   /**
@@ -366,20 +368,225 @@ Page({
       }
     ],
     // input变量定义
-    filenumber: '',
+    usercode: '',
     name: '',
     phone: '',
     examiner: '',
     examinerdate: '',
     principal: '',
-    assessedunit: ''
+    assessedunit: '',
+    // 按钮状态
+    isDisabled: false,
+    id: ''
+  },
+
+  inputChangeHandle(e) {
+    var prop = e.target.dataset['prop']
+    var changed = {}
+    changed[prop] = e.detail.value
+    this.setData(changed)
+  },
+
+  updateRecordHandle(e) {
+    var that = this;
+    DB.doc(that.data.id).update({
+        data: that.data,
+        success(res) {
+          wx.showToast({
+            title: '更新成功',
+            icon: 'success',
+            duration: 2000
+          })
+        },
+        fail(res) {
+          wx.showToast({
+            title: '失败',
+            icon: 'none',
+            duration: 2000
+          })
+        },
+      }),
+      this.setData({
+        isDisabled: true
+      }),
+      wx.redirectTo({
+        url: '../ElderlyHealthManageChecklistMain/index',
+      })
   },
 
   /**
+   * 返回上一个页面
+   * @param {*} e 
+   */
+  canceleHandle(e) {
+    wx.redirectTo({
+      url: '../ElderlyHealthManageChecklistMain/index',
+    })
+  },
+
+    /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    DB.where({
+        usercode: options.usercode
+      })
+      .get({
+        success: function (res) {
+          if (res.data.length == 0) {
+            wx.showToast({
+              title: '没有查询信息',
+              duration: 2000,
+              mask: true,
+              success() {
+                setTimeout(function() {
+                  wx.redirectTo({
+                    url: '../ElderlyHealthManageChecklistMain/index',
+                  })
+                }, 1000)
+              }
+            })
+          }
+          var data = res.data[0]
+          //checkbox 变量设定
+          if (data.checklist !== undefined) {
+            that.data.checklistCheckBoxItems.forEach(item => {
+              data.checklist.forEach(checklistItem => {
+                if (checklistItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            checklistCheckBoxItems: that.data.checklistCheckBoxItems,
+          })
 
+          if (data.healthGuidance !== undefined) {
+            that.data.healthGuidanceCheckBoxItems.forEach(item => {
+              data.healthGuidance.forEach(healthGuidanceItem => {
+                if (healthGuidanceItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            healthGuidanceCheckBoxItems: that.data.healthGuidanceCheckBoxItems,
+          })
+
+          if (data.healthCB !== undefined) {
+            that.data.childChechealthCheckBoxItemskboxItems.forEach(item => {
+              data.healthCB.forEach(healthCBItem => {
+                if (healthCBItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            healthCheckBoxItems: that.data.healthCheckBoxItems,
+          })
+
+          if (data.healthReport !== undefined) {
+            that.data.healthReportCheckBoxItems.forEach(item => {
+              data.healthReport.forEach(healthReportItem => {
+                if (healthReportItem == item.value) {
+                  item.status = 1
+                }
+              })
+            })
+          }
+          that.setData({
+            healthReportCheckBoxItems: that.data.healthReportCheckBoxItems,
+          })
+
+          //radio 变量设置
+          that.data.genderItems.forEach(item => {
+            if (data.gender == item.name) {
+              item.gender = 1
+            }
+          })
+
+          that.data.s_2_1.forEach(item => {
+              if (data.s_2_1 == item.name) {
+                item.s_2_1 = 1
+              }
+            }),
+
+            that.data.s_2_2.forEach(item => {
+              if (data.s_2_2 == item.name) {
+                item.s_2_2 = 1
+              }
+            }),
+
+            that.data.s_2_4.forEach(item => {
+              if (data.s_2_4 == item.name) {
+                item.s_2_4 = 1
+              }
+            }),
+
+            that.data.s_3_1.forEach(item => {
+              if (data.s_3_1 == item.name) {
+                item.s_3_1 = 1
+              }
+            }),
+
+            that.data.s_3_2.forEach(item => {
+              if (data.s_3_2 == item.name) {
+                item.s_3_2 = 1
+              }
+            }),
+
+            that.data.s_3_3.forEach(item => {
+              if (data.s_3_3 == item.name) {
+                item.s_3_3 = 1
+              }
+            }),
+
+            that.data.s_4_1.forEach(item => {
+              if (data.s_4_1 == item.name) {
+                item.s_4_1 = 1
+              }
+            }),
+
+            that.data.s_4_3.forEach(item => {
+              if (data.s_4_3 == item.name) {
+                item.s_4_3 = 1
+              }
+            }),
+
+            that.data.s_4_5.forEach(item => {
+              if (data.s_4_5 == item.name) {
+                item.s_4_5 = 1
+              }
+            }),
+
+            that.setData({
+              // 单选框
+              genderItems: that.data.genderItems,
+              s_2_1: that.data.s_2_1,
+              s_2_2: that.data.s_2_2,
+              s_2_4: that.data.s_2_4,
+              s_3_1: that.data.s_3_1,
+              s_3_2: that.data.s_3_2,
+              s_3_3: that.data.s_3_3,
+              s_4_1: that.data.s_4_1,
+              s_4_3: that.data.s_4_3,
+              s_4_5: that.data.s_4_5,
+              // 输入框
+              usercode: data.usercode,
+              name: data.name,
+              phone: data.phone,
+              examiner: data.examiner,
+              examinerdate: data.examinerdate,
+              principal: data.principal,
+              assessedunit: data.assessedunit,
+              id: data._id
+            })
+        }
+      })
   },
 
   /**

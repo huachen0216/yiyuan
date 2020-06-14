@@ -7,41 +7,24 @@ Page({
     usercode: ''
   },
 
-  // 修改档案
-  editRecord: function () {
-    wx.navigateTo({
-      url: '../ResidentHealthEdit/index?usercode=' + this.data.usercode,
-    })
-  },
-
   // 新增档案
   addRecord: function () {
     wx.navigateTo({
-      url: '../ResidentHealthAdd/index?usercode=' + this.data.usercode,
-    })
-  },
-
-  // 扫描档案
-  scanRecord: function () {
-    var that = this
-    wx.scanCode({
-      success: function (res) {
-        that.setData({
-          usercode: res.result
-        });
-
-        wx.showToast({
-          title: '扫描成功, ' + that.data.usercode,
-          duration: 2000
-        })
-      }
+      url: '../ElderlyChineseHealthManageChecklistAdd/index?usercode=' + this.data.usercode,
     })
   },
 
   // 查询档案
   queryRecord: function () {
     wx.navigateTo({
-      url: '../ResidentHealthQuery/index?usercode=' + this.data.usercode,
+      url: '../ElderlyChineseHealthManageChecklistQuery/index?usercode=' + this.data.usercode,
+    })
+  },
+
+  // 修改档案
+  updateRecord: function () {
+    wx.navigateTo({
+      url: '../ElderlyChineseHealthManageChecklistUpdate/index?usercode=' + this.data.usercode,
     })
   },
 

@@ -1,14 +1,6 @@
 {
   "pages":[
-    "pages/ResidentHealthChecklistMain/index",
-    "pages/ResidentHealthChecklistAdd/index",
-    "pages/ResidentHealthChecklistQuery/index",
-    "pages/ResidentHealthChecklistUpdate/index",
-    "pages/TheAgedHealthManageChecklistAdd/index",
     "pages/main/index",
-    "pages/TheAgedHealthManageAdd/index",
-    "pages/TheAgedHealthManageMain/index",
-    "pages/index/index",
     "pages/logs/logs"
   ],
   "window":{

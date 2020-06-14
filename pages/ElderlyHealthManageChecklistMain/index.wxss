@@ -1,0 +1,13 @@
+.text-style {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: large;
+  color: red;
+}
+
+.button-style {
+  margin: 10px;
+}
+
+

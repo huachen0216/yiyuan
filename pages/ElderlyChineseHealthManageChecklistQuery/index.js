@@ -1,5 +1,6 @@
-Page({
+const DB = wx.cloud.database().collection("elderlyChineseHealthManageChecklist")
 
+Page({
   /**
    * 页面的初始数据
    */
@@ -154,7 +155,7 @@ Page({
     ],
 
     // input变量定义
-    filenumber: '',
+    usercode: '',
     name: '',
     phone: '',
     examiner: '',
@@ -164,10 +165,138 @@ Page({
   },
 
   /**
+   * 返回上一个页面
+   * @param {*} e 
+   */
+  canceleHandle(e) {
+    wx.redirectTo({
+      url: '../ElderlyChineseHealthManageChecklistMain/index',
+    })
+  },
+
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    DB.where({
+        usercode: options.usercode
+      })
+      .get({
+        success: function (res) {
+          if (res.data.length == 0) {
+            wx.showToast({
+              title: '没有查询信息',
+              duration: 2000,
+              mask: true,
+              success() {
+                setTimeout(function () {
+                  wx.redirectTo({
+                    url: '../ElderlyChineseHealthManageChecklistMain/index',
+                  })
+                }, 1000)
+              }
+            })
+          }
+          var data = res.data[0]
+          //radio 变量设置
+          that.data.genderItems.forEach(item => {
+            if (data.gender == item.name) {
+              item.gender = 1
+            }
+          })
 
+          that.data.filetypeItems.forEach(item => {
+              if (data.filetype == item.name) {
+                item.filetype = 1
+              }
+            }),
+
+            that.data.s_2_1.forEach(item => {
+              if (data.s_2_1 == item.name) {
+                item.s_2_1 = 1
+              }
+            }),
+
+            that.data.s_2_2.forEach(item => {
+              if (data.s_2_2 == item.name) {
+                item.s_2_2 = 1
+              }
+            }),
+
+            that.data.s_2_3.forEach(item => {
+              if (data.s_2_3 == item.name) {
+                item.s_2_3 = 1
+              }
+            }),
+
+            that.data.s_2_4.forEach(item => {
+              if (data.s_2_4 == item.name) {
+                item.s_2_4 = 1
+              }
+            }),
+
+            that.data.s_2_5.forEach(item => {
+              if (data.s_2_5 == item.name) {
+                item.s_2_5 = 1
+              }
+            }),
+
+            that.data.s_3_0.forEach(item => {
+              if (data.s_3_0 == item.name) {
+                item.s_3_0 = 1
+              }
+            }),
+
+            that.data.s_3_1.forEach(item => {
+              if (data.s_3_1 == item.name) {
+                item.s_3_1 = 1
+              }
+            }),
+
+            that.data.s_3_2.forEach(item => {
+              if (data.s_3_2 == item.name) {
+                item.s_3_2 = 1
+              }
+            }),
+
+            that.data.s_3_3.forEach(item => {
+              if (data.s_3_3 == item.name) {
+                item.s_3_3 = 1
+              }
+            }),
+
+            that.data.s_3_4.forEach(item => {
+              if (data.s_3_4 == item.name) {
+                item.s_3_4 = 1
+              }
+            }),
+
+            that.setData({
+              // 单选框
+              genderItems: that.data.genderItems,
+              filetypeItems: that.data.filetypeItems,
+              s_2_1: that.data.s_2_1,
+              s_2_2: that.data.s_2_2,
+              s_2_3: that.data.s_2_3,
+              s_2_4: that.data.s_2_4,
+              s_2_5: that.data.s_2_5,
+              s_3_0: that.data.s_3_0,
+              s_3_1: that.data.s_3_1,
+              s_3_2: that.data.s_3_2,
+              s_3_3: that.data.s_3_3,
+              s_3_4: that.data.s_3_4,
+              // 输入框
+              usercode: data.usercode,
+              name: data.name,
+              phone: data.phone,
+              examiner: data.examiner,
+              examinerdate: data.examinerdate,
+              principal: data.principal,
+              assessedunit: data.assessedunit,
+            })
+        }
+      })
   },
 
   /**

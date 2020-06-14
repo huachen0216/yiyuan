@@ -12,7 +12,7 @@
 
 		<view class="add-text-section">
 			<view class='text-title'>1.1 档案编号: </view>
-			<input class="weui-input" placeholder="档案编号" value="{{filenumber}}" bindinput="inputChangeHandle" data-prop="filenumber" />
+			<input class="weui-input" value="{{usercode}}" disabled="true"/>
 		</view>
 
 		<view class="add-radio-section">
@@ -174,7 +174,6 @@
 	</view>
 
 	<view class="buttons">
-		<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
 		<button type="default" class="default" bindtap="canceleHandle">取消</button>
 	</view>
 </view>
