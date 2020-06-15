@@ -47,6 +47,9 @@ Page({
         duration: 2000
       })
     }
+    wx.setNavigationBarTitle({
+      title: '家庭医师签约',
+    })
   },
 
   /**

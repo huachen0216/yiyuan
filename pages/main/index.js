@@ -41,10 +41,45 @@ Page({
     })
   },
 
+  // 居民健康档案考核核查表
+  ResidentHealthChecklistMain(e) {
+    wx.navigateTo({
+      url: '../ResidentHealthChecklistMain/index'
+    })
+  },
+
   // 家庭医师签约
   FamilyDoctorSign(e) {
     wx.navigateTo({
       url: '../FamilyDoctorSignMain/index'
+    })
+  },
+
+  // 糖尿病管理核查表
+  DiabetesHealthManage(e) {
+    wx.navigateTo({
+      url: '../DiabetesHealthManage/index'
+    })
+  },
+
+  // 高血压管理核查表
+  HypertensionManage(e) {
+    wx.navigateTo({
+      url: '../HypertensionManage/index'
+    })
+  },
+
+  // 老年人中医药健康管理
+  ElderlyChineseHealthManageChecklistMain(e) {
+    wx.navigateTo({
+      url: '../ElderlyChineseHealthManageChecklistMain/index'
+    })
+  },
+
+  // 老年人健康管理核查表
+  ElderlyHealthManageChecklistMain(e) {
+    wx.navigateTo({
+      url: '../ElderlyHealthManageChecklistMain/index'
     })
   },
 

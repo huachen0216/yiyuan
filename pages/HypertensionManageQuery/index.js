@@ -455,7 +455,7 @@ Page({
               mask: true,
               success() {
                 setTimeout(function() {
-                  wx.redirectTo({
+                  wx.navigateBack({
                     url: '../HypertensionManage/index',
                   })
                 }, 1000)

@@ -72,7 +72,7 @@ Page({
         isDisabled: true
       }),
       wx.redirectTo({
-        url: '../FamilyDoctorSign/index',
+        url: '../FamilyDoctorSignMain/index',
       })
   },
 
@@ -82,7 +82,7 @@ Page({
    */
   canceleHandle(e) {
     wx.redirectTo({
-      url: '../FamilyDoctorSign/index',
+      url: '../FamilyDoctorSignMain/index',
     })
   },
 
@@ -102,8 +102,8 @@ Page({
             mask: true,
             success() {
               setTimeout(function () {
-                wx.redirectTo({
-                  url: '../FamilyDoctorSign/index',
+                wx.navigateBack({
+                  url: '../FamilyDoctorSignMain/index',
                 })
               }, 1000)
             }

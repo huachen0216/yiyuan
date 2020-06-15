@@ -11,7 +11,7 @@
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">居民健康档案考核核查表</button>
+	<button type="default" bindtap="ResidentHealthChecklistMain" disabled="{{isDisabled}}">居民健康档案考核核查表</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
@@ -19,18 +19,18 @@
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">糖尿病管理核查表</button>
+	<button type="default" bindtap="DiabetesHealthManage" disabled="{{isDisabled}}">糖尿病管理核查表</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">高血压管理核查表</button>
+	<button type="default" bindtap="HypertensionManage" disabled="{{isDisabled}}">高血压管理核查表</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">老年人中医药健康管理</button>
+	<button type="default" bindtap="ElderlyChineseHealthManageChecklistMain" disabled="{{isDisabled}}">老年人中医药健康管理</button>
 </view>
 
 <view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">老年人健康管理核查表</button>
+	<button type="default" bindtap="ElderlyHealthManageChecklistMain" disabled="{{isDisabled}}">老年人健康管理核查表</button>
 </view>
 

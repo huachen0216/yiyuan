@@ -46,6 +46,9 @@ Page({
         duration: 2000
       })
     }
+    wx.setNavigationBarTitle({
+      title: '老年人健康管理核查表',
+    })
   },
 
   /**

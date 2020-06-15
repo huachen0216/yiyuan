@@ -63,6 +63,9 @@ Page({
         duration: 2000
       })
     }
+    wx.setNavigationBarTitle({
+      title: '居民健康档案',
+    })
   },
 
   /**

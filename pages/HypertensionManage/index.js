@@ -48,6 +48,9 @@ Page({
         duration: 2000
       })
     }
+    wx.setNavigationBarTitle({
+      title: '高血压管理核查表',
+    })
   },
 
   /**

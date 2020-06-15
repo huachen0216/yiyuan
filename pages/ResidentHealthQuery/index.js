@@ -272,7 +272,7 @@ Page({
               mask: true,
               success() {
                 setTimeout(function() {
-                  wx.redirectTo({
+                  wx.navigateBack({
                     url: '../ResidentHealthMain/index',
                   })
                 }, 1000)

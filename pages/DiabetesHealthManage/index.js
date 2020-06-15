@@ -46,6 +46,9 @@ Page({
         duration: 2000
       })
     }
+    wx.setNavigationBarTitle({
+      title: '糖尿病管理核查表',
+    })
   },
 
   /**
