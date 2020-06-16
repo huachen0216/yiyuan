@@ -71,7 +71,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../FamilyDoctorSignMain/index',
       })
   },
@@ -81,7 +81,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../FamilyDoctorSignMain/index',
     })
   },
@@ -102,7 +102,7 @@ Page({
             mask: true,
             success() {
               setTimeout(function () {
-                wx.redirectTo({
+                wx.navigateBack({
                   url: '../FamilyDoctorSignMain/index',
                 })
               }, 1000)

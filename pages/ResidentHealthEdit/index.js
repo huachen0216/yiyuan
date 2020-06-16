@@ -286,7 +286,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../ResidentHealthMain/index',
       })
   },
@@ -296,7 +296,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ResidentHealthMain/index',
     })
   },

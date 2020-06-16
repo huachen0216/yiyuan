@@ -53,7 +53,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">2.1 健康管理服务记录表及相应表单的内容是否符合《国家基本公共卫生服务规范》（第三版）的要求 </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_2_1">
-				<view class="radio-item" wx:for="{{s_2_1}}">
+				<view class="radio-item" wx:for="{{s_2_1Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -63,7 +63,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">2.2 2019年，中医药健康管理服务记录表中，33项问题信息是否完整采集 </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_2_2">
-				<view class="radio-item" wx:for="{{s_2_2}}">
+				<view class="radio-item" wx:for="{{s_2_2Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -73,7 +73,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">2.3 2019年，中医药健康管理服务记录表中，是否根据体质判定标准表的记录情况，完整且正确的填写体质类型 </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_2_3">
-				<view class="radio-item" wx:for="{{s_2_3}}">
+				<view class="radio-item" wx:for="{{s_2_3Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -83,7 +83,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">2.4 2019年，中医药健康管理服务记录表中，是否填写中医药保健指导 </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_2_4">
-				<view class="radio-item" wx:for="{{s_2_4}}">
+				<view class="radio-item" wx:for="{{s_2_4Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -93,7 +93,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title" style="font-weight: bold;">2.5 是否合格：</view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_2_5">
-				<view class="radio-item" wx:for="{{s_2_5}}">
+				<view class="radio-item" wx:for="{{s_2_5Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -107,7 +107,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">联系结果：</view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_3_0">
-				<view class="radio-item" wx:for="{{s_3_0}}">
+				<view class="radio-item" wx:for="{{s_3_0Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -117,7 +117,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">3.1 回答问题者与核查对象的关系 </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_3_1">
-				<view class="radio-item" wx:for="{{s_3_1}}">
+				<view class="radio-item" wx:for="{{s_3_1Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -127,7 +127,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">3.2 在2019年，基层医疗机构为您做过中医体质辨识吗？ </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_3_2">
-				<view class="radio-item" wx:for="{{s_3_2}}">
+				<view class="radio-item" wx:for="{{s_3_2Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -137,7 +137,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title">3.3 基层医疗机构的医务人员根据您的中医体质类型是否对您进行了中医药保健指导？ </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_3_3">
-				<view class="radio-item" wx:for="{{s_3_3}}">
+				<view class="radio-item" wx:for="{{s_3_3Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>
@@ -147,7 +147,7 @@
 		<view class="add-radio-section">
 			<view class="radio-title" style="font-weight: bold;">3.4 真实性核实： </view>
 			<radio-group bindchange="inputChangeHandle" data-prop="s_3_4">
-				<view class="radio-item" wx:for="{{s_3_4}}">
+				<view class="radio-item" wx:for="{{s_3_4Items}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
 				</view>

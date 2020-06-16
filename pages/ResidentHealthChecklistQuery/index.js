@@ -330,7 +330,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ResidentHealthChecklistMain/index',
     })
   },

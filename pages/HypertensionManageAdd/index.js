@@ -620,7 +620,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../HypertensionManage/index',
       })
   },
@@ -631,7 +631,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../HypertensionManage/index',
     })
   },
@@ -652,7 +652,7 @@ Page({
             mask: true,
             success() {
               setTimeout(function () {
-                wx.redirectTo({
+                wx.navigateBack({
                   url: '../FamilyDoctorSign/index',
                 })
               }, 1000)

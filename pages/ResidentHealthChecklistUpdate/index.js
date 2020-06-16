@@ -357,7 +357,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../ResidentHealthChecklistMain/index',
       })
   },
@@ -367,7 +367,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ResidentHealthChecklistMain/index',
     })
   },

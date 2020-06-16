@@ -46,7 +46,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../FamilyDoctorSignMain/index',
     })
   },

@@ -356,7 +356,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../ResidentHealthChecklistMain/index',
       })
   },
@@ -366,7 +366,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ResidentHealthChecklistMain/index',
     })
   },
@@ -387,37 +387,7 @@ Page({
             mask: true,
             success() {
               setTimeout(function () {
-                wx.redirectTo({
-                  url: '../ResidentHealthChecklistMain/index',
-                })
-              }, 1000)
-            }
-          })
-        }
-      }
-    })
-    that.setData({
-      usercode: options.usercode
-    })
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-    var that = this;
-    DB.where({
-      usercode: options.usercode
-    }).get({
-      success(res) {
-        if (res.data.length > 0) {
-          wx.showToast({
-            title: '用户已存在',
-            duration: 2000,
-            mask: true,
-            success() {
-              setTimeout(function () {
-                wx.redirectTo({
+                wx.navigateBack({
                   url: '../ResidentHealthChecklistMain/index',
                 })
               }, 1000)

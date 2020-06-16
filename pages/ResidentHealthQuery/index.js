@@ -412,7 +412,7 @@ Page({
    * @param {*} e 
    */
   returnHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ResidentHealthMain/index',
     })
   },

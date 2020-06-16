@@ -650,7 +650,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../DiabetesHealthManage/index',
       })
   },
@@ -660,7 +660,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../DiabetesHealthManage/index',
     })
   },

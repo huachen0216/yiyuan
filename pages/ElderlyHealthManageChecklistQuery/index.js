@@ -18,7 +18,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_1: [{
+    s_2_1Items: [{
         name: '本人',
         value: '2_1_1',
         gender: 0
@@ -34,7 +34,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_2: [{
+    s_2_2Items: [{
         name: '体检过',
         value: '2_2_1',
         gender: 0
@@ -55,7 +55,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_4: [{
+    s_2_4Items: [{
         name: '有通知',
         value: '2_4_1',
         gender: 0
@@ -71,7 +71,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_1: [{
+    s_3_1Items: [{
         name: '有（为不真实）',
         value: '3_1_1',
         gender: 0
@@ -82,7 +82,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_2: [{
+    s_3_2Items: [{
         name: '访谈记录与档案记录项目相符，有查体（血压、体重）和辅助查体记录。',
         value: '3_2_1',
         gender: 0
@@ -108,7 +108,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_3: [{
+    s_3_3Items: [{
         name: '真实',
         value: '3_3_1',
         gender: 0
@@ -119,7 +119,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_1: [{
+    s_4_1Items: [{
         name: '建立健康档案,健康档案封面和个人基本信息表填写完整',
         value: '4_1_1',
         gender: 0
@@ -140,7 +140,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_3: [{
+    s_4_3Items: [{
         name: '健康指导正确、无漏项',
         value: '4_3_1',
         gender: 0
@@ -161,7 +161,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_5: [{
+    s_4_5Items: [{
         name: '完整',
         value: '4_5_1',
         gender: 0
@@ -384,12 +384,12 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ElderlyHealthManageChecklistMain/index',
     })
   },
 
-    /**
+  /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
@@ -405,10 +405,10 @@ Page({
               duration: 2000,
               mask: true,
               success() {
-                setTimeout(function() {
+                setTimeout(function () {
                   wx.navigateBack({
                     url: '../ElderlyHealthManageChecklistMain/index',
-                  })
+                  }, 2000)
                 }, 1000)
               }
             })
@@ -442,7 +442,7 @@ Page({
           })
 
           if (data.healthCB !== undefined) {
-            that.data.childChechealthCheckBoxItemskboxItems.forEach(item => {
+            that.data.healthCheckBoxItems.forEach(item => {
               data.healthCB.forEach(healthCBItem => {
                 if (healthCBItem == item.value) {
                   item.status = 1
@@ -474,72 +474,72 @@ Page({
             }
           })
 
-          that.data.s_2_1.forEach(item => {
+          that.data.s_2_1Items.forEach(item => {
               if (data.s_2_1 == item.name) {
-                item.s_2_1 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_2_2.forEach(item => {
+            that.data.s_2_2Items.forEach(item => {
               if (data.s_2_2 == item.name) {
-                item.s_2_2 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_2_4.forEach(item => {
+            that.data.s_2_4Items.forEach(item => {
               if (data.s_2_4 == item.name) {
-                item.s_2_4 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_3_1.forEach(item => {
+            that.data.s_3_1Items.forEach(item => {
               if (data.s_3_1 == item.name) {
-                item.s_3_1 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_3_2.forEach(item => {
+            that.data.s_3_2Items.forEach(item => {
               if (data.s_3_2 == item.name) {
-                item.s_3_2 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_3_3.forEach(item => {
+            that.data.s_3_3Items.forEach(item => {
               if (data.s_3_3 == item.name) {
-                item.s_3_3 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_4_1.forEach(item => {
+            that.data.s_4_1Items.forEach(item => {
               if (data.s_4_1 == item.name) {
-                item.s_4_1 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_4_3.forEach(item => {
+            that.data.s_4_3Items.forEach(item => {
               if (data.s_4_3 == item.name) {
-                item.s_4_3 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_4_5.forEach(item => {
+            that.data.s_4_5Items.forEach(item => {
               if (data.s_4_5 == item.name) {
-                item.s_4_5 = 1
+                item.gender = 1
               }
             }),
 
             that.setData({
               // 单选框
               genderItems: that.data.genderItems,
-              s_2_1: that.data.s_2_1,
-              s_2_2: that.data.s_2_2,
-              s_2_4: that.data.s_2_4,
-              s_3_1: that.data.s_3_1,
-              s_3_2: that.data.s_3_2,
-              s_3_3: that.data.s_3_3,
-              s_4_1: that.data.s_4_1,
-              s_4_3: that.data.s_4_3,
-              s_4_5: that.data.s_4_5,
+              s_2_1Items: that.data.s_2_1Items,
+              s_2_2Items: that.data.s_2_2Items,
+              s_2_4Items: that.data.s_2_4Items,
+              s_3_1Items: that.data.s_3_1Items,
+              s_3_2Items: that.data.s_3_2Items,
+              s_3_3Items: that.data.s_3_3Items,
+              s_4_1Items: that.data.s_4_1Items,
+              s_4_3Items: that.data.s_4_3Items,
+              s_4_5Items: that.data.s_4_5Items,
               // 输入框
               usercode: data.usercode,
               name: data.name,

@@ -28,7 +28,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_1: [{
+    s_2_1Items: [{
         name: '是',
         value: '2_1_yes',
         gender: 0
@@ -39,7 +39,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_2: [{
+    s_2_2Items: [{
         name: '是',
         value: '2_2_yes',
         gender: 0
@@ -50,7 +50,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_3: [{
+    s_2_3Items: [{
         name: '是',
         value: '2_3_yes',
         gender: 0
@@ -61,7 +61,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_4: [{
+    s_2_4Items: [{
         name: '是',
         value: '2_4_yes',
         gender: 0
@@ -72,7 +72,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_5: [{
+    s_2_5Items: [{
         name: '合格',
         value: '2_5_yes',
         gender: 0
@@ -83,7 +83,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_0: [{
+    s_3_0Items: [{
         name: '联系上，接受访谈（不失访，继续问卷）',
         value: '3_0_1',
         gender: 0
@@ -104,7 +104,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_1: [{
+    s_3_1Items: [{
         name: '本人',
         value: '3_1_1',
         gender: 0
@@ -115,7 +115,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_2: [{
+    s_3_2Items: [{
         name: '做过',
         value: '3_2_1',
         gender: 0
@@ -131,7 +131,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_3: [{
+    s_3_3Items: [{
         name: '是',
         value: '3_3_1',
         gender: 0
@@ -142,7 +142,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_4: [{
+    s_3_4Items: [{
         name: '真实',
         value: '3_4_1',
         gender: 0
@@ -195,7 +195,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../ElderlyChineseHealthManageChecklistMain/index',
       })
   },
@@ -205,7 +205,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ElderlyChineseHealthManageChecklistMain/index',
     })
   },
@@ -226,7 +226,7 @@ Page({
             mask: true,
             success() {
               setTimeout(function () {
-                wx.redirectTo({
+                wx.navigateBack({
                   url: '../ElderlyChineseHealthManageChecklistMain/index',
                 })
               }, 1000)

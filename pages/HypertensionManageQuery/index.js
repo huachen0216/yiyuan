@@ -18,7 +18,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_1: [{
+    s_2_1Items: [{
         name: '本人',
         value: '2_1_1',
         gender: 0
@@ -34,7 +34,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_2: [{
+    s_2_2Items: [{
         name: '高血压',
         value: '2_2_1',
         gender: 0
@@ -60,7 +60,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_3: [{
+    s_2_3Items: [{
         name: '体检过（进行了血压、血糖测量和心肺听诊）（跳转到2.5）',
         value: '2_3_1',
         gender: 0
@@ -76,7 +76,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_4: [{
+    s_2_4Items: [{
         name: '不知道有体检，没接到通知',
         value: '2_4_1',
         gender: 0
@@ -92,7 +92,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_5: [{
+    s_2_5Items: [{
         name: '大约每月随访一次（含不到一个月）',
         value: '2_5_1',
         gender: 0
@@ -133,7 +133,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_7: [{
+    s_2_7Items: [{
         name: '不知道有随访，没接到通知',
         value: '2_7_1',
         gender: 0
@@ -149,7 +149,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_1: [{
+    s_3_1Items: [{
         name: '有（为不真实，跳转到3.3）',
         value: '3_1_1',
         gender: 0
@@ -160,7 +160,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_3: [{
+    s_3_3Items: [{
         name: '真实',
         value: '3_3_1',
         gender: 0
@@ -171,7 +171,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_3: [{
+    s_4_3Items: [{
         name: '达到国家规范要求频次（3次及以上）',
         value: '4_3_1',
         gender: 0
@@ -182,7 +182,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_5: [{
+    s_4_5Items: [{
         name: '是',
         value: '4_5_1',
         gender: 0
@@ -193,7 +193,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_6: [{
+    s_4_6Items: [{
         name: '规范',
         value: '4_6_1',
         gender: 0
@@ -204,7 +204,7 @@ Page({
         gender: 0
       }
     ],
-    s_5_1: [{
+    s_5_1Items: [{
         name: '是',
         value: '5_1_1',
         gender: 0
@@ -216,6 +216,169 @@ Page({
       }
     ],
     // checkbox item 定义
+    healthGuidanceCheckBoxItems: [{
+        name: '饮食、运动',
+        value: '2-5-1',
+        status: 0
+      },
+      {
+        name: '戒烟、限酒',
+        value: '2-5-2',
+        status: 0
+      },
+      {
+        name: '药物使用',
+        value: '2-5-3',
+        status: 0
+      },
+      {
+        name: '药物使用',
+        value: '2-5-4',
+        status: 0
+      },
+      {
+        name: '其他',
+        value: '2-5-5',
+        status: 0
+      },
+      {
+        name: '记不清（失访）',
+        value: '2-5-6',
+        status: 0
+      }
+    ],
+    healthCheckBoxItems: [{
+        name: '症状',
+        value: '4-2-1',
+        status: 0
+      },
+      {
+        name: '血压',
+        value: '4-2-2',
+        status: 0
+      },
+      {
+        name: '身高、体重、腰围',
+        value: '4-2-3',
+        status: 0
+      },
+      {
+        name: '老年人生活自理能力评估（有评估表）',
+        value: '4-2-4',
+        status: 0
+      },
+      {
+        name: '生活方式',
+        value: '4-2-5',
+        status: 0
+      },
+      {
+        name: '口腔、视力、听力和运动功能',
+        value: '4-2-6',
+        status: 0
+      },
+      {
+        name: '心、肺、腹部检查',
+        value: '4-2-7',
+        status: 0
+      },
+      {
+        name: '血常规',
+        value: '4-2-8',
+        status: 0
+      },
+      {
+        name: '尿常规',
+        value: '4-2-9',
+        status: 0
+      },
+      {
+        name: '肝功能 (血清谷草转氨酶、血清谷丙转氨酶、总胆红素)',
+        value: '4-2-10',
+        status: 0
+      },
+      {
+        name: '肾功能（血清肌酐、血尿素氮）',
+        value: '4-2-11',
+        status: 0
+      },
+      {
+        name: '血脂（总胆固醇、甘油三酯、高密度脂蛋白胆固醇、低密度脂蛋白胆固醇）',
+        value: '4-2-12',
+        status: 0
+      },
+      {
+        name: '空腹血糖',
+        value: '4-2-13',
+        status: 0
+      },
+      {
+        name: '心电图',
+        value: '4-2-14',
+        status: 0
+      },
+      {
+        name: '危险因素控制（无危险因素可空项）',
+        value: '4-2-15',
+        status: 0
+      },
+      {
+        name: '腹部B超',
+        value: '4-2-16',
+        status: 0
+      },
+      {
+        name: '超重肥胖（包括腹型肥胖）以及辅助检查异常结果未评价',
+        value: '4-2-17',
+        status: 0
+      },
+      {
+        name: '无空项、漏项或错项',
+        value: '4-2-18',
+        status: 0
+      }
+    ],
+    healthReportCheckBoxItems: [{
+        name: '有',
+        value: '4-4-1',
+        status: 0
+      },
+      {
+        name: '缺少尿常规结果报告单',
+        value: '4-4-2',
+        status: 0
+      },
+      {
+        name: '缺少血常规结果报告单',
+        value: '4-4-3',
+        status: 0
+      },
+      {
+        name: '①缺少肝功能结果报告单',
+        value: '4-4-4',
+        status: 0
+      },
+      {
+        name: '缺少肾功能结果报告单',
+        value: '4-4-5',
+        status: 0
+      },
+      {
+        name: '缺少血脂结果报告单 ',
+        value: '4-4-6',
+        status: 0
+      },
+      {
+        name: '缺少空腹血糖结果报告单',
+        value: '4-4-7',
+        status: 0
+      },
+      {
+        name: '缺少心电图报告单',
+        value: '4-4-8',
+        status: 0
+      }
+    ],
     checkServiceCheckBoxItems: [{
         name: '测量血压',
         value: '2-6-1',
@@ -425,7 +588,8 @@ Page({
     assessedunit: '',
     bloodpressure: '',
     // 按钮状态
-    isDisabled: false
+    isDisabled: false,
+    id: ''
   },
 
   /**
@@ -433,7 +597,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../HypertensionManage/index',
     })
   },

@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/HypertensionManage/index",
     "pages/main/index",
     "pages/logs/logs"
   ],

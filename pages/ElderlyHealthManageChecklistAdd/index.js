@@ -18,7 +18,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_1: [{
+    s_2_1Items: [{
         name: '本人',
         value: '2_1_1',
         gender: 0
@@ -34,7 +34,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_2: [{
+    s_2_2Items: [{
         name: '体检过',
         value: '2_2_1',
         gender: 0
@@ -55,7 +55,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_4: [{
+    s_2_4Items: [{
         name: '有通知',
         value: '2_4_1',
         gender: 0
@@ -71,7 +71,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_1: [{
+    s_3_1Items: [{
         name: '有（为不真实）',
         value: '3_1_1',
         gender: 0
@@ -82,7 +82,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_2: [{
+    s_3_2Items: [{
         name: '访谈记录与档案记录项目相符，有查体（血压、体重）和辅助查体记录。',
         value: '3_2_1',
         gender: 0
@@ -108,7 +108,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_3: [{
+    s_3_3Items: [{
         name: '真实',
         value: '3_3_1',
         gender: 0
@@ -119,7 +119,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_1: [{
+    s_4_1Items: [{
         name: '建立健康档案,健康档案封面和个人基本信息表填写完整',
         value: '4_1_1',
         gender: 0
@@ -140,7 +140,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_3: [{
+    s_4_3Items: [{
         name: '健康指导正确、无漏项',
         value: '4_3_1',
         gender: 0
@@ -161,7 +161,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_5: [{
+    s_4_5Items: [{
         name: '完整',
         value: '4_5_1',
         gender: 0
@@ -408,7 +408,7 @@ Page({
       this.setData({
         isDisabled: true
       }),
-      wx.redirectTo({
+      wx.navigateBack({
         url: '../ElderlyHealthManageChecklistMain/index',
       })
   },
@@ -418,7 +418,7 @@ Page({
    * @param {*} e 
    */
   canceleHandle(e) {
-    wx.redirectTo({
+    wx.navigateBack({
       url: '../ElderlyHealthManageChecklistMain/index',
     })
   },
@@ -439,7 +439,7 @@ Page({
             mask: true,
             success() {
               setTimeout(function () {
-                wx.redirectTo({
+                wx.navigateBack({
                   url: '../ElderlyHealthManageChecklistMain/index',
                 })
               }, 1000)
