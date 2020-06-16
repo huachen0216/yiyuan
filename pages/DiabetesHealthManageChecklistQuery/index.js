@@ -17,7 +17,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_1: [{
+    s_2_1Items: [{
         name: '本人',
         value: '2_1_1',
         gender: 0
@@ -33,7 +33,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_2: [{
+    s_2_2Items: [{
         name: '糖尿病',
         value: '2_2_1',
         gender: 0
@@ -59,7 +59,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_3: [{
+    s_2_3Items: [{
         name: '体检过（进行了血压、血糖测量和心肺听诊）（跳转到2.5）',
         value: '2_3_1',
         gender: 0
@@ -75,7 +75,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_5: [{
+    s_2_5Items: [{
         name: '大约每月随访一次（含不到一个月）',
         value: '2_5_1',
         gender: 0
@@ -116,7 +116,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_4: [{
+    s_2_4Items: [{
         name: '体检过（进行了血压、血糖测量和心肺听诊）（跳转到2.5）',
         value: '2_4_1',
         gender: 0
@@ -132,7 +132,7 @@ Page({
         gender: 0
       }
     ],
-    s_2_7: [{
+    s_2_7Items: [{
         name: '不知道有随访，没接到通知',
         value: '2_7_1',
         gender: 0
@@ -148,7 +148,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_1: [{
+    s_3_1Items: [{
         name: '有（为不真实，跳转到3.3）',
         value: '3_1_1',
         gender: 0
@@ -159,7 +159,7 @@ Page({
         gender: 0
       }
     ],
-    s_3_3: [{
+    s_3_3Items: [{
         name: '真实',
         value: '3_3_1',
         gender: 0
@@ -170,7 +170,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_3: [{
+    s_4_3Items: [{
         name: '达到国家规范要求频次（3次及以上）',
         value: '4_3_1',
         gender: 0
@@ -181,7 +181,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_5: [{
+    s_4_5Items: [{
         name: '是',
         value: '4_5_1',
         gender: 0
@@ -192,7 +192,7 @@ Page({
         gender: 0
       }
     ],
-    s_4_6: [{
+    s_4_6Items: [{
         name: '规范',
         value: '4_6_1',
         gender: 0
@@ -203,7 +203,7 @@ Page({
         gender: 0
       }
     ],
-    s_5_1: [{
+    s_5_1Items: [{
         name: '是',
         value: '5_1_1',
         gender: 0
@@ -644,7 +644,7 @@ Page({
               duration: 2000,
               mask: true,
               success() {
-                setTimeout(function() {
+                setTimeout(function () {
                   wx.navigateBack({
                     url: '../DiabetesHealthManage/index',
                   })
@@ -726,93 +726,93 @@ Page({
             }
           })
 
-          that.data.s_2_1.forEach(item => {
+          that.data.s_2_1Items.forEach(item => {
               if (data.s_2_1 == item.name) {
-                item.s_2_1 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_2_2.forEach(item => {
+            that.data.s_2_2Items.forEach(item => {
               if (data.s_2_2 == item.name) {
-                item.s_2_2 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_2_3.forEach(item => {
+            that.data.s_2_3Items.forEach(item => {
               if (data.s_2_3 == item.name) {
-                item.s_2_3 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_2_4.forEach(item => {
+            that.data.s_2_4Items.forEach(item => {
               if (data.s_2_4 == item.name) {
-                item.s_2_4 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_2_5.forEach(item => {
+            that.data.s_2_5Items.forEach(item => {
               if (data.s_2_5 == item.name) {
-                item.s_2_5 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_2_7.forEach(item => {
+            that.data.s_2_7Items.forEach(item => {
               if (data.s_2_7 == item.name) {
-                item.s_2_7 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_3_1.forEach(item => {
+            that.data.s_3_1Items.forEach(item => {
               if (data.s_3_1 == item.name) {
-                item.s_3_1 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_3_3.forEach(item => {
+            that.data.s_3_3Items.forEach(item => {
               if (data.s_3_3 == item.name) {
-                item.s_3_3 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_4_3.forEach(item => {
+            that.data.s_4_3Items.forEach(item => {
               if (data.s_4_3 == item.name) {
-                item.s_4_3 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_4_5.forEach(item => {
+            that.data.s_4_5Items.forEach(item => {
               if (data.s_4_5 == item.name) {
-                item.s_4_5 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_4_6.forEach(item => {
+            that.data.s_4_6Items.forEach(item => {
               if (data.s_4_6 == item.name) {
-                item.s_4_6 = 1
+                item.gender = 1
               }
             }),
 
-            that.data.s_5_1.forEach(item => {
+            that.data.s_5_1Items.forEach(item => {
               if (data.s_5_1 == item.name) {
-                item.s_5_1 = 1
+                item.gender = 1
               }
             }),
 
             that.setData({
               // 单选框
               genderItems: that.data.genderItems,
-              s_2_1: that.data.s_2_1,
-              s_2_2: that.data.s_2_2,
-              s_2_3: that.data.s_2_3,
-              s_2_4: that.data.s_2_4,
-              s_2_5: that.data.s_2_5,
-              s_2_7:that.data.s_2_7,
-              s_3_1:that.data.s_3_1,
-              s_3_3:that.data.s_3_3,
-              s_4_3:that.data.s_4_3,
-              s_4_5:that.data.s_4_5,
-              s_4_6:that.data.s_4_6,
-              s_5_1:that.data.s_5_1,
+              s_2_1Items: that.data.s_2_1Items,
+              s_2_2Items: that.data.s_2_2Items,
+              s_2_3Items: that.data.s_2_3Items,
+              s_2_4Items: that.data.s_2_4Items,
+              s_2_5Items: that.data.s_2_5Items,
+              s_2_7Items: that.data.s_2_7Items,
+              s_3_1Items: that.data.s_3_1Items,
+              s_3_3Items: that.data.s_3_3Items,
+              s_4_3Items: that.data.s_4_3Items,
+              s_4_5Items: that.data.s_4_5Items,
+              s_4_6Items: that.data.s_4_6Items,
+              s_5_1Items: that.data.s_5_1Items,
               // 输入框
               usercode: data.usercode,
               assessedunit: data.assessedunit,

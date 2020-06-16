@@ -9,6 +9,7 @@ Page({
     // input变量定义
     usercode: '',
     signtime: '',
+    signperson: '',
     partya: '',
     idcard: '',
     contractphone: '',
@@ -114,6 +115,7 @@ Page({
           // input变量定义
           usercode: data.usercode,
           signtime: data.signtime,
+          signperson: data.signperson,
           partya: data.partya,
           idcard: data.idcard,
           contractphone: data.contractphone,

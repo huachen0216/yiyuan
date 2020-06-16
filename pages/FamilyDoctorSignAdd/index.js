@@ -9,6 +9,7 @@ Page({
     // input变量定义
     usercode: '',
     signtime: '',
+    signperson: '',
     partya: '',
     idcard: '',
     contractphone: '',
@@ -71,7 +72,7 @@ Page({
         isDisabled: true
       }),
       wx.redirectTo({
-        url: '../FamilyDoctorSign/index',
+        url: '../FamilyDoctorSignMain/index',
       })
   },
 
@@ -81,7 +82,7 @@ Page({
    */
   canceleHandle(e) {
     wx.redirectTo({
-      url: '../FamilyDoctorSign/index',
+      url: '../FamilyDoctorSignMain/index',
     })
   },
 
@@ -102,7 +103,7 @@ Page({
             success() {
               setTimeout(function () {
                 wx.redirectTo({
-                  url: '../FamilyDoctorSign/index',
+                  url: '../FamilyDoctorSignMain/index',
                 })
               }, 1000)
             }
