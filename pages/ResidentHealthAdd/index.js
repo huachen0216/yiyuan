@@ -39,6 +39,10 @@ Page({
       {
         name: '保姆看护',
         value: 'bm'
+      },
+      {
+        name: '父母',
+        value: 'fm'
       }
     ],
 
@@ -229,7 +233,6 @@ Page({
     huji: '',
     address: '',
     policestation: '',
-    currentdisease: '',
     acigarette: '',
     smokeage: '',
     drinkage: '',
@@ -240,6 +243,29 @@ Page({
     liquor: '',
     redwine: '',
     meal: '',
+    // 新增加的字段
+    employer: '',
+    hypertensionYear: '',
+    hypertensionInstructions: '',
+    hypertensionDosage: '',
+    bloodPressure: '',
+    hypertensionState: '',
+    hypertensionMedication: '',
+    diabetesYear: '',
+    diabetesInstructions: '',
+    diabetesDosage: '',
+    bloodSugarPressure: '',
+    diabetesState: '',
+    diabetesMedication: '',
+    heartDiseaseYear: '',
+    heartDiseaseInstructions: '',
+    heartDiseaseDosage: '',
+    nosmketime: '',
+    nodrinktime: '',
+    monthlyIncome: '',
+    cars: '',
+    realEstate: '',
+    financialProduct: '',
     // 按钮状态
     isDisabled: false
   },

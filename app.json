@@ -1,6 +1,9 @@
 {
   "pages":[
+    "pages/ResidentHealthMain/index",
+    "pages/ResidentHealthChecklistMain/index",
     "pages/main/index",
+    "pages/ResidentHealthAdd/index",
     "pages/logs/logs"
   ],
   "window":{
