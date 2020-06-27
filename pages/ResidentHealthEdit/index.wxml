@@ -1,254 +1,385 @@
 <view class="addPageMain">
-	<view class="add-text-section">
-		<view class='text-title'>编号:</view>
-		<input class="weui-input" value="{{usercode}}" disabled="True" />
+	<text class="text-style">居民健康档案</text>
+
+	<view class="vcontainer">
+		<view class='text-section-title'>1 基础资料</view>
+
+
+		<view class="add-text-section">
+			<view class='text-title'>编号:</view>
+			<input class="weui-input" value="{{usercode}}" disabled="True" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>姓名:</view>
+			<input class="weui-input" placeholder="姓名" value="{{username}}" bindinput="inputChangeHandle" data-prop="username" />
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">性别：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="gender">
+				<view class="radio-item" wx:for="{{genderItems}}">
+					<radio value="{{item.name}}" checked="{{ item.gender == '1' }}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+		<view class="add-text-section">
+			<view class='text-title'>身高(cm):</view>
+			<input class="weui-input" placeholder="身高" value="{{height}}" bindinput="inputChangeHandle" data-prop="height" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>体重(kg):</view>
+			<input class="weui-input" placeholder="体重" value="{{weight}}" bindinput="inputChangeHandle" data-prop="weight" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>学历:</view>
+			<input class="weui-input" placeholder="学历" value="{{education}}" bindinput="inputChangeHandle" data-prop="education" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>医保卡号:</view>
+			<input class="weui-input" placeholder="医保卡号" value="{{medicarecardNumber}}" bindinput="inputChangeHandle" data-prop="medicarecardNumber" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>定点医院:</view>
+			<input class="weui-input" placeholder="定点医院" value="{{positionsospital}}" bindinput="inputChangeHandle" data-prop="positionsospital" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>联系电话:</view>
+			<input class="weui-input" placeholder="联系电话" value="{{phone}}" bindinput="inputChangeHandle" data-prop="phone" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>药物过敏史:</view>
+			<input class="weui-input" placeholder="药物过敏史" value="{{drugallergy}}" bindinput="inputChangeHandle" data-prop="drugallergy" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>民族:</view>
+			<input class="weui-input" placeholder="民族" value="{{nation}}" bindinput="inputChangeHandle" data-prop="nation" />
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">户别：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="household">
+				<view class="radio-item" wx:for="{{householdItems}}">
+					<radio value="{{item.name}}" checked="{{item.household == '1' }}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>手术名称:</view>
+			<input class="weui-input" placeholder="手术名称" value="{{surgeryname}}" bindinput="inputChangeHandle" data-prop="surgeryname" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>手术时间:</view>
+			<input class="weui-input" placeholder="手术时间" value="{{surgerytime}}" bindinput="inputChangeHandle" data-prop="surgerytime" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>紧急情况联系人:</view>
+			<input class="weui-input" placeholder="紧急情况联系人" value="{{emergencycontact}}" bindinput="inputChangeHandle" data-prop="emergencycontact" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>紧急人联系电话:</view>
+			<input class="weui-input" placeholder="紧急人联系电话" value="{{emergencycontactphone}}" bindinput="inputChangeHandle" data-prop="emergencycontactphone" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>户口所在地:</view>
+			<input class="weui-input" placeholder="户口所在地" value="{{location}}" bindinput="inputChangeHandle" data-prop="location" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>户籍:</view>
+			<input class="weui-input" placeholder="户籍" value="{{huji}}" bindinput="inputChangeHandle" data-prop="huji" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>现住址:</view>
+			<input class="weui-input" placeholder="现住址" value="{{address}}" bindinput="inputChangeHandle" data-prop="address" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>工作单位:</view>
+			<input class="weui-input" placeholder="工作单位" value="{{employer}}" bindinput="inputChangeHandle" data-prop="employer" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>所属派出所:</view>
+			<input class="weui-input" placeholder="所属派出所" value="{{policestation}}" bindinput="inputChangeHandle" data-prop="policestation" />
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">居住状况：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="livingcond">
+				<view class="radio-item" wx:for="{{livingConditionItems}}">
+					<radio value="{{item.name}}" checked="{{item.livingcond == '1'}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
 	</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>姓名:</view>
-		<input class="weui-input" placeholder="姓名" value="{{username}}" bindinput="inputChangeHandle" data-prop="username" />
-	</view>
+	<view class="vcontainer">
+		<view class='text-section-title'>2 健康情况</view>
 
-	<view class="add-radio-section">
-		<view class="radio-title">性别：</view>
-		<radio-group bindchange="inputChangeHandle" data-prop="gender">
-			<view class="radio-item" wx:for="{{genderItems}}">
-				<radio value="{{item.name}}" checked="{{ item.gender == '1' }}"></radio>
-				<label>{{item.name}}</label>
-			</view>
-		</radio-group>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>血型:</view>
+			<input class="weui-input" placeholder="血型" value="{{bloodtype}}" bindinput="inputChangeHandle" data-prop="bloodtype" />
+		</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>血型:</view>
-		<input class="weui-input" placeholder="血型" value="{{bloodtype}}" bindinput="inputChangeHandle" data-prop="bloodtype" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>身高(cm):</view>
-		<input class="weui-input" placeholder="身高" value="{{height}}" 
-		bindinput="inputChangeHandle" data-prop="height" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>体重(kg):</view>
-		<input class="weui-input" placeholder="体重" value="{{weight}}" bindinput="inputChangeHandle" data-prop="weight" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>学历:</view>
-		<input class="weui-input" placeholder="学历" value="{{education}}" bindinput="inputChangeHandle" data-prop="education" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>医保卡号:</view>
-		<input class="weui-input" placeholder="医保卡号" value="{{medicarecardNumber}}" bindinput="inputChangeHandle" data-prop="medicarecardNumber" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>定点医院:</view>
-		<input class="weui-input" placeholder="定点医院" value="{{positionsospital}}" bindinput="inputChangeHandle" data-prop="positionsospital" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>联系电话:</view>
-		<input class="weui-input" placeholder="联系电话" value="{{phone}}" bindinput="inputChangeHandle" data-prop="phone" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>药物过敏史:</view>
-		<input class="weui-input" placeholder="药物过敏史" value="{{drugallergy}}" bindinput="inputChangeHandle" data-prop="drugallergy" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>民族:</view>
-		<input class="weui-input" placeholder="民族" value="{{nation}}" bindinput="inputChangeHandle" data-prop="nation" />
-	</view>
-
-	<view class="add-radio-section">
-		<view class="radio-title">户别：</view>
-		<radio-group bindchange="inputChangeHandle" data-prop="household">
-			<view class="radio-item" wx:for="{{householdItems}}">
-				<radio value="{{item.name}}" checked="{{item.household == '1' }}"></radio>
-				<label>{{item.name}}</label>
-			</view>
-		</radio-group>
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>手术名称:</view>
-		<input class="weui-input" placeholder="手术名称" value="{{surgeryname}}" bindinput="inputChangeHandle" data-prop="surgeryname" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>手术时间:</view>
-		<input class="weui-input" placeholder="手术时间" value="{{surgerytime}}" bindinput="inputChangeHandle" data-prop="surgerytime" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>紧急情况联系人:</view>
-		<input class="weui-input" placeholder="紧急情况联系人" value="{{emergencycontact}}" bindinput="inputChangeHandle" data-prop="emergencycontact" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>紧急人联系电话:</view>
-		<input class="weui-input" placeholder="紧急人联系电话" value="{{emergencycontactphone}}" bindinput="inputChangeHandle" data-prop="emergencycontactphone" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>户口所在地:</view>
-		<input class="weui-input" placeholder="户口所在地" value="{{location}}" bindinput="inputChangeHandle" data-prop="location" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>户籍:</view>
-		<input class="weui-input" placeholder="户籍" value="{{huji}}" bindinput="inputChangeHandle" data-prop="huji" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>现住址:</view>
-		<input class="weui-input" placeholder="现住址" value="{{address}}" bindinput="inputChangeHandle" data-prop="address" />
-	</view>
-
-	<view class="add-text-section">
-		<view class='text-title'>所属派出所:</view>
-		<input class="weui-input" placeholder="所属派出所" value="{{policestation}}" bindinput="inputChangeHandle" data-prop="policestation" />
-	</view>
-
-	<view class="add-text-section">
 		<view class='text-title'>现患疾病:</view>
-		<input class="weui-input" placeholder="现患疾病" value="{{currentdisease}}" bindinput="inputChangeHandle" data-prop="currentdisease" />
+		<view class="add-text-section">
+			<view class='text-title'>1. 高血压</view>
+			<input class="item-input-value" placeholder="年" value="{{hypertensionYear}}" bindinput="inputChangeHandle" data-prop="hypertensionYear" />
+			<view class='text-title'>年</view>
+		</view>
+
+		<view class='text-title'>现服药物</view>
+		<view class="add-text-section">
+			<view class='text-title'>用法: </view>
+			<input class="weui-input" placeholder="用法" value="{{hypertensionInstructions}}" bindinput="inputChangeHandle" data-prop="hypertensionInstructions" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>用量:</view>
+			<input class="weui-input" placeholder="用量" value="{{hypertensionDosage}}" bindinput="inputChangeHandle" data-prop="hypertensionDosage" />
+		</view>
+
+		<view class='text-title'>血压</view>
+		<view class="add-text-section">
+			<view class='text-title'>血压值: </view>
+			<input class="weui-input" placeholder="血压值" value="{{bloodPressure}}" bindinput="inputChangeHandle" data-prop="bloodPressure" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>控制是否满意:</view>
+			<input class="weui-input" placeholder="控制是否满意" value="{{hypertensionState}}" bindinput="inputChangeHandle" data-prop="hypertensionState" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>用药是否规律:</view>
+			<input class="weui-input" placeholder="用药是否规律" value="{{hypertensionMedication}}" bindinput="inputChangeHandle" data-prop="hypertensionMedication" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>2. 糖尿病</view>
+			<input class="item-input-value" placeholder="年" value="{{diabetesYear}}" bindinput="inputChangeHandle" data-prop="diabetesYear" />
+			<view class='text-title'>年</view>
+		</view>
+
+		<view class='text-title'>现服药物</view>
+		<view class="add-text-section">
+			<view class='text-title'>用法: </view>
+			<input class="weui-input" placeholder="用法" value="{{diabetesInstructions}}" bindinput="inputChangeHandle" data-prop="diabetesInstructions" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>用量:</view>
+			<input class="weui-input" placeholder="用量" value="{{diabetesDosage}}" bindinput="inputChangeHandle" data-prop="diabetesDosage" />
+		</view>
+
+		<view class='text-title'>血糖</view>
+		<view class="add-text-section">
+			<view class='text-title'>血糖值: </view>
+			<input class="weui-input" placeholder="血糖值" value="{{bloodSugarPressure}}" bindinput="inputChangeHandle" data-prop="bloodSugarPressure" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>控制是否满意:</view>
+			<input class="weui-input" placeholder="控制是否满意" value="{{diabetesState}}" bindinput="inputChangeHandle" data-prop="diabetesState" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>用药是否规律:</view>
+			<input class="weui-input" placeholder="用药是否规律" value="{{diabetesMedication}}" bindinput="inputChangeHandle" data-prop="diabetesMedication" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>3. 冠心病</view>
+			<input class="item-input-value" placeholder="年" value="{{heartDiseaseYear}}" bindinput="inputChangeHandle" data-prop="heartDiseaseYear" />
+			<view class='text-title'>年</view>
+		</view>
+
+		<view class='text-title'>现服药物</view>
+		<view class="add-text-section">
+			<view class='text-title'>用法: </view>
+			<input class="weui-input" placeholder="用法" value="{{heartDiseaseInstructions}}" bindinput="inputChangeHandle" data-prop="heartDiseaseInstructions" />
+		</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>用量:</view>
+			<input class="weui-input" placeholder="用量" value="{{heartDiseaseDosage}}" bindinput="inputChangeHandle" data-prop="heartDiseaseDosage" />
+		</view>
+		<view class='text-title'>家族史:</view>
+
+		<view class=" add-checkbox-section">
+			<view class="checkbox-title">父亲：</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{father}}" data-prop="father">
+				<label class="checkbox-item" wx:for="{{fatherCheckboxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">母亲：</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{mother}}" data-prop="mother">
+				<label class="checkbox-item" wx:for="{{motherCheckboxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">子女：</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{child}}" data-prop="child">
+				<label class="checkbox-item" wx:for="{{childCheckboxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
+
+		<view class="add-checkbox-section">
+			<view class="checkbox-title">兄弟姐妹：</view>
+			<checkbox-group bindchange="inputChangeHandle" value="{{brothers}}" data-prop="brothers">
+				<label class="checkbox-item" wx:for="{{brothersCheckboxItems}}" wx:key="{{item.value}}">
+					<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
+				</label>
+			</checkbox-group>
+		</view>
 	</view>
 
-	<view class="add-radio-section">
-		<view class="radio-title">居住状况：</view>
-		<radio-group bindchange="inputChangeHandle" data-prop="livingcond">
-			<view class="radio-item" wx:for="{{livingConditionItems}}">
-				<radio value="{{item.name}}" checked="{{item.livingcond == '1'}}"></radio>
-				<label>{{item.name}}</label>
-			</view>
-		</radio-group>
-	</view>
+	<view class="vcontainer">
 
-	<view class='text-title'>家族史:</view>
+		<view class='text-section-title'>3 行为习惯</view>
+		<view class='text-title'>锻炼：</view>
+		<view class="add-text-likecheckbox-section">
+			<view class='text-title'>散步</view>
+			<input class="item-input-value" placeholder="分钟" value="{{walkminute}}" bindinput="inputChangeHandle" data-prop="walkminute" />
+			<view class='text-title'>分钟</view>
+		</view>
 
-	<view class=" add-checkbox-section">
-		<view class="checkbox-title">父亲：</view>
-		<checkbox-group bindchange="inputChangeHandle" value="{{father}}" data-prop="father">
-			<label class="checkbox-item" wx:for="{{fatherCheckboxItems}}" wx:key="{{item.value}}">
-				<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
-			</label>
-		</checkbox-group>
-	</view>
+		<view class="add-text-likecheckbox-section">
+			<view class='text-title'>跑步</view>
+			<input class="item-input-value" placeholder="分钟" value="{{runminute}}" bindinput="inputChangeHandle" data-prop="runminute" />
+			<view class='text-title'>分钟</view>
+		</view>
 
-	<view class="add-checkbox-section">
-		<view class="checkbox-title">母亲：</view>
-		<checkbox-group bindchange="inputChangeHandle" value="{{mother}}" data-prop="mother">
-			<label class="checkbox-item" wx:for="{{motherCheckboxItems}}" wx:key="{{item.value}}">
-				<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
-			</label>
-		</checkbox-group>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>其他</view>
+			<input class="item-input-value" placeholder="分钟" value="{{otherminute}}" bindinput="inputChangeHandle" data-prop="otherminute" />
+			<view class='text-title'>其他</view>
+		</view>
 
-	<view class="add-checkbox-section">
-		<view class="checkbox-title">子女：</view>
-		<checkbox-group bindchange="inputChangeHandle" bindchange="inputChangeHandle" value="{{child}}" data-prop="child">
-			<label class="checkbox-item" wx:for="{{childCheckboxItems}}" wx:key="{{item.value}}">
-				<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
-			</label>
-		</checkbox-group>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>吸烟:</view>
+			<input class="item-input-value" placeholder="支" value="{{acigarette}}" bindinput="inputChangeHandle" data-prop="acigarette" />
+			<view class='text-title'>支</view>
+		</view>
 
-	<view class="add-checkbox-section">
-		<view class="checkbox-title">兄弟姐妹：</view>
-		<checkbox-group bindchange="inputChangeHandle" value="{{brothers}}" data-prop="brothers">
-			<label class="checkbox-item" wx:for="{{brothersCheckboxItems}}" wx:key="{{item.value}}">
-				<checkbox value="{{item.value}}" checked="{{item.status == '1'}}" />{{item.name}}
-			</label>
-		</checkbox-group>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>吸烟年龄:</view>
+			<input class="item-input-value" placeholder="年龄" value="{{smokeage}}" bindinput="inputChangeHandle" data-prop="smokeage" />
+		</view>
 
-	<view class='text-title'>锻炼：</view>
-	<view class="add-text-likecheckbox-section">
-		<view class='text-title'>散步</view>
-		<input class="item-input-value" placeholder="分钟" value="{{walkminute}}" bindinput="inputChangeHandle" data-prop="walkminute" />
-		<view class='text-title'>分钟</view>
-	</view>
+		<view class="add-radio-section">
+			<view class="radio-title">戒烟：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="nosmoke">
+				<view class="radio-item" wx:for="{{isNoSmokeItems}}">
+					<radio value="{{item.name}}" checked="{{item.nosmoke == '1'}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
 
-	<view class="add-text-likecheckbox-section">
-		<view class='text-title'>跑步</view>
-		<input class="item-input-value" placeholder="分钟" value="{{runminute}}" bindinput="inputChangeHandle" data-prop="runminute" />
-		<view class='text-title'>分钟</view>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>戒烟时间:</view>
+			<input class="item-input-value" placeholder="时间" value="{{nosmketime}}" bindinput="inputChangeHandle" data-prop="nosmketime" />
+		</view>
+		<view class='text-title'>饮酒种类：</view>
+		<view class=" add-text-likecheckbox-section">
+			<view class='text-title'>白酒</view>
+			<input class="item-input-value" placeholder="两" value="{{liquor}}" bindinput="inputChangeHandle" data-prop="liquor" />
+			<view class='text-title'>两</view>
+		</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>其他</view>
-		<input class="item-input-value" placeholder="分钟" value="{{otherminute}}" bindinput="inputChangeHandle" data-prop="otherminute" />
-		<view class='text-title'>其他</view>
-	</view>
+		<view class="add-text-likecheckbox-section">
+			<view class='text-title'>红酒</view>
+			<input class="item-input-value" placeholder="两" value="{{redwine}}" bindinput="inputChangeHandle" data-prop="redwine" />
+			<view class='text-title'>两</view>
+		</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>吸烟:</view>
-		<input class="item-input-value" placeholder="支" value="{{acigarette}}" bindinput="inputChangeHandle" data-prop="acigarette" />
-		<view class='text-title'>支</view>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>啤酒</view>
+			<input class="item-input-value" placeholder="两" value="{{beer}}" bindinput="inputChangeHandle" data-prop="beer" />
+			<view class='text-title'>两</view>
+		</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>吸烟年龄:</view>
-		<input class="item-input-value" placeholder="年龄" value="{{smokeage}}" bindinput="inputChangeHandle" data-prop="smokeage" />
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>开始喝酒年龄:</view>
+			<input class="item-input-value" placeholder="年龄" value="{{drinkage}}" bindinput="inputChangeHandle" data-prop="drinkage" />
+		</view>
 
-	<view class="add-radio-section">
-		<view class="radio-title">戒烟：</view>
-		<radio-group bindchange="inputChangeHandle" data-prop="nosmoke">
-			<view class="radio-item" wx:for="{{isNoSmokeItems}}">
-				<radio value="{{item.name}}" checked="{{item.nosmoke == '1'}}"></radio>
-				<label>{{item.name}}</label>
-			</view>
-		</radio-group>
-	</view>
+		<view class="add-radio-section">
+			<view class="radio-title">是否戒酒：</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="nodrink">
+				<view class="radio-item" wx:for="{{isNoDrinkItems}}">
+					<radio value="{{item.name}}" checked="{{item.nodrink == '1'}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
 
-	<view class='text-title'>饮酒种类：</view>
-	<view class=" add-text-likecheckbox-section">
-		<view class='text-title'>白酒</view>
-		<input class="item-input-value" placeholder="两" value="{{liquor}}" bindinput="inputChangeHandle" data-prop="liquor" />
-		<view class='text-title'>两</view>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>戒酒时间:</view>
+			<input class="item-input-value" placeholder="时间" value="{{nodrinktime}}" bindinput="inputChangeHandle" data-prop="nodrinktime" />
+		</view>
 
-	<view class="add-text-likecheckbox-section">
-		<view class='text-title'>红酒</view>
-		<input class="item-input-value" placeholder="两" value="{{redwine}}" bindinput="inputChangeHandle" data-prop="redwine" />
-		<view class='text-title'>两</view>
+		<view class="add-text-section">
+			<view class='text-title'>主食量</view>
+			<input class="item-input-value" placeholder="两" value="{{meal}}" bindinput="inputChangeHandle" data-prop="meal" />
+			<view class='text-title'>/顿</view>
+		</view>
 	</view>
+	<view class="vcontainer">
+		<view class='text-section-title'>4 收入情况</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>啤酒</view>
-		<input class="item-input-value" placeholder="两" value="{{beer}}" bindinput="inputChangeHandle" data-prop="beer" />
-		<view class='text-title'>两</view>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>月收入:</view>
+			<input class="weui-input" placeholder="月收入" value="{{monthlyIncome}}" bindinput="inputChangeHandle" data-prop="monthlyIncome" />
+		</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>开始喝酒年龄:</view>
-		<input class="item-input-value" placeholder="年龄" value="{{drinkage}}" bindinput="inputChangeHandle" data-prop="drinkage" />
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>车辆:</view>
+			<input class="item-input-value" placeholder="辆" value="{{cars}}" bindinput="inputChangeHandle" data-prop="cars" />
+			<view class='text-title'>辆</view>
+		</view>
 
-	<view class="add-radio-section">
-		<view class="radio-title">是否戒酒：</view>
-		<radio-group bindchange="inputChangeHandle" data-prop="nodrink">
-			<view class="radio-item" wx:for="{{isNoDrinkItems}}">
-				<radio value="{{item.name}}" checked="{{item.nodrink == '1'}}"></radio>
-				<label>{{item.name}}</label>
-			</view>
-		</radio-group>
-	</view>
+		<view class="add-text-section">
+			<view class='text-title'>房产:</view>
+			<input class="weui-input" placeholder="房产" value="{{realEstate}}" bindinput="inputChangeHandle" data-prop="realEstate" />
+		</view>
 
-	<view class="add-text-section">
-		<view class='text-title'>主食量</view>
-		<input class="item-input-value" placeholder="两" value="{{meal}}" bindinput="inputChangeHandle" data-prop="meal" />
-		<view class='text-title'>/顿</view>
+		<view class="add-text-section">
+			<view class='text-title'>金融产品:</view>
+			<input class="weui-input" placeholder="金融产品" value="{{financialProduct}}" bindinput="inputChangeHandle" data-prop="financialProduct" />
+		</view>
 	</view>
-	<view class="buttons">
-		<button type="primary" class="primary" bindtap="updateRecordHandle" disabled="{{isDisabled}}">保存</button>
-		<button type="default" class="default" bindtap="canceleHandle">取消</button>
-	</view>
+</view>
+
+<view class="buttons">
+	<button type="primary" class="primary" bindtap="updateRecordHandle" disabled="{{isDisabled}}">保存</button>
+	<button type="default" class="default" bindtap="canceleHandle">取消</button>
+
 </view>

@@ -1,3 +1,27 @@
+.vcontainer {
+  padding-top: 10rpx;
+  /* padding-left: 10rpx; */
+  margin-top: 0rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 0rpx;
+  border: 1rpx dashed gray;
+  justify-content: flex-start;
+}
+
+.text-section-title {
+  font-weight: bold; 
+  margin-bottom: 10rpx;
+}
+
+.text-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom:20rpx;
+}
 .addPageMain {
   margin-left: 10px;
 }
@@ -7,13 +31,14 @@
   margin-bottom: 10px;
 }
 
+.text-title {
+  margin-right: 10rpx;
+}
+
 .add-text-likecheckbox-section {
   display: flex;
 }
 
-.text-title {
-  margin-right: 10px;
-}
 
 .add-radio-section {
   margin-bottom: 10px
@@ -47,5 +72,5 @@
 }
 
 .item-input-value {
-  width: 50px;
+  width: 100rpx;
 }

@@ -47,6 +47,11 @@ Page({
         name: '保姆看护',
         value: 'bm',
         livingcond: 0
+      },
+      {
+        name: '父母',
+        value: 'fm',
+        livingcond: 0
       }
     ],
 
@@ -241,7 +246,6 @@ Page({
     huji: '',
     address: '',
     policestation: '',
-    currentdisease: '',
     acigarette: '',
     smokeage: '',
     drinkage: '',
@@ -252,6 +256,29 @@ Page({
     liquor: '',
     redwine: '',
     meal: '',
+    // 新增加的字段
+    employer: '',
+    hypertensionYear: '',
+    hypertensionInstructions: '',
+    hypertensionDosage: '',
+    bloodPressure: '',
+    hypertensionState: '',
+    hypertensionMedication: '',
+    diabetesYear: '',
+    diabetesInstructions: '',
+    diabetesDosage: '',
+    bloodSugarPressure: '',
+    diabetesState: '',
+    diabetesMedication: '',
+    heartDiseaseYear: '',
+    heartDiseaseInstructions: '',
+    heartDiseaseDosage: '',
+    nosmketime: '',
+    nodrinktime: '',
+    monthlyIncome: '',
+    cars: '',
+    realEstate: '',
+    financialProduct: '',
     // 按钮状态
     isDisabled: false,
     id: ''
@@ -318,7 +345,7 @@ Page({
               mask: true,
               success() {
                 setTimeout(function () {
-                  wx.navigateBack({                         
+                  wx.navigateBack({
                     url: '../ResidentHealthMain/index',
                   })
                 }, 1000)
@@ -448,6 +475,29 @@ Page({
               nation: data.nation,
               education: data.education,
               meal: data.meal,
+              // 新增加的字段
+              employer: data.employer,
+              hypertensionYear: data.hypertensionYear,
+              hypertensionInstructions: data.hypertensionInstructions,
+              hypertensionDosage: data.hypertensionDosage,
+              bloodPressure: data.bloodPressure,
+              hypertensionState: data.hypertensionState,
+              hypertensionMedication: data.hypertensionMedication,
+              diabetesYear: data.diabetesYear,
+              diabetesInstructions: data.diabetesInstructions,
+              diabetesDosage: data.diabetesDosage,
+              bloodSugarPressure: data.bloodSugarPressure,
+              diabetesState: data.diabetesState,
+              diabetesMedication: data.diabetesMedication,
+              heartDiseaseYear: data.heartDiseaseYear,
+              heartDiseaseInstructions: data.heartDiseaseInstructions,
+              heartDiseaseDosage: data.heartDiseaseDosage,
+              nosmketime: data.nosmketime,
+              nodrinktime: data.nodrinktime,
+              monthlyIncome: data.monthlyIncome,
+              cars: data.cars,
+              realEstate: data.realEstate,
+              financialProduct: data.financialProduct,
               id: data._id
             })
         }

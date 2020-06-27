@@ -1,9 +1,10 @@
 {
   "pages":[
-    "pages/ResidentHealthMain/index",
-    "pages/ResidentHealthChecklistMain/index",
+    "pages/ElderlyTCMIdentifyMain/index",
     "pages/main/index",
-    "pages/ResidentHealthAdd/index",
+    "pages/ElderlyTCMIdentifyAdd/index",
+    "pages/ElderlyTCMIdentifyQuery/index",
+    "pages/ElderlyTCMIdentifyUpdate/index",
     "pages/logs/logs"
   ],
   "window":{

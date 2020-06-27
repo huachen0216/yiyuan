@@ -1,0 +1,354 @@
+<view class="addPageMain">
+	<text class="text-style">老年人健康管理核查表</text>
+
+	<view class="vcontainer">
+		<view class="text-title">请根据近一年的体验和感觉，回答以下问题。</view>
+		<view class="text-title">没有（根本不/重来没有）</view>
+		<view class="text-title">很少（有一点/偶尔）</view>
+		<view class="text-title">有时（有些/少数时间）</view>
+		<view class="text-title">经常（相当/多数时间）</view>
+		<view class="text-title">总是（非常/每天）</view>
+
+		<view class="add-text-section">
+			<view class='text-title'>档案编号: </view>
+			<input class="weui-input" placeholder="档案编号" value="{{usercode}}" disabled="true" />
+		</view>
+	</view>
+
+	<view class="vcontainer">
+		<view class="add-radio-section">
+			<view class="radio-title">(1)您精力充沛吗？（指精神头足，乐于做事）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q1">
+				<view class="radio-item" wx:for="{{q1Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(2)您容易疲乏吗？（指体力如何，是否稍微活动一下或做一点家务劳动就感到累）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q2">
+				<view class="radio-item" wx:for="{{q2Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(3)您容易气短，呼吸短促，接不上气吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q3">
+				<view class="radio-item" wx:for="{{q3Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(4)您说话声音低弱无力吗?（指说话没有力气）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q4">
+				<view class="radio-item" wx:for="{{q4Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(5)您感到闷闷不乐、情绪低沉吗?（指心情不愉快，情绪低落）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q5">
+				<view class="radio-item" wx:for="{{q5Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(6)您容易精神紧张、焦虑不安吗?（指遇事是否心情紧张）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q6">
+				<view class="radio-item" wx:for="{{q6Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(7)您因为生活状态改变而感到孤独、失落吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q7">
+				<view class="radio-item" wx:for="{{q7Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(8)您容易感到害怕或受到惊吓吗?</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q8">
+				<view class="radio-item" wx:for="{{q8Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(9)您感到身体超重不轻松吗?(感觉身体沉重)[BMI指数=体重（kg）/身高2（m）]</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q9">
+				<view class="radio-item" wx:for="{{q9Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(10)您眼睛干涩吗?</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q10">
+				<view class="radio-item" wx:for="{{q10Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(11)您手脚发凉吗?（不包含周围温度低或穿的少导致的手脚发冷）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q11">
+				<view class="radio-item" wx:for="{{q11Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">(12)您胃脘部、背部或腰膝部怕冷吗？（指上腹部、背部、腰部或膝关节等，有一处或多处怕冷）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q12">
+				<view class="radio-item" wx:for="{{q12Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">13.您比一般人耐受不了寒冷吗？（指比别人容易害怕冬天或是夏天的冷空调、电扇等）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q13">
+				<view class="radio-item" wx:for="{{q13Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">14.您容易患感冒吗?（指每年感冒的次数）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q14">
+				<view class="radio-item" wx:for="{{q14Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">15.您没有感冒时也会鼻塞、流鼻涕吗?</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q15">
+				<view class="radio-item" wx:for="{{q15Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">16.您有口粘口腻，或睡眠打鼾吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q16">
+				<view class="radio-item" wx:for="{{q16Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">17.您容易过敏(对药物、食物、气味、花粉或在季节交替、气候变化时)吗? 1从来没有 2一年1、2次 3一年3、4次 4一年5、6次 5每次遇到上述原因都过敏</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q17">
+				<view class="radio-item" wx:for="{{q17Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">18.您的皮肤容易起荨麻疹吗?(包括风团、风疹块、风疙瘩)</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q18">
+				<view class="radio-item" wx:for="{{q18Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">19.您的皮肤在不知不觉中会出现青紫瘀斑、皮下出血吗?（指皮肤在没有外伤的情况下出现青一块紫一块的情况）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q19">
+				<view class="radio-item" wx:for="{{q19Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">20.您的皮肤一抓就红，并出现抓痕吗?（指被指甲或钝物划过后皮肤的反应）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q20">
+				<view class="radio-item" wx:for="{{q20Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">21.您皮肤或口唇干吗?</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q21">
+				<view class="radio-item" wx:for="{{q21Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">22.您有肢体麻木或固定部位疼痛的感觉吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q22">
+				<view class="radio-item" wx:for="{{q22Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">23.您面部或鼻部有油腻感或者油亮发光吗?（指脸上或鼻子）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q23">
+				<view class="radio-item" wx:for="{{q23Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">24.您面色或目眶晦黯，或出现褐色斑块/斑点吗?</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q24">
+				<view class="radio-item" wx:for="{{q24Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">25.您有皮肤湿疹、疮疖吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q25">
+				<view class="radio-item" wx:for="{{q25Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">26.您感到口干咽燥、总想喝水吗？</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q26">
+				<view class="radio-item" wx:for="{{q26Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">27.您感到口苦或嘴里有异味吗?（指口苦或口臭）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q27">
+				<view class="radio-item" wx:for="{{q27Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">28.您腹部肥大吗?（指腹部脂肪肥厚） </view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q28">
+				<view class="radio-item" wx:for="{{q28Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">29.您吃(喝)凉的东西会感到不舒服或者怕吃(喝)凉的东西吗？（指不喜欢吃凉的食物，或吃了凉的食物后会不舒服）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q29">
+				<view class="radio-item" wx:for="{{q29Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">30.您有大便黏滞不爽、解不尽的感觉吗?(大便容易粘在马桶或便坑壁上)</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q30">
+				<view class="radio-item" wx:for="{{q30Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">31.您容易大便干燥吗?</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q31">
+				<view class="radio-item" wx:for="{{q31Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">32.您舌苔厚腻或有舌苔厚厚的感觉吗?（如果自我感觉不清楚可由调查员观察后填写）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q32">
+				<view class="radio-item" wx:for="{{q32Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class="add-radio-section">
+			<view class="radio-title">33.您舌下静脉瘀紫或增粗吗？（可由调查员辅助观察后填写）</view>
+			<radio-group bindchange="inputChangeHandle" data-prop="q33">
+				<view class="radio-item" wx:for="{{q33Items}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+	</view>
+</view>
+
+<view class="buttons">
+	<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
+	<button type="default" class="default" bindtap="canceleHandle">取消</button>
+</view>

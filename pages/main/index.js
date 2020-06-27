@@ -3,28 +3,11 @@ Page({
    * 页面的初始数据
    */
   data: {
+    userID: '',
     usercode: '',
     // 按钮状态
+    isConfirm: false,
     isDisabled: true
-  },
-
-  confirmHandle(e) {
-    var that = this;
-    var usercode = that.data.usercode
-    if (usercode.length == 0 ) {
-      wx.showToast({
-        title: '社保号码为空！',
-        duration: 2000
-      })
-      return
-    } 
-    wx.setStorage({
-      data: usercode,
-      key: 'usercode',
-    })
-    that.setData({
-      isDisabled: false
-    })
   },
 
   inputChangeHandle(e) {
@@ -32,6 +15,40 @@ Page({
     var changed = {}
     changed[prop] = e.detail.value
     this.setData(changed)
+  },
+
+  confirmHandle(e) {
+    var that = this;
+    var userID = that.data.userID
+    var usercode = that.data.usercode
+    if (userID.length == 0) {
+      wx.showToast({
+        title: '身份证号为空！',
+        duration: 2000
+      })
+      return
+    }
+    if (usercode.length == 0) {
+      wx.showToast({
+        title: '社保号码为空！',
+        duration: 2000
+      })
+      return
+    }
+    wx.setStorage({
+      data: usercode,
+      key: 'usercode',
+    })
+
+    wx.setStorage({
+      data: userID,
+      key: 'userID',
+    })
+    that.setData({
+      isDisabled: false,
+      isConfirm: true
+    })
+    
   },
 
   // 居民健康档案
@@ -80,6 +97,13 @@ Page({
   ElderlyHealthManageChecklistMain(e) {
     wx.navigateTo({
       url: '../ElderlyHealthManageChecklistMain/index'
+    })
+  },
+
+  // 老年人中医体质辨识
+  ElderlyTCMIdentifyMain(e) {
+    wx.navigateTo({
+      url: '../ElderlyTCMIdentifyMain/index'
     })
   },
 

@@ -1,0 +1,50 @@
+.vcontainer {
+  padding-top: 10rpx;
+  /* padding-left: 10rpx; */
+  margin-top: 0rpx;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  margin-bottom: 0rpx;
+  border: 1rpx dashed gray;
+  justify-content: flex-start;
+}
+
+.addPageMain {
+  margin-left: 10rpx;
+}
+
+.text-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: larger;
+  font-weight: bold;
+  margin-bottom:20rpx;
+}
+
+.text-title {
+  margin-right: 10rpx;
+}
+
+.add-radio-section {
+  margin-bottom: 10rpx
+}
+
+
+.radio-title {
+  margin-bottom: 5rpx;
+}
+
+.radio-item {
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.add-text-section {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.text-title {
+  margin-right: 10rpx;
+}
