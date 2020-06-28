@@ -1,0 +1,22 @@
+.add-text-section {
+  display: flex;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-title {
+  margin-right: 20rpx;
+}
+
+.item-input-value {
+  width: 400rpx;
+}
+
+.main-button-style {
+  display: flex;
+  margin-top: 20rpx;
+  justify-content: center;
+  align-items: center;
+}

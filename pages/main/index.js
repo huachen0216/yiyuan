@@ -3,10 +3,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userID: '',
-    usercode: '',
+    password: '',
     // 按钮状态
-    isConfirm: false,
     isDisabled: true
   },
 
@@ -17,7 +15,37 @@ Page({
     this.setData(changed)
   },
 
-  confirmHandle(e) {
+  patientHandle(e) {
+    wx.navigateTo({
+      url: '../PatientMain/index',
+    })
+  },
+
+  doctorHandle(e) {
+    var that = this;
+    var password = that.data.password
+    if (password.length <= 0) {
+      wx.showToast({
+        title: '请输入验证码',
+        image: '/images/close.png',
+        duration: 2000
+      })
+      return
+    }
+    if (password != '123456') {
+      wx.showToast({
+        title: '验证码输入错误！',
+        image: '/images/close.png',
+        duration: 2000
+      })
+      return
+    }
+    wx.navigateTo({
+      url: '../DoctorMain/index',
+    })
+  },
+
+  patientHandle1(e) {
     var that = this;
     var userID = that.data.userID
     var usercode = that.data.usercode
@@ -35,76 +63,6 @@ Page({
       })
       return
     }
-    wx.setStorage({
-      data: usercode,
-      key: 'usercode',
-    })
-
-    wx.setStorage({
-      data: userID,
-      key: 'userID',
-    })
-    that.setData({
-      isDisabled: false,
-      isConfirm: true
-    })
-    
-  },
-
-  // 居民健康档案
-  ResidentHealth(e) {
-    wx.navigateTo({
-      url: '../ResidentHealthMain/index'
-    })
-  },
-
-  // 居民健康档案考核核查表
-  ResidentHealthChecklistMain(e) {
-    wx.navigateTo({
-      url: '../ResidentHealthChecklistMain/index'
-    })
-  },
-
-  // 家庭医师签约
-  FamilyDoctorSign(e) {
-    wx.navigateTo({
-      url: '../FamilyDoctorSignMain/index'
-    })
-  },
-
-  // 糖尿病管理核查表
-  DiabetesHealthManage(e) {
-    wx.navigateTo({
-      url: '../DiabetesHealthManage/index'
-    })
-  },
-
-  // 高血压管理核查表
-  HypertensionManage(e) {
-    wx.navigateTo({
-      url: '../HypertensionManage/index'
-    })
-  },
-
-  // 老年人中医药健康管理
-  ElderlyChineseHealthManageChecklistMain(e) {
-    wx.navigateTo({
-      url: '../ElderlyChineseHealthManageChecklistMain/index'
-    })
-  },
-
-  // 老年人健康管理核查表
-  ElderlyHealthManageChecklistMain(e) {
-    wx.navigateTo({
-      url: '../ElderlyHealthManageChecklistMain/index'
-    })
-  },
-
-  // 老年人中医体质辨识
-  ElderlyTCMIdentifyMain(e) {
-    wx.navigateTo({
-      url: '../ElderlyTCMIdentifyMain/index'
-    })
   },
 
   /**

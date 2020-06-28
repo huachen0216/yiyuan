@@ -1,22 +1,21 @@
-.add-text-section {
+.psw-section {
   display: flex;
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
+  margin-top: 50rpx;
+  font-weight: bolder;
   justify-content: center;
   align-items: center;
 }
 
-.text-title {
-  margin-right: 20rpx;
-}
-
-.item-input-value {
-  width: 400rpx;
-}
-
-.main-button-style {
+.patient-button-style {
   display: flex;
-  margin-top: 20rpx;
+  margin-top: 50rpx;
+  justify-content: center;
+  align-items: center;
+}
+
+.doctor-button-style {
+  display: flex;
+  margin-top: 30rpx;
   justify-content: center;
   align-items: center;
 }

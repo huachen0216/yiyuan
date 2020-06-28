@@ -1,45 +1,11 @@
-<view class="add-text-section">
-	<view class='text-title'>证件号:</view>
-	<input class="weui-input" placeholder="证件号" value="{{userID}}" bindinput="inputChangeHandle" data-prop="userID" />
+<view class="btn-sp-area patient-button-style" id="buttonContainer">
+	<button type="primary" plain="true" bindtap="patientHandle">患者</button>
 </view>
 
-<view class="add-text-section">
-	<view class='text-title'>社保号:</view>
-	<input class="weui-input" placeholder="社保号" value="{{usercode}}" bindinput="inputChangeHandle" data-prop="usercode" />
+<view class="psw-section">
+	<input class="weui-input" placeholder="请输入验证码" password value="{{password}}" bindinput="inputChangeHandle" data-prop="password" />
 </view>
 
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="mini-btn" type="primary" size="mini" bindtap="confirmHandle" disabled="{{isConfirm}}">确认</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">居民健康档案简表</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ResidentHealthChecklistMain" disabled="{{isDisabled}}">居民健康档案考核核查表</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="FamilyDoctorSign" disabled="{{isDisabled}}">家庭医师签约</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="DiabetesHealthManage" disabled="{{isDisabled}}">糖尿病管理核查表</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="HypertensionManage" disabled="{{isDisabled}}">高血压管理核查表</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ElderlyChineseHealthManageChecklistMain" disabled="{{isDisabled}}">老年人中医药健康管理</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ElderlyHealthManageChecklistMain" disabled="{{isDisabled}}">老年人健康管理核查表</button>
-</view>
-
-<view class="btn-area main-button-style" id="buttonContainer">
-	<button type="default" bindtap="ElderlyTCMIdentifyMain" disabled="{{isDisabled}}">老年人中医体质辨识</button>
+<view class="btn-sp-area doctor-button-style" id="buttonContainer">
+	<button type="primary" plain="true" bindtap="doctorHandle">医生</button>
 </view>

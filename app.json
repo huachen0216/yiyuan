@@ -1,10 +1,6 @@
 {
   "pages":[
-    "pages/ElderlyTCMIdentifyMain/index",
     "pages/main/index",
-    "pages/ElderlyTCMIdentifyAdd/index",
-    "pages/ElderlyTCMIdentifyQuery/index",
-    "pages/ElderlyTCMIdentifyUpdate/index",
     "pages/logs/logs"
   ],
   "window":{

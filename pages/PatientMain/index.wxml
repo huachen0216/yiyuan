@@ -1,0 +1,29 @@
+<view class="add-text-section">
+	<view class='text-title'>证件号:</view>
+	<input class="weui-input" placeholder="证件号" value="{{userID}}" bindinput="inputChangeHandle" data-prop="userID" />
+</view>
+
+<view class="add-text-section">
+	<view class='text-title'>社保号:</view>
+	<input class="weui-input" placeholder="社保号" value="{{usercode}}" bindinput="inputChangeHandle" data-prop="usercode" />
+</view>
+
+<view class="btn-area main-button-style" id="buttonContainer">
+	<button type="mini-btn" type="primary" size="mini" bindtap="confirmHandle" disabled="{{isConfirm}}">确认</button>
+</view>
+
+<view class="btn-area main-button-style" id="buttonContainer">
+	<button type="default" bindtap="ResidentHealth" disabled="{{isDisabled}}">居民健康档案简表</button>
+</view>
+
+<view class="btn-area main-button-style" id="buttonContainer">
+	<button type="default" bindtap="FamilyDoctorSign" disabled="{{isDisabled}}">家庭医师签约</button>
+</view>
+
+<view class="btn-area main-button-style" id="buttonContainer">
+	<button type="default" bindtap="ElderlyChineseHealthManageChecklistMain" disabled="{{isDisabled}}">老年人中医药健康管理</button>
+</view>
+
+<view class="btn-area main-button-style" id="buttonContainer">
+	<button type="default" bindtap="ElderlyTCMIdentifyMain" disabled="{{isDisabled}}">老年人中医体质辨识</button>
+</view>
