@@ -145,7 +145,6 @@
 	<view class="vcontainer">
 		<view class="section">
 			<text class="partleft">* 2、甲方获得签约服务：</text>
-			<text class="partright">选择服务</text>
 		</view>
 	</view>
 
@@ -154,91 +153,28 @@
 	</view>
 
 	<view class="vcontainer">
+		<view class="add-radio-section">
+			<radio-group bindchange="inputChangeHandle" data-prop="service">
+				<view class="radio-item" wx:for="{{serviceItems}}">
+					<radio value="{{item.name}}"></radio>
+					<label>{{item.name}}</label>
+				</view>
+			</radio-group>
+		</view>
+
+		<view class='text-title'>详细服务选项：</view>
 		<view class="page-section-space">
-			<scroll-view scroll-y="true" style="height: 150px;">
-				<view class="add-text-section">
-					<view class='text-title'>(1) 建立更新相应健康档案</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(2) 健康评估及计划（1次/年）</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(3) 主动告知健康信息（1次/年）</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(4) 健康通服务</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(5) 随访</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(6) 自理能力评估</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(7) 免费物理检查：身高、体重、腰围、臀围、血压</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(8) 饮食、运动与用药指导</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(9) 心理咨询、心理辅导服务</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(10) 健康技能我指导</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(11) 预防接种</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(12) 家庭保健员培养</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(13) 免费义诊（1次/年）</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(14) 免费体检（1次/年）</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(15) 就医指导</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(16) 社区康复</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(17) 慢性病自我管理小组</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(18) 对孕妇进行孕期指导服务</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(19) 对残疾人开展康复训练指导</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(20) 贴心服务我上门</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(21) 对产妇和新生儿提供上门访视和体检服务</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(22) 对确有需求的进行定期上门访视</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(23) 转诊及预约服务</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(24) 中医养生保健服务</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(25) 传染病防治</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(26) 避孕药具发放</view>
-				</view>
-				<view class="add-text-section">
-					<view class='text-title'>(27) 知己健康管理</view>
+			<scroll-view scroll-y="true" style="height: 500rpx;">
+				<view class="add-checkbox-section">
+					<checkbox-group bindchange="inputChangeHandle" value="{{pages}}" data-prop="pages">
+						<label class="checkbox-item" wx:for="{{pagesCheckboxItems}}" wx:key="{{item.value}}">
+							<checkbox value="{{item.value}}" />{{item.name}}
+						</label>
+					</checkbox-group>
 				</view>
 			</scroll-view>
 		</view>
+
 	</view>
 
 	<view class="vcontainer">
