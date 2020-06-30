@@ -154,7 +154,7 @@
 
 	<view class="vcontainer">
 		<view class="add-radio-section">
-			<radio-group bindchange="inputChangeHandle" data-prop="service">
+			<radio-group bindchange="changePagesHandle" data-prop="service">
 				<view class="radio-item" wx:for="{{serviceItems}}">
 					<radio value="{{item.name}}"></radio>
 					<label>{{item.name}}</label>
