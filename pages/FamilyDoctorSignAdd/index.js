@@ -215,58 +215,348 @@ Page({
     var changed = {}
     changed[prop] = e.detail.value
     that.setData(changed)
-    var newPagesCheckboxItems = []
+    var youngItems = [{
+        name: '(1) 建立更新相应健康档案',
+        value: 'item1',
+        index: 0
+      },
+      {
+        name: '(2) 健康评估及计划（1次/年）',
+        value: 'item2',
+        index: 0
+      },
+      {
+        name: '(3) 主动告知健康信息（1次/年）',
+        value: 'item3',
+        index: 0
+      },
+      {
+        name: '(4) 健康通服务',
+        value: 'item4',
+        index: 0
+      },
+      {
+        name: '(7) 免费物理检查：身高、体重、腰围、臀围、血压',
+        value: 'item7',
+        index: 0
+      },
+      {
+        name: '(10) 健康技能我指导',
+        value: 'item10',
+        index: 0
+      },
+      {
+        name: '(15) 就医指导',
+        value: 'item15',
+        index: 0
+      },
+      {
+        name: '(25) 传染病防治',
+        value: 'item25',
+        index: 0
+      },
+      {
+        name: '(27) 知己健康管理',
+        value: 'item27',
+        index: 0
+      },
+    ]
+    var youngItems1 = [{
+        name: '(1) 建立更新相应健康档案',
+        value: 'item1',
+        index: 0
+      },
+      {
+        name: '(2) 健康评估及计划（1次/年）',
+        value: 'item2',
+        index: 0
+      },
+      {
+        name: '(3) 主动告知健康信息（1次/年）',
+        value: 'item3',
+        index: 0
+      },
+      {
+        name: '(4) 健康通服务',
+        value: 'item4',
+        index: 0
+      },
+      {
+        name: '(5) 随访',
+        value: 'item5',
+        index: 0
+      },
+      {
+        name: '(6) 自理能力评估',
+        value: 'item6',
+        index: 0
+      },
+      {
+        name: '(7) 免费物理检查：身高、体重、腰围、臀围、血压',
+        value: 'item7',
+        index: 0
+      },
+      {
+        name: '(8) 饮食、运动与用药指导',
+        value: 'item8',
+        index: 0
+      },
+      {
+        name: '(9) 心理咨询、心理辅导服务',
+        value: 'item9',
+        index: 0
+      },
+      {
+        name: '(10) 健康技能我指导',
+        value: 'item10',
+        index: 0
+      },
+      {
+        name: '(12) 家庭保健员培养',
+        value: 'item12',
+        index: 0
+      },
+      {
+        name: '(13) 免费义诊（1次/年）',
+        value: 'item13',
+        index: 0
+      },
+      {
+        name: '(15) 就医指导',
+        value: 'item15',
+        index: 0
+      },
+      {
+        name: '(17) 慢性病自我管理小组',
+        value: 'item17',
+        index: 0
+      },
+      {
+        name: '(20) 贴心服务我上门',
+        value: 'item20',
+        index: 0
+      },
+      {
+        name: '(22) 对确有需求的进行定期上门访视',
+        value: 'item22',
+        index: 0
+      },
+      {
+        name: '(23) 转诊及预约服务',
+        value: 'item23',
+        index: 0
+      },
+      {
+        name: '(24) 中医养生保健服务',
+        value: 'item24',
+        index: 0
+      },
+      {
+        name: '(27) 知己健康管理',
+        value: 'item27',
+        index: 0
+      },
+    ]
+    var oldItems = [{
+        name: '(1) 建立更新相应健康档案',
+        value: 'item1',
+        index: 0
+      },
+      {
+        name: '(2) 健康评估及计划（1次/年）',
+        value: 'item2',
+        index: 0
+      },
+      {
+        name: '(3) 主动告知健康信息（1次/年）',
+        value: 'item3',
+        index: 0
+      },
+      {
+        name: '(4) 健康通服务',
+        value: 'item4',
+        index: 0
+      },
+      {
+        name: '(5) 随访',
+        value: 'item5',
+        index: 0
+      },
+      {
+        name: '(6) 自理能力评估',
+        value: 'item6',
+        index: 0
+      },
+      {
+        name: '(7) 免费物理检查：身高、体重、腰围、臀围、血压',
+        value: 'item7',
+        index: 0
+      },
+      {
+        name: '(8) 饮食、运动与用药指导',
+        value: 'item8',
+        index: 0
+      },
+      {
+        name: '(9) 心理咨询、心理辅导服务',
+        value: 'item9',
+        index: 0
+      },
+      {
+        name: '(10) 健康技能我指导',
+        value: 'item10',
+        index: 0
+      },
+      {
+        name: '(13) 免费义诊（1次/年）',
+        value: 'item13',
+        index: 0
+      },
+      {
+        name: '(14) 免费体检（1次/年）',
+        value: 'item14',
+        index: 0
+      },
+      {
+        name: '(15) 就医指导',
+        value: 'item15',
+        index: 0
+      },
+      {
+        name: '(16) 社区康复',
+        value: 'item16',
+        index: 0
+      },
+      {
+        name: '(24) 中医养生保健服务',
+        value: 'item24',
+        index: 0
+      },
+      {
+        name: '(27) 知己健康管理',
+        value: 'item27',
+        index: 0
+      },
+    ]
+    var oldItems1 = [{
+        name: '(1) 建立更新相应健康档案',
+        value: 'item1',
+        index: 0
+      },
+      {
+        name: '(2) 健康评估及计划（1次/年）',
+        value: 'item2',
+        index: 0
+      },
+      {
+        name: '(3) 主动告知健康信息（1次/年）',
+        value: 'item3',
+        index: 0
+      },
+      {
+        name: '(4) 健康通服务',
+        value: 'item4',
+        index: 0
+      },
+      {
+        name: '(5) 随访',
+        value: 'item5',
+        index: 0
+      },
+      {
+        name: '(6) 自理能力评估',
+        value: 'item6',
+        index: 0
+      },
+      {
+        name: '(7) 免费物理检查：身高、体重、腰围、臀围、血压',
+        value: 'item7',
+        index: 0
+      },
+      {
+        name: '(8) 饮食、运动与用药指导',
+        value: 'item8',
+        index: 0
+      },
+      {
+        name: '(9) 心理咨询、心理辅导服务',
+        value: 'item9',
+        index: 0
+      },
+      {
+        name: '(10) 健康技能我指导',
+        value: 'item10',
+        index: 0
+      },
+      {
+        name: '(12) 家庭保健员培养',
+        value: 'item12',
+        index: 0
+      },
+      {
+        name: '(13) 免费义诊（1次/年）',
+        value: 'item13',
+        index: 0
+      },
+      {
+        name: '(14) 免费体检（1次/年）',
+        value: 'item14',
+        index: 0
+      },
+      {
+        name: '(15) 就医指导',
+        value: 'item15',
+        index: 0
+      },
+      {
+        name: '(17) 慢性病自我管理小组',
+        value: 'item17',
+        index: 0
+      },
+      {
+        name: '(20) 贴心服务我上门',
+        value: 'item20',
+        index: 0
+      },
+      {
+        name: '(22) 对确有需求的进行定期上门访视',
+        value: 'item22',
+        index: 0
+      },
+      {
+        name: '(23) 转诊及预约服务',
+        value: 'item23',
+        index: 0
+      },
+      {
+        name: '(24) 中医养生保健服务',
+        value: 'item24',
+        index: 0
+      },
+      {
+        name: '(27) 知己健康管理',
+        value: 'item27',
+        index: 0
+      },
+    ]
+
     if (that.data.service == '年轻人') {
-      newPagesCheckboxItems =  [{
-          name: '(1) 建立更新相应健康档案',
-          value: 'item1',
-          index: 0
-        },
-        {
-          name: '(2) 健康评估及计划（1次/年）',
-          value: 'item2',
-          index: 0
-        },
-        {
-          name: '(3) 主动告知健康信息（1次/年）',
-          value: 'item3',
-          index: 0
-        },
-        {
-          name: '(4) 健康通服务',
-          value: 'item4',
-          index: 0
-        },
-        {
-          name: '(7) 免费物理检查：身高、体重、腰围、臀围、血压',
-          value: 'item7',
-          index: 0
-        },
-        {
-          name: '(10) 健康技能我指导',
-          value: 'item10',
-          index: 0
-        },
-        {
-          name: '(15) 就医指导',
-          value: 'item15',
-          index: 0
-        },
-        {
-          name: '(25) 传染病防治',
-          value: 'item25',
-          index: 0
-        },
-        {
-          name: '(27) 知己健康管理',
-          value: 'item27',
-          index: 0
-        },
-      ]
+      that.setData({
+        pagesCheckboxItems: youngItems
+      })
+    } else if (that.data.service == '年轻人(慢病)') {
+      that.setData({
+        pagesCheckboxItems: youngItems1
+      })
+    } else if (that.data.service == '老年人') {
+      that.setData({
+        pagesCheckboxItems: oldItems
+      })
+    } else if (that.data.service == '老年热(慢病)') {
+      that.setData({
+        pagesCheckboxItems: oldItems1
+      })
     }
-    that.setData({
-      pagesCheckboxItems: newPagesCheckboxItems
-    })
   },
 
   addRecordHandle(e) {

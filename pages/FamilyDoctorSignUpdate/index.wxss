@@ -77,3 +77,34 @@
   line-height: 100rpx;
   border: 1rpx dashed gray;
 }
+
+.add-radio-section {
+  margin-bottom: 10rpx
+}
+
+.radio-title {
+  margin-bottom: 5rpx;
+}
+
+.radio-item {
+  display: inline-block;
+  margin-right: 20rpx;
+}
+
+.checkbox-item {
+  display: inline-block;
+  margin-right: 20rpx;
+  margin-bottom: 5rpx;
+}
+
+.add-checkbox-item {
+  display: flex;
+}
+
+.add-checkbox-section {
+  margin-bottom: 10rpx;
+}
+
+.add-checkbox-item .item-value {
+  margin-right: 10rpx;
+}
