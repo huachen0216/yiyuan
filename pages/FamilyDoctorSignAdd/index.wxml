@@ -263,7 +263,7 @@
 
 	<view class="vcontainer">
 		<view class="checkbox-item">
-			<checkbox value="jy" checked="{{termination}}" bindchange="inputChangeHandle" data-prop="termination" />解约:
+			<switch type="checkbox" checked="{{termination}}" bindchange="inputChangeHandle" data-prop="termination" />解约:
 		</view>
 	</view>
 
@@ -284,14 +284,15 @@
 
 	<view class="vcontainer">
 		<view class="textView-title">解约原因: </view>
-		<textarea class="textarea-input-value" value="{{cancelreason}}" bindchange="inputChangeHandle" data-prop="termination" />
+		<textarea class="textarea-input-value" value="{{cancelreason}}" bindblur="inputChangeHandle" data-prop="cancelreason" />
 		</view>
 
 	<view class="vcontainer">
 		<view class="checkbox-item">
-			<checkbox value="{{autotermination}}" checked="{{false}}" bindchange="inputChangeHandle" data-prop="autotermination" />是否自动续约
+			<switch type="checkbox" checked="{{autotermination}}" bindchange="inputChangeHandle" data-prop="autotermination" />是否自动续约
 		</view>
 	</view>
+
 	<view class="buttons">
 		<button type="primary" class="primary" bindtap="addRecordHandle" disabled="{{isDisabled}}">保存</button>
 		<button type="default" class="default" bindtap="canceleHandle">取消</button>

@@ -195,7 +195,6 @@ Page({
     termination: '',
     canceltime: '',
     partaconfirm: '',
-    termination: '',
     autotermination: '',
     cancelreason: '',
     // 按钮状态
