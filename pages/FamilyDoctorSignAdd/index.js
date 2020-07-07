@@ -23,7 +23,7 @@ Page({
         index: 0
       },
       {
-        name: '老年热(慢病)',
+        name: '老年人(慢病)',
         value: 'old1',
         index: 0
       },
@@ -551,7 +551,7 @@ Page({
       that.setData({
         pagesCheckboxItems: oldItems
       })
-    } else if (that.data.service == '老年热(慢病)') {
+    } else if (that.data.service == '老年人(慢病)') {
       that.setData({
         pagesCheckboxItems: oldItems1
       })

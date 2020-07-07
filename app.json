@@ -1,6 +1,5 @@
 {
   "pages":[
-    "pages/FamilyDoctorSignMain/index",
     "pages/main/index",
     "pages/logs/logs"
   ],

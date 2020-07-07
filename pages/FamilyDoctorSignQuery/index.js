@@ -22,7 +22,7 @@ Page({
         index: 0
       },
       {
-        name: '老年热(慢病)',
+        name: '老年人(慢病)',
         value: 'old1',
         index: 0
       },
